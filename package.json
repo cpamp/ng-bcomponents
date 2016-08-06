@@ -1,0 +1,11 @@
+{
+  "name": "angular2-bootstrap-components",
+  "version": "0.0.1",
+  "description": "Bootstrap components as angular2 components",
+  "main": " ",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
