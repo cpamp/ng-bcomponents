@@ -18,11 +18,15 @@ export class BadgeBComponent extends BComponent {
         this.value = value;
     }
 
+    isNumber() {
+        return typeof this.value === 'number';
+    }
+
     increment(by: number = 1) {
-        this.value += by;
+        if(this.isNumber()) { this.value += by; }
     }
 
     decrement(by: number = 1) {
-        this.value -= by;
+        if(this.isNumber()) { this.value -= by; }
     }
 }
