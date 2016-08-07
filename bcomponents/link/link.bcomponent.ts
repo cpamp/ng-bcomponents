@@ -8,6 +8,6 @@ import {BComponent, BComponentAttributes, BComponentInputs} from '../bcomponent'
     inputs: BComponentInputs.concat(['label', 'link'])
 })
 export class LinkBComponent extends BComponent {
-    label: string;
-    link: string;
+    public label: string;
+    public link: string;
 }
