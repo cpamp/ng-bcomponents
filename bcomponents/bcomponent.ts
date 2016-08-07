@@ -2,20 +2,28 @@ import {Directive, ElementRef, Input} from '@angular/core';
 
 export class BComponent {
     public self = this;
-    public id: string = "";
-    public class: string = "";
-    public classes: string = "";
-    public styles: string = "";
-    public name: string = "";
-    public aria: string = "";
-    public ariaBy: string = "";
+    public id: string;
+    public class: string;
+    public classes: string;
+    public styles: string;
+    public name: string;
+    public aria: string;
+    public ariaBy: string;
 
     constructor(baseClass: string) {
         this.class = baseClass;
     }
 
-    ngOnInit() {
-        this.class = this.class + " " + this.classes;
+    ngOnChanges() {
+        if(this.class != null) {
+            if(this.classes != null) {
+                this.class = this.class + " " + this.classes;
+            }
+        } else {
+            if(this.classes != null) {
+                this.class = this.classes
+            }
+        }
     }
 }
 
@@ -45,11 +53,11 @@ export class BComponentAttributes {
     }
 
     ngOnChanges() {
-        this.setAttribute("class", this.attributes.class);
-        this.setAttribute("id", this.attributes.id);
-        this.setAttribute("style", this.attributes.styles);
-        this.setAttribute("name", this.attributes.name);
-        this.setAttribute("aria-label", this.attributes.aria);
-        this.setAttribute("aria-labelledby", this.attributes.ariaBy);
+        if(this.attributes.class != null) this.setAttribute("class", this.attributes.class);
+        if(this.attributes.id != null) this.setAttribute("id", this.attributes.id);
+        if(this.attributes.styles != null) this.setAttribute("style", this.attributes.styles);
+        if(this.attributes.name != null) this.setAttribute("name", this.attributes.name);
+        if(this.attributes.aria != null) this.setAttribute("aria-label", this.attributes.aria);
+        if(this.attributes.ariaBy != null) this.setAttribute("aria-labelledby", this.attributes.ariaBy);
     }
 }
