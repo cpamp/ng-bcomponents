@@ -16,7 +16,7 @@ export class HeadingBComponent extends BComponent{
         super("page-header");
     }
 
-    ngOnChanges() {
+    ngOnChildChanges = () => {
         if(this.size == null) {
             this.size = 1;
         }

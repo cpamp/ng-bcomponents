@@ -12,10 +12,10 @@ export class LabelBComponent extends BComponent {
     public type: DisplayType = "default";
 
     constructor() {
-        super("label");
+        super("label label-default");
     }
 
-    ngOnChanges() {
-        this.class = this.class + " label-" + this.type;
+    ngOnChildChanges = () => {
+        this.baseClass = "label label-" + this.type;
     }
 }
