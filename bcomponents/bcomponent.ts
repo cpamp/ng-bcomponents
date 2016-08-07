@@ -2,6 +2,9 @@ import {Directive, ElementRef, Input} from '@angular/core';
 
 export class BComponent {
     public self = this;
+    public ngOnChildChanges: () => void;
+
+    public baseClass: string;
     public id: string;
     public class: string;
     public classes: string;
@@ -11,13 +14,15 @@ export class BComponent {
     public ariaBy: string;
 
     constructor(baseClass: string) {
-        this.class = baseClass;
+        this.baseClass = baseClass;
     }
 
     ngOnChanges() {
-        if(this.class != null) {
+        if(this.ngOnChildChanges != null) this.ngOnChildChanges();
+        if(this.baseClass != null) {
+            this.class = this.baseClass;
             if(this.classes != null) {
-                this.class = this.class + " " + this.classes;
+                this.class +=  " " + this.classes;
             }
         } else {
             if(this.classes != null) {
