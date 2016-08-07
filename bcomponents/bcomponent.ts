@@ -61,3 +61,5 @@ export class BComponentAttributes {
         if(this.attributes.ariaBy != null) this.setAttribute("aria-labelledby", this.attributes.ariaBy);
     }
 }
+
+export type DisplayType = "default" | "primary" | "success" | "info" | "warning" | "danger";
