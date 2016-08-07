@@ -5,9 +5,9 @@ import {BComponent, BComponentAttributes, BComponentInputs} from '../bcomponent'
     selector: "link-bcomponent",
     templateUrl: "link.bcomponent.html",
     directives: [BComponentAttributes],
-    inputs: BComponentInputs.concat(['label', 'link'])
+    inputs: BComponentInputs.concat(['text', 'link'])
 })
 export class LinkBComponent extends BComponent {
-    public label: string;
+    public text: string;
     public link: string;
 }

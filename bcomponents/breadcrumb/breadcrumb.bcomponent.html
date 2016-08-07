@@ -1,6 +1,6 @@
 <ol [bcomponent-attributes]="self">
     <li *ngFor="let item of breadcrumbItems">
-        <link-bcomponent [label]="item.label" [link]="item.link"></link-bcomponent>
+        <link-bcomponent [text]="item.text" [link]="item.link"></link-bcomponent>
     </li>
     <li *ngIf="active != null" class="active">{{active}}</li>
 </ol>

@@ -4,11 +4,11 @@ import {LinkBComponent} from '../link/link.bcomponent';
 
 export class BreadcrumbItem {
     public link: string;
-    public label: string;
+    public text: string;
 
-    constructor(link: string, label: string) {
+    constructor(link: string, text: string) {
         this.link = link;
-        this.label = label;
+        this.text = text;
     }
 }
 
