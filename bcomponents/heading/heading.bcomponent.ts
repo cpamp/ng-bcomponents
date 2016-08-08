@@ -5,11 +5,11 @@ import {BComponent, BComponentInputs, BComponentAttributes} from '../bcomponent'
     selector: 'heading-bcomponent',
     templateUrl: 'heading.bcomponent.html',
     directives: [BComponentAttributes],
-    inputs: BComponentInputs.concat(['title', 'subTitle', 'size'])
+    inputs: BComponentInputs.concat(['title', 'subtitle', 'size'])
 })
 export class HeadingBComponent extends BComponent{
     public title: string;
-    public subTitle: string;
+    public subtitle: string;
     public size: number = 1;
 
     constructor() {
