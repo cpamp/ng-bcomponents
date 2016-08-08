@@ -68,3 +68,5 @@ export class BComponentAttributes {
 }
 
 export type DisplayType = "default" | "primary" | "success" | "info" | "warning" | "danger";
+
+export type DisplaySize = "lg" | "sm";
