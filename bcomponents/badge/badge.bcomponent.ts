@@ -18,7 +18,7 @@ export class BadgeBComponent extends BComponent {
         this.value = value;
     }
 
-    public isNumer = () => {
+    public isNumer = (): boolean => {
         return typeof this.value === 'number';
     }
 
