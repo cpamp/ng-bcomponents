@@ -14,19 +14,19 @@ export class BadgeBComponent extends BComponent {
         super("badge");
     }
 
-    setValue(value: number) {
+    public setValue = (value: number) => {
         this.value = value;
     }
 
-    isNumber() {
+    public isNumer = () => {
         return typeof this.value === 'number';
     }
 
-    increment(by: number = 1) {
-        if(this.isNumber()) { this.value += by; }
+    public increment = (by: number = 1) => {
+        if(this.isNumer()) { console.log(this.value); this.value += by; }
     }
 
-    decrement(by: number = 1) {
-        if(this.isNumber()) { this.value -= by; }
+    public decrement = (by: number = 1) => {
+        if(this.isNumer()) { console.log(this.value); this.value -= by; }
     }
 }

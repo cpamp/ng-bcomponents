@@ -26,11 +26,11 @@ export class AlertBComponent extends BComponent {
         }
     }
 
-    show() {
+    public show = () => {
         this.hidden = true;
     }
 
-    hide() {
+    public hide = () => {
         this.hidden = false;
     }
 }

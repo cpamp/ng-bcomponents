@@ -53,7 +53,7 @@ export class BComponentAttributes {
         this.el = el;
     }
 
-    setAttribute(attribute: string, value: string) {
+    public setAttribute = (attribute: string, value: string) => {
         this.el.nativeElement.setAttribute(attribute, value);
     }
 
