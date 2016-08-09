@@ -26,10 +26,6 @@ export class TextboxBComponent extends BComponent {
         super("form-control");
     }
 
-    private isNull = (value: any): boolean => {
-        return value == null;
-    }
-
     ngOnChildChanges = () => {
         this.frontClass = "btn btn-" + this.frontType;
         this.backClass = "btn btn-" + this.backType;

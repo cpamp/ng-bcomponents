@@ -30,6 +30,10 @@ export class BComponent {
             }
         }
     }
+
+    public isNull = (value: any): boolean => {
+        return value == null;
+    }
 }
 
 export const BComponentInputs = [
