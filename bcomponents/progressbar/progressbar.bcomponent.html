@@ -1,0 +1,5 @@
+<div class="progress">
+    <div *ngIf="!isNull(display) && displayPercent" [bcomponent-attributes]="self" role="progressbar" [attr.aria-valuenow]="value" [attr.aria-valuemin]="minValue" [attr.aria-valuemax]="maxValue">{{percentValue}}{{display}}</div>
+    <div *ngIf="!isNull(display) && !displayPercent" [bcomponent-attributes]="self" role="progressbar" [attr.aria-valuenow]="value" [attr.aria-valuemin]="minValue" [attr.aria-valuemax]="maxValue">{{value}} {{display}}</div>
+    <div *ngIf="isNull(display)" [bcomponent-attributes]="self" role="progressbar" [attr.aria-valuenow]="value" [attr.aria-valuemin]="minValue" [attr.aria-valuemax]="maxValue"></div>
+</div>
