@@ -1,6 +1,8 @@
 # angular2-bootstrap-components
 This project is a collection of bootstrap components (bcomponents) as angular 2 components. Instead of having to write nested markup for a bootstrap heading, you would use `<heading-bcomponent [title]="'My awesome heading'"></heading-bcomponent>`. One major drawback to this approach is that it does not handle nested components. For example, you can not use a heading bcomponent within the body of your panel bcomponent body text. You can, however, provide the raw HTML for a heading within the panel body.
 
+You can visit the [angular2-bootstrap-components-demo project](https://github.com/cpamp21/angular2-bootstrap-components-demo) for a complete usage example.
+
 ## BComponents
 The components in this project are called bcomponents and all tags are suffixed with `-bcomponent`.
 
