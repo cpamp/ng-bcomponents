@@ -23,7 +23,7 @@ Usage:
 ### Badge BComponent
 Inputs:
 ```typescript
-value: number - 0
+value: number = 0
 ```
 Api:
 ```typescript
