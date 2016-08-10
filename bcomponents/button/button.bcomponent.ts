@@ -8,7 +8,7 @@ import {BComponent, BComponentAttributes, BComponentInputs, DisplayType} from '.
     inputs: BComponentInputs.concat(['text', 'type', 'click'])
 })
 export class ButtonBComponent extends BComponent {
-    public value: number = 0;
+    public text: string;
     public type: DisplayType = "default";
     public click: () => void;
 
