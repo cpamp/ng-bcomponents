@@ -16,10 +16,10 @@ export class BreadcrumbItem {
     selector: 'breadcrumb-bcomponent',
     templateUrl: 'breadcrumb.bcomponent.html',
     directives: [BComponentAttributes, LinkBComponent],
-    inputs: BComponentInputs.concat('breadcrumbItems', 'active')
+    inputs: BComponentInputs.concat('items', 'active')
 })
 export class BreadcrumbBComponent extends BComponent {
-    public breadcrumbItems: BreadcrumbItem[];
+    public items: BreadcrumbItem[];
     public active: string;
 
     constructor() {
