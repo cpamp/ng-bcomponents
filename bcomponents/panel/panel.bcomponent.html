@@ -1,0 +1,5 @@
+<div [bcomponent-attributes]="self">
+    <div *ngIf="!isNull(header)" class="panel-heading" [innerHtml]="header"></div>
+    <div class="panel-body" [innerHtml]="body"></div>
+    <div *ngIf="!isNull(footer)" class="panel-footer" [innerHtml]="footer"></div>
+</div>
