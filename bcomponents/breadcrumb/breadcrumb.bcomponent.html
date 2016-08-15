@@ -1,5 +1,5 @@
 <ol [bcomponent-attributes]="self">
-    <li *ngFor="let item of breadcrumbItems">
+    <li *ngFor="let item of items">
         <link-bcomponent [text]="item.text" [link]="item.link"></link-bcomponent>
     </li>
     <li *ngIf="active != null" class="active">{{active}}</li>
