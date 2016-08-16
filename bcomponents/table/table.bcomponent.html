@@ -1,0 +1,10 @@
+<div class="table-responsive">
+    <table [bcomponent-attributes]="self">
+        <tr>
+            <th *ngFor="let header of headers" [innerHtml]="header"></th>
+        </tr>
+        <tr *ngFor="let row of items">
+            <td *ngFor="let column of row" [innerHtml]="column"></td>
+        </tr>
+    </table>
+</div>
