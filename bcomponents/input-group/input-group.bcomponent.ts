@@ -2,12 +2,12 @@ import {Component} from '@angular/core';
 import {BComponent, BComponentAttributes, BComponentInputs, DisplayType, DisplaySize} from '../bcomponent';
 
 @Component({
-    selector: "textbox-bcomponent",
-    templateUrl: "textbox.bcomponent.html",
+    selector: "input-group-bcomponent",
+    templateUrl: "input-group.bcomponent.html",
     directives: [BComponentAttributes],
     inputs: BComponentInputs.concat(['placeholder', 'model', 'size', 'frontText', 'backText', 'frontClick', 'backClick', 'frontType', 'backType'])
 })
-export class TextboxBComponent extends BComponent {
+export class InputGroupBComponent extends BComponent {
     public placeholder: string;
     public model: string;
     public size: DisplaySize;
