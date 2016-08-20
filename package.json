@@ -3,24 +3,7 @@
   "version": "0.1.6",
   "description": "Bootstrap components as angular2 components",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "prepublish": "gulp tsc",
-    "build": "rimraf -rf dist/ && gulp tsc",
-    "typings": "typings install",
-    "postinstall": "typings install"
-  },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {},
-  "devDependencies": {
-    "gulp": "^3.9.1",
-    "gulp-angular2-embed-templates": "^2.2.1",
-    "gulp-typescript": "^2.13.6",
-    "merge2": "^1.0.2",
-    "rimraf": "^2.5.4",
-    "typescript": "^1.8.10",
-    "typings": "^1.3.2",
+  "peerDependencies": {
     "@angular/common": "^2.0.0-rc.5",
     "@angular/compiler": "^2.0.0-rc.5",
     "@angular/core": "^2.0.0-rc.5",
@@ -29,5 +12,28 @@
     "rxjs": "5.0.0-beta.6",
     "systemjs": "^0.19.36",
     "zone.js": "^0.6.14"
+  },
+  "repository" : { 
+    "type" : "git", 
+    "url" : "git+https://github.com/cpamp21/ng-bcomponents.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepublish": "gulp tsc",
+    "build": "rimraf -rf dist/ && gulp tsc",
+    "typings": "typings install",
+    "postinstall": "typings install"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-angular2-embed-templates": "^2.2.1",
+    "gulp-typescript": "^2.13.6",
+    "merge2": "^1.0.2",
+    "rimraf": "^2.5.4",
+    "typescript": "^1.8.10",
+    "typings": "^1.3.2"
   }
 }
