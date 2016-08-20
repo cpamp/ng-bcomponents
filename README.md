@@ -3,13 +3,47 @@ This project is a collection of bootstrap components (bcomponents) as angular 2 
 
 You can visit the [angular2-bootstrap-components-demo project](https://github.com/cpamp21/angular2-bootstrap-components-demo) for a complete usage example.
 
+## Installation and Usage
+### npm
+To install with npm run the following command:  
+`npm i angular2-bootstrap-components`  
+
+For SystemJS add this to your systemjs.config.js file:  
+```javascript
+var map = {
+    // Your other libraries here
+    'bcomponents':                'node_modules/angular2-bootstrap-components'
+};
+var packages = {
+    // Your other libraries here
+    'bcomponents':                { main: 'bcomponents.js', defaultExtension: 'js' }
+};
+var config = {
+    map: map,
+    packages: packages,
+    defaultJSExtensions: true
+};
+System.config(config);
+```
+
+### Usage
+To import a component simply import the one of the classes listed below like this:  
+```typescript
+import {ButtonBComponent} from 'bcomponents`  
+import {LinkBComponent} from 'bcomponents`  
+```
+
 ## BComponents
 The components in this project are called bcomponents and all tags are suffixed with `-bcomponent`.
 
 ### DisplayType
-Many components accept an input `type` which is of type `DisplayType`. DisplayType can be any of the following values, but note that some components do not use default or primary and will instead default to success: `default, primary, success, info, warning, danger`.
+Many components accept an input `type` of type `DisplayType`. DisplayType can be any of the following values, but note that some components do not use default or primary and will instead default to success: `default, primary, success, info, warning, danger`.
+
+### DisplaySize
+Many components accept an input `size` of type `DisplaySize`. Display size can be any of the following values: `sm, lg`.
 
 ### Alert
+Class: `AlertBComponent`  
 Selector: `alert-bcomponent`  
 Inputs:
 ```typescript
@@ -20,6 +54,7 @@ type: DisplayType = success
 ```
 
 ### Badge
+Class: `BadgeBComponent`  
 Selector: `badge-bcomponent`  
 Inputs:
 ```typescript
@@ -33,6 +68,7 @@ decrement: (by: number = 1) => void
 ```
 
 ### Breadcrumb
+Class: `BreadcrumbBComponent`  
 Selector: `breadcrumb-bcomponent`  
 BreadcrumbItem:
 ```typescript
@@ -47,6 +83,7 @@ active: string
 ```
 
 ### Button
+Class: `ButtonBComponent`  
 Selector: `button-bcomponent`  
 Inputs:
 ```typescript
@@ -56,6 +93,7 @@ click: () => void
 ```
 
 ### Dropdown
+Class: `ButtonBComponent`  
 Selector: `dropdown-bcomponent`  
 DropdownType:
 ```typescript
@@ -74,6 +112,7 @@ title: string
 ```
 
 ### Heading
+Class: `HeadingBComponent`  
 Selector: `heading-bcomponent`  
 Inputs:
 ```typescript
@@ -83,6 +122,7 @@ size: number = 1
 ```
 
 ### Input Group
+Class: `InputGroupBComponent`  
 Selector: `input-group-bcomponent`  
 Inputs:
 ```typescript
@@ -98,6 +138,7 @@ backType: DisplayType = "default"
 ```
 
 ### Jumbotron
+Class: `JumbotronBComponent`  
 Selector: `Jumbotron-bcomponent`  
 Inputs:
 ```typescript
@@ -108,6 +149,7 @@ size: number
 ```
 
 ### Label
+Class: `LabelBComponent`  
 Selector: `label-bcomponent`  
 Inputs:
 ```typescript
@@ -116,6 +158,7 @@ type: DisplayType
 ```
 
 ### Link
+Class: `LinkBComponent`  
 Selector: `link-bcomponent`  
 Inputs:
 ```typescript
@@ -124,6 +167,7 @@ link: string
 ```
 
 ### Panel
+Class: `PanelBComponent`  
 Selector: `panel-bcomponent`  
 Inputs:
 ```typescript
@@ -134,6 +178,7 @@ type: DisplayType = "default"
 ```
 
 ### Progressbar
+Class: `ProgressbarBComponent`  
 Selector: `progressbar-bcomponent`  
 Inputs:
 ```typescript
@@ -148,6 +193,7 @@ maxValue: number = 100
 ```
 
 ### Table
+Class: `TableBComponent`  
 Selector: `table-bcomponent`  
 Inputs:
 ```typescript
@@ -157,6 +203,7 @@ striped: boolean
 ```
 
 ### Thumbnail
+Class: `ThumbnailBComponent`  
 Selector: `thumbnail-bcomponent`  
 Inputs:
 ```typescript
@@ -170,6 +217,7 @@ size: number = 3
 ```
 
 ### Well
+Class: `WellBComponent`  
 Selector: `well-bcomponent`  
 Inputs:
 ```typescript
