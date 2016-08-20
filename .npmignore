@@ -1,6 +1,5 @@
 bcomponents
 typings
-node_modules
 .gitignore
 gulpfile.js
 todo.txt

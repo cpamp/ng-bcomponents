@@ -5,7 +5,7 @@
   "main": " ",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prepublish": "rimraf -rf lib/ && gulp tsc",
+    "prepublish": "gulp tsc",
     "build": "rimraf -rf lib/ && gulp tsc",
     "typings": "typings install",
     "postinstall": "typings install"
