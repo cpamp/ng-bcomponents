@@ -28,6 +28,9 @@ export * from './dist/bcomponents/jumbotron/jumbotron.bcomponent';
 // Label
 export * from './dist/bcomponents/label/label.bcomponent';
 
+// Link
+export * from './dist/bcomponents/link/link.bcomponent';
+
 // Panel
 export * from './dist/bcomponents/panel/panel.bcomponent';
 
