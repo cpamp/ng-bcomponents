@@ -1,6 +1,6 @@
 .log
 todo.txt
 node_modules
-lib
+dist
 typings
 *.log

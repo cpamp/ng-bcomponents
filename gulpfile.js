@@ -10,8 +10,8 @@ function transpile() {
         .pipe(ts(tsConfig.compilerOptions));
 
     return merge([
-        tResult.dts.pipe(gulp.dest('./lib')),
-        tResult.js.pipe(gulp.dest('./lib'))
+        tResult.dts.pipe(gulp.dest('./dist')),
+        tResult.js.pipe(gulp.dest('./dist'))
     ]);
 }
 

@@ -8,11 +8,11 @@
         "experimentalDecorators": true,
         "sourceMap": true,
         "declaration": true,
-        "outDir": "lib"
+        "outDir": "dist"
     },
     "exclude": [
         "node_modules",
-        "lib",
+        "dist",
         "bcomponents.d.ts"
     ]
 }

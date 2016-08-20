@@ -1,42 +1,42 @@
 // BComponent
-export {BComponent, DisplayType, DisplaySize} from './lib/bcomponents/bcomponent';
+export {BComponent, DisplayType, DisplaySize} from './dist/bcomponents/bcomponent';
 
 // Alert
-export * from './lib/bcomponents/alert/alert.bcomponent';
+export * from './dist/bcomponents/alert/alert.bcomponent';
 
 // Badge
-export * from './lib/bcomponents/badge/badge.bcomponent';
+export * from './dist/bcomponents/badge/badge.bcomponent';
 
 // Breadcrumb
-export * from './lib/bcomponents/breadcrumb/breadcrumb.bcomponent';
+export * from './dist/bcomponents/breadcrumb/breadcrumb.bcomponent';
 
 // Button
-export * from './lib/bcomponents/button/button.bcomponent';
+export * from './dist/bcomponents/button/button.bcomponent';
 
 // Dropdown
-export * from './lib/bcomponents/dropdown/dropdown.bcomponent';
+export * from './dist/bcomponents/dropdown/dropdown.bcomponent';
 
 // Heading
-export * from './lib/bcomponents/heading/heading.bcomponent';
+export * from './dist/bcomponents/heading/heading.bcomponent';
 
 // Input Group
-export * from './lib/bcomponents/input-group/input-group.bcomponent';
+export * from './dist/bcomponents/input-group/input-group.bcomponent';
 
 // Jumbotron
-export * from './lib/bcomponents/jumbotron/jumbotron.bcomponent';
+export * from './dist/bcomponents/jumbotron/jumbotron.bcomponent';
 
 // Label
-export * from './lib/bcomponents/label/label.bcomponent';
+export * from './dist/bcomponents/label/label.bcomponent';
 
 // Panel
-export * from './lib/bcomponents/panel/panel.bcomponent';
+export * from './dist/bcomponents/panel/panel.bcomponent';
 
 // Progressbar
-export * from './lib/bcomponents/progressbar/progressbar.bcomponent';
+export * from './dist/bcomponents/progressbar/progressbar.bcomponent';
 
 // Table
-export * from './lib/bcomponents/table/table.bcomponent';
+export * from './dist/bcomponents/table/table.bcomponent';
 
 // Thumbnail
-export * from './lib/bcomponents/thumbnail/thumbnail.bcomponent'; 
+export * from './dist/bcomponents/thumbnail/thumbnail.bcomponent'; 
 
