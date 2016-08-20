@@ -16,7 +16,7 @@ var map = {
 };
 var packages = {
     // Your other libraries here
-    'ng-bcomponents':                { main: 'bcomponents.js', defaultExtension: 'js' }
+    'ng-bcomponents':                { main: 'index.js', defaultExtension: 'js' }
 };
 var config = {
     map: map,
