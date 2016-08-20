@@ -1,6 +1,6 @@
 # npmignore
-bcomponents
-typings
+bcomponents/
+typings/
 .gitignore
 gulpfile.js
 todo.txt
