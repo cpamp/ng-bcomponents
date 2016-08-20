@@ -1,6 +1,6 @@
 {
   "name": "ng-bcomponents",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "Bootstrap components as angular2 components",
   "main": "index.js",
   "peerDependencies": {
@@ -13,9 +13,9 @@
     "systemjs": "^0.19.36",
     "zone.js": "^0.6.14"
   },
-  "repository" : { 
-    "type" : "git", 
-    "url" : "git+https://github.com/cpamp21/ng-bcomponents.git"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cpamp21/ng-bcomponents.git"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
