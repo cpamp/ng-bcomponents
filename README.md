@@ -12,7 +12,7 @@ For SystemJS add this to your systemjs.config.js file:
 ```javascript
 var map = {
     // Your other libraries here
-    'ng-bcomponents':                'node_modules/angular2-bootstrap-components'
+    'ng-bcomponents':                'node_modules/ng-bcomponents'
 };
 var packages = {
     // Your other libraries here
