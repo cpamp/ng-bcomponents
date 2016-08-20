@@ -29,8 +29,8 @@ System.config(config);
 ### Usage
 To import a component simply import the one of the classes listed below like this:  
 ```typescript
-import {ButtonBComponent} from 'bcomponents`;  
-import {LinkBComponent} from 'bcomponents`;  
+import {ButtonBComponent} from 'ng-bcomponents`;  
+import {LinkBComponent} from 'ng-bcomponents`;  
 ```
 
 ## BComponents
