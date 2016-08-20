@@ -32,6 +32,9 @@ exports.JumbotronBComponent = require('./dist/bcomponents/jumbotron/jumbotron.bc
 // Label
 exports.LabelBComponent = require('./dist/bcomponents/label/label.bcomponent').LabelBComponent;
 
+// Link
+exports.LinkBComponent = require('./dist/bcomponents/link/link.bcomponent').LinkBComponent;
+
 // Panel
 exports.PanelBComponent = require('./dist/bcomponents/panel/panel.bcomponent').PanelBComponent;
 
@@ -43,3 +46,6 @@ exports.TableBComponent = require('./dist/bcomponents/table/table.bcomponent').T
 
 // Thumbnail
 exports.ThumbnailBComponent = require('./dist/bcomponents/thumbnail/thumbnail.bcomponent').ThumbnailBComponent;
+
+// Well
+exports.WellBComponent = require('./dist/bcomponents/well/well.bcomponent').WellBComponent;

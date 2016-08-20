@@ -8,7 +8,6 @@ import {BComponent, BComponentAttributes, BComponentInputs, DisplayType} from '.
     inputs: BComponentInputs.concat(['text', 'dismissible', 'hidden', 'type'])
 })
 export class AlertBComponent extends BComponent {
-    @ViewChild(BComponentAttributes) attributes: BComponentAttributes;
     public text: string;
     public dismissible: boolean = false;
     public hidden: boolean = false;
