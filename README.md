@@ -9,7 +9,8 @@ The components in this project are called bcomponents and all tags are suffixed 
 ### DisplayType
 Many components accept an input `type` which is of type `DisplayType`. DisplayType can be any of the following values, but note that some components do not use default or primary and will instead default to success: `default, primary, success, info, warning, danger`.
 
-### Alert BComponent
+### Alert
+Selector: `alert-bcomponent`  
 Inputs:
 ```typescript
 text: string
@@ -17,12 +18,9 @@ dismissible: boolean = false
 hidden: boolean = false
 type: DisplayType = success
 ```
-Usage:
-```html
-<alert-bcomponent [text]="'<b>Dismissible</b>'" [type]="'default'" [dismissible]="true"></alert-bcomponent>
-```
 
-### Badge BComponent
+### Badge
+Selector: `badge-bcomponent`  
 Inputs:
 ```typescript
 value: number = 0
@@ -33,12 +31,9 @@ setValue: (value: number) => void
 increment: (by: number = 1) => void
 decrement: (by: number = 1) => void
 ```
-Usage:
-```html
-<badge-bcomponent [value]="3"></badge-bcomponent>
-```
 
-### Breadcrumb BComponent
+### Breadcrumb
+Selector: `breadcrumb-bcomponent`  
 BreadcrumbItem:
 ```typescript
 link: string
@@ -50,19 +45,133 @@ Inputs:
 items: BreadcrumbItem[]
 active: string
 ```
-Usage:
-```html
-<breadcrumb-bcomponent [items]="breadcrumbItems" [active]="'Amazing'"></breadcrumb-component>
-```
 
-### Button BComponent
+### Button
+Selector: `button-bcomponent`  
 Inputs:
 ```typescript
 text: string
 type: DisplayType
 click: () => void
 ```
-Usage:
-```html
-<button-bcomponent [text]="'Click me baby'" [click]="btnClickDemo" [type]="'primary'"></button-bcomponent>
+
+### Dropdown
+Selector: `dropdown-bcomponent`  
+DropdownType:
+```typescript
+type DropdownType = "separator" | "header" | "default"
 ```
+DropdownItem:
+```typescript
+type: DropdownType
+text: string
+link: string
+```
+Inputs:
+```typescript
+items: DropdownItem[]
+title: string
+```
+
+### Heading
+Selector: `heading-bcomponent`  
+Inputs:
+```typescript
+title: string
+subtitle: string
+size: number = 1
+```
+
+### Input Group
+Selector: `input-group-bcomponent`  
+Inputs:
+```typescript
+placeholder: string
+model: string
+size: DisplaySize
+frontText: string
+backText: string
+frontClick: () => void
+backClick: () => void
+frontType: DisplayType = "default"
+backType: DisplayType = "default"
+```
+
+### Jumbotron
+Selector: `Jumbotron-bcomponent`  
+Inputs:
+```typescript
+title: string
+subtitle: string
+body: string
+size: number
+```
+
+### Label
+Selector: `label-bcomponent`  
+Inputs:
+```typescript
+text: string
+type: DisplayType
+```
+
+### Link
+Selector: `link-bcomponent`  
+Inputs:
+```typescript
+text: string
+link: string
+```
+
+### Panel
+Selector: `panel-bcomponent`  
+Inputs:
+```typescript
+header: string
+body: string
+footer: string
+type: DisplayType = "default"
+```
+
+### Progressbar
+Selector: `progressbar-bcomponent`  
+Inputs:
+```typescript
+value: number = 0
+type: DisplayType = "success"
+display: string = "%"
+displayPercent: boolean = true
+striped: boolean = false
+animated: boolean = false
+minValue: number = 0
+maxValue: number = 100
+```
+
+### Table
+Selector: `table-bcomponent`  
+Inputs:
+```typescript
+items: any[]
+headers: any[]
+striped: boolean
+```
+
+### Thumbnail
+Selector: `thumbnail-bcomponent`  
+Inputs:
+```typescript
+link: string
+header: string
+body: string
+footer: string
+src: string
+alt: string
+size: number = 3
+```
+
+### Well
+Selector: `well-bcomponent`  
+Inputs:
+```typescript
+text: string
+size: DisplaySize
