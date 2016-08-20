@@ -6,17 +6,17 @@ You can visit the [angular2-bootstrap-components-demo project](https://github.co
 ## Installation and Usage
 ### npm
 To install with npm run the following command:  
-`npm i angular2-bootstrap-components`  
+`npm i ng-bcomponents`  
 
 For SystemJS add this to your systemjs.config.js file:  
 ```javascript
 var map = {
     // Your other libraries here
-    'bcomponents':                'node_modules/angular2-bootstrap-components'
+    'ng-bcomponents':                'node_modules/angular2-bootstrap-components'
 };
 var packages = {
     // Your other libraries here
-    'bcomponents':                { main: 'bcomponents.js', defaultExtension: 'js' }
+    'ng-bcomponents':                { main: 'bcomponents.js', defaultExtension: 'js' }
 };
 var config = {
     map: map,
