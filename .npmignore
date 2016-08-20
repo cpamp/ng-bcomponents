@@ -1,0 +1,8 @@
+bcomponents
+typings
+node_modules
+.gitignore
+gulpfile.js
+todo.txt
+tsconfig.json
+typings.json

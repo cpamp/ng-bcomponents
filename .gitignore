@@ -1,2 +1,5 @@
 .log
 todo.txt
+node_modules
+lib
+typings
