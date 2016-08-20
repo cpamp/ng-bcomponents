@@ -2,7 +2,7 @@ import {Component} from '@angular/core';
 import {BComponent, BComponentAttributes, BComponentInputs} from '../bcomponent';
 import {LinkBComponent} from '../link/link.bcomponent';
 
-type DropdownType = "separator" | "header" | "default";
+export type DropdownType = "separator" | "header" | "default";
 
 export class DropdownItem {
     public type: DropdownType = "default";
