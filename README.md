@@ -159,6 +159,8 @@ link: string
 ```
 
 ### List Group
+Class: `ListGroupBComponent`  
+Selector: `list-group-bcomponent`  
 ListGroupItem:
 ```typescript
 text: string
@@ -167,8 +169,6 @@ link: string
 active: boolean
 constructor(text: string, badge: BadgeBComponent = null, link: string = "", active: boolean = false)
 ```
-Class: `ListGroupBComponent`  
-Selector: `list-group-bcomponent`  
 Inputs:
 ```typescript
 items: ListGroupItem[]
