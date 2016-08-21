@@ -10,4 +10,10 @@ import {BComponent, BComponentAttributes, BComponentInputs} from '../bcomponent'
 export class LinkBComponent extends BComponent {
     public text: string;
     public link: string;
+
+    constructor(text: string = "", link: string = "") {
+        super(null);
+        this.text = text;
+        this.link = link;
+    }
 }

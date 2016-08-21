@@ -10,8 +10,9 @@ import {BComponent, BComponentAttributes, BComponentInputs} from '../bcomponent'
 export class BadgeBComponent extends BComponent {
     public value: number = 0;
 
-    constructor() {
+    constructor(value: number = 0) {
         super("badge");
+        this.value = value;
     }
 
     public setValue = (value: number) => {

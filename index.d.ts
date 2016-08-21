@@ -46,4 +46,5 @@ export * from './dist/bcomponents/table/table.bcomponent';
 // Thumbnail
 export * from './dist/bcomponents/thumbnail/thumbnail.bcomponent'; 
 
+// Well
 export * from './dist/bcomponents/well/well.bcomponent';

@@ -9,11 +9,14 @@ import {BComponent, BComponentAttributes, BComponentInputs, DisplayType} from '.
 })
 export class ButtonBComponent extends BComponent {
     public text: string;
-    public type: DisplayType = "default";
+    public type: DisplayType;
     public click: () => void;
 
-    constructor() {
+    constructor(text: string = "", type: DisplayType = "default", click: () => void = (() => {})) {
         super("btn btn-default");
+        this.text = text;
+        this.type = type;
+        this.click = click;
     }
 
     ngOnChildChanges = () => {

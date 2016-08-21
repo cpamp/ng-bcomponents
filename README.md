@@ -70,15 +70,9 @@ decrement: (by: number = 1) => void
 ### Breadcrumb
 Class: `BreadcrumbBComponent`  
 Selector: `breadcrumb-bcomponent`  
-BreadcrumbItem:
-```typescript
-link: string
-text: string
-constructor(link: string, text: string)
-```
 Inputs:
 ```typescript
-items: BreadcrumbItem[]
+items: LinkBComponent[]
 active: string
 ```
 
@@ -131,10 +125,8 @@ model: string
 size: DisplaySize
 frontText: string
 backText: string
-frontClick: () => void
-backClick: () => void
-frontType: DisplayType = "default"
-backType: DisplayType = "default"
+frontButton: ButtonBComponent
+backButton: ButtonBComponent
 ```
 
 ### Jumbotron
