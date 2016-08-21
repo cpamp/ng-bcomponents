@@ -175,6 +175,27 @@ items: ListGroupItem[]
 linked: boolean = false
 ```
 
+### Media
+```typescript
+type VerticalAlignment = "left" | "right"
+type HorizontalAlignment = "top" | "middle" | "bottom"
+```
+MediaAlignment:
+```typescript
+vertical: VerticalAlignment = "left"
+horizontal: HorizontalAlignment = "top"
+```
+Inputs:
+```typescript
+alignment: MediaAlignment
+heading: string
+body: string
+link: string
+src: string
+alt: string
+size: string
+```
+
 ### Panel
 Class: `PanelBComponent`  
 Selector: `panel-bcomponent`  
