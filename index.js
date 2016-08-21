@@ -10,8 +10,7 @@ exports.AlertBComponent = require('./dist/bcomponents/alert/alert.bcomponent').A
 exports.BadgeBComponent = require('./dist/bcomponents/badge/badge.bcomponent').BadgeBComponent;
 
 // Breadcrumb
-exports.BreadcrumbBComponent = require('./dist/bcomponents/breadcrumb/breadcrumb.bcomponent').BreadcrumbBComponent
-exports.BreadcrumbItem = require('./dist/bcomponents/breadcrumb/breadcrumb.bcomponent').BreadcrumbItem
+exports.BreadcrumbBComponent = require('./dist/bcomponents/breadcrumb/breadcrumb.bcomponent').BreadcrumbBComponent;
 
 // Button
 exports.ButtonBComponent = require('./dist/bcomponents/button/button.bcomponent').ButtonBComponent;
