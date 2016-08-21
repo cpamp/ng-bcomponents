@@ -44,4 +44,10 @@ export class DropdownBComponent extends BComponent {
     constructor() {
         super("dropdown");
     }
+
+    public Initialize = (items: DropdownItem[] = [], title: string = ""): DropdownBComponent => {
+        this.items = items;
+        this.title = title;
+        return this;
+    }
 }

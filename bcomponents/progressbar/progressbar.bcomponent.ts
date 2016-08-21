@@ -29,6 +29,18 @@ export class ProgressbarBComponent extends BComponent {
         this.percentValue = Math.round(this.value / this.maxValue * 100);
     }
 
+    public Initialize = (value: number = 0, type: DisplayType = "success", display: string = "%", displayPercent: boolean = true, striped: boolean = false, animated: boolean = false, minValue: number = 0, maxValue: number = 100): ProgressbarBComponent => {
+        this.value = value;
+        this.type = type;
+        this.display = display;
+        this.displayPercent = displayPercent;
+        this.striped = striped;
+        this.animated = animated;
+        this.minValue = minValue;
+        this.maxValue = maxValue;
+        return this;
+    }
+
     ngOnChildChanges = () => {
         this.type = this.type === "default" || this.type === "primary" ? "success" : this.type;
         this.baseClass = "progress-bar progress-bar-" + this.type;

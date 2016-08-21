@@ -15,6 +15,12 @@ export class LabelBComponent extends BComponent {
         super("label label-default");
     }
 
+    public Initialize = (text: string = "", type: DisplayType = "default"): LabelBComponent => {
+        this.text = text;
+        this.type = type;
+        return this;
+    }
+
     ngOnChildChanges = () => {
         this.baseClass = "label label-" + this.type;
     }

@@ -15,4 +15,10 @@ export class BreadcrumbBComponent extends BComponent {
     constructor() {
         super("breadcrumb");
     }
+
+    public Initialize = (items: LinkBComponent[] = null, active: string = null): BreadcrumbBComponent => {
+        this.items = items;
+        this.active = active;
+        return this;
+    }
 }

@@ -17,6 +17,21 @@ export class ThumbnailBComponent extends BComponent {
     public alt: string;
     public size: number = 3;
 
+    constructor() {
+        super("thumbnail");
+    }
+
+    public Initialize = (link: string = null, header: string = null, body: string = null, footer: string = null, src: string = "", alt: string = "", size: number = 3): ThumbnailBComponent => {
+        this.link = link;
+        this.header = header;
+        this.body = body;
+        this.footer = footer;
+        this.src = src;
+        this.alt = alt;
+        this.size = size;
+        return this;
+    }
+
     hasHeader = (): boolean => {
         return this.header !== null || this.header.trim() !== "";
     }
@@ -35,9 +50,5 @@ export class ThumbnailBComponent extends BComponent {
 
     hasContent = (): boolean => {
         return this.hasHeader() || this.hasBody() || this.hasFooter();
-    }
-
-    constructor() {
-        super("thumbnail");
     }
 }

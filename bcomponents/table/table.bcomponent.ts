@@ -16,6 +16,13 @@ export class TableBComponent extends BComponent {
         super("table");
     }
 
+    public Initialize = (items: any[] = [], headers: any[] = null, striped: boolean = false): TableBComponent => {
+        this.items = items;
+        this.headers = headers;
+        this.striped = striped;
+        return this;
+    }
+
     extractHeaders = (object: any): any[] => {
         return Object.getOwnPropertyNames(object);
     }

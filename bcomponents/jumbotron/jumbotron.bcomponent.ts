@@ -17,4 +17,12 @@ export class JumbotronBComponent extends BComponent {
     constructor() {
         super("jumbotron");
     }
+
+    public Initialize = (title: string = "", subtitle: string = "", body: string = "", size: number = 1): JumbotronBComponent => {
+        this.title = title;
+        this.subtitle = subtitle;
+        this.body = body;
+        this.size = size;
+        return this;
+    }
 }

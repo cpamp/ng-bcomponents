@@ -15,6 +15,12 @@ export class WellBComponent extends BComponent {
         super("well");
     }
 
+    public Initialize = (text: string = "", size: DisplaySize = null): WellBComponent => {
+        this.text = text;
+        this.size = size;
+        return this;
+    }
+
     ngOnChildChanges = () => {
         if(this.size !== null) {
             this.baseClass = "well well-" + this.size;

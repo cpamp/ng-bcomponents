@@ -23,6 +23,17 @@ export class InputGroupBComponent extends BComponent {
         super("form-control");
     }
 
+    public Initialize = (placeholder: string = "", model: string = "", size: DisplaySize = null, frontText: string = null, backText: string = null, frontButton: ButtonBComponent = null, backButton: ButtonBComponent = null): InputGroupBComponent => {
+        this.placeholder = placeholder;
+        this.model = model;
+        this.size = size;
+        this.frontText = frontText;
+        this.backText = backText;
+        this.frontButton = frontButton;
+        this.backButton = backButton;
+        return this;
+    }
+
     ngOnChildChanges = () => {
         this.groupClass = "input-group";
         if(!this.isNull(this.size)) {

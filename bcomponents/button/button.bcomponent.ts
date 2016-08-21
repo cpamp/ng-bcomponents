@@ -18,7 +18,7 @@ export class ButtonBComponent extends BComponent {
 
     public Initialize = (text: string = "", type: DisplayType = "default", click: () => void = (() => {})): ButtonBComponent => {
         this.text = text;
-        this.type = type;
+        this.type = type = "default";
         this.click = click;
         return this;
     }

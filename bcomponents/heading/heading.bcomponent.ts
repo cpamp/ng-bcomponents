@@ -16,6 +16,13 @@ export class HeadingBComponent extends BComponent{
         super("page-header");
     }
 
+    public Initialize = (title: string = "", subtitle: string = "", size: number = 1): HeadingBComponent => {
+        this.title = title;
+        this.subtitle = subtitle;
+        this.size = size;
+        return this;
+    }
+
     ngOnChildChanges = () => {
         if(this.size == null) {
             this.size = 1;

@@ -33,4 +33,10 @@ export class ListGroupBComponent extends BComponent {
     constructor() {
         super("list-group");
     }
+
+    public Initialize = (items: ListGroupItem[] = [], linked: boolean = false): ListGroupBComponent => {
+        this.items = items;
+        this.linked = linked;
+        return this;
+    }
 }
