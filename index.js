@@ -38,6 +38,12 @@ exports.LinkBComponent = require('./dist/bcomponents/link/link.bcomponent').Link
 exports.ListGroupBComponent = require('./dist/bcomponents/list-group/list-group.bcomponent').ListGroupBComponent;
 exports.ListGroupItem = require('./dist/bcomponents/list-group/list-group.bcomponent').ListGroupItem;
 
+// Media
+exports.MediaBComponent = require('./dist/bcomponents/media/media.bcomponent').MediaBComponent;
+exports.MediaAlignment = require('./dist/bcomponents/media/media.bcomponent').MediaAlignment;
+exports.VerticalAlignment = require('./dist/bcomponents/media/media.bcomponent').VerticalAlignment;
+exports.HorizontalAlignment = require('./dist/bcomponents/media/media.bcomponent').HorizontalAlignment;
+
 // Panel
 exports.PanelBComponent = require('./dist/bcomponents/panel/panel.bcomponent').PanelBComponent;
 

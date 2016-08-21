@@ -1,0 +1,18 @@
+<div [bcomponent-attributes]="self">
+    <div [attr.class]="mediaClass" *ngIf="!isRight()">
+        <a *ngIf="hasLink()" [attr.href]="link">
+            <img class="media-object" [attr.src]="src" [attr.alt]="alt">
+        </a>
+        <img *ngIf="!hasLink()" class="media-object" [attr.src]="src" [attr.alt]="alt">
+    </div>
+    <div class="media-body">
+        <heading-bcomponent [title]="heading" [size]="size" [styles]="'margin-top: 0px;'"></heading-bcomponent>
+        <span [innerHtml]="body"></span>
+    </div>
+    <div [attr.class]="mediaClass" *ngIf="isRight()">
+        <a *ngIf="hasLink()" [attr.href]="link">
+            <img class="media-object" [attr.src]="src" [attr.alt]="alt">
+        </a>
+        <img *ngIf="!hasLink()" class="media-object" [attr.src]="src" [attr.alt]="alt">
+    </div>
+</div>
