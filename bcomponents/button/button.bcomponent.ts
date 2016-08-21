@@ -18,8 +18,9 @@ export class ButtonBComponent extends BComponent {
 
     public Initialize = (text: string = "", type: DisplayType = "default", click: () => void = (() => {})): ButtonBComponent => {
         this.text = text;
-        this.type = type = "default";
+        this.type = type;
         this.click = click;
+        if(this.ngOnChildChanges != null) this.ngOnChildChanges();
         return this;
     }
 

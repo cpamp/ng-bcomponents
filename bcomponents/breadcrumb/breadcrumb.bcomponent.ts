@@ -19,6 +19,7 @@ export class BreadcrumbBComponent extends BComponent {
     public Initialize = (items: LinkBComponent[] = null, active: string = null): BreadcrumbBComponent => {
         this.items = items;
         this.active = active;
+        if(this.ngOnChildChanges != null) this.ngOnChildChanges();
         return this;
     }
 }

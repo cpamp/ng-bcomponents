@@ -31,6 +31,7 @@ export class InputGroupBComponent extends BComponent {
         this.backText = backText;
         this.frontButton = frontButton;
         this.backButton = backButton;
+        if(this.ngOnChildChanges != null) this.ngOnChildChanges();
         return this;
     }
 

@@ -23,6 +23,7 @@ export class JumbotronBComponent extends BComponent {
         this.subtitle = subtitle;
         this.body = body;
         this.size = size;
+        if(this.ngOnChildChanges != null) this.ngOnChildChanges();
         return this;
     }
 }

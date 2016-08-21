@@ -38,6 +38,7 @@ export class ProgressbarBComponent extends BComponent {
         this.animated = animated;
         this.minValue = minValue;
         this.maxValue = maxValue;
+        if(this.ngOnChildChanges != null) this.ngOnChildChanges();
         return this;
     }
 

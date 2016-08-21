@@ -37,6 +37,7 @@ export class ListGroupBComponent extends BComponent {
     public Initialize = (items: ListGroupItem[] = [], linked: boolean = false): ListGroupBComponent => {
         this.items = items;
         this.linked = linked;
+        if(this.ngOnChildChanges != null) this.ngOnChildChanges();
         return this;
     }
 }

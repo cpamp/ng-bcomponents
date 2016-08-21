@@ -22,6 +22,7 @@ export class AlertBComponent extends BComponent {
         this.dismissible = dismissible;
         this.hidden = hidden;
         this.type = type;
+        if(this.ngOnChildChanges != null) this.ngOnChildChanges();
         return this;
     }
 

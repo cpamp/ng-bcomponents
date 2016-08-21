@@ -48,6 +48,7 @@ export class DropdownBComponent extends BComponent {
     public Initialize = (items: DropdownItem[] = [], title: string = ""): DropdownBComponent => {
         this.items = items;
         this.title = title;
+        if(this.ngOnChildChanges != null) this.ngOnChildChanges();
         return this;
     }
 }

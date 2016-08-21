@@ -18,6 +18,7 @@ export class LinkBComponent extends BComponent {
     public Initialize = (text: string = "", link: string = ""): LinkBComponent => {
         this.text = text;
         this.link = link;
+        if(this.ngOnChildChanges != null) this.ngOnChildChanges();
         return this;
     }
 }

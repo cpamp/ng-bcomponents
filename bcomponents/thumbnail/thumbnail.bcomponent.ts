@@ -29,6 +29,7 @@ export class ThumbnailBComponent extends BComponent {
         this.src = src;
         this.alt = alt;
         this.size = size;
+        if(this.ngOnChildChanges != null) this.ngOnChildChanges();
         return this;
     }
 

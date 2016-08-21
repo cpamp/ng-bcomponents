@@ -18,6 +18,7 @@ export class WellBComponent extends BComponent {
     public Initialize = (text: string = "", size: DisplaySize = null): WellBComponent => {
         this.text = text;
         this.size = size;
+        if(this.ngOnChildChanges != null) this.ngOnChildChanges();
         return this;
     }
 

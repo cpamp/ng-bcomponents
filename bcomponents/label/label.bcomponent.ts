@@ -18,6 +18,7 @@ export class LabelBComponent extends BComponent {
     public Initialize = (text: string = "", type: DisplayType = "default"): LabelBComponent => {
         this.text = text;
         this.type = type;
+        if(this.ngOnChildChanges != null) this.ngOnChildChanges();
         return this;
     }
 

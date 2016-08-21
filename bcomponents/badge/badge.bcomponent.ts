@@ -16,6 +16,7 @@ export class BadgeBComponent extends BComponent {
 
     public Initialize = (value: number = 0): BadgeBComponent => {
         this.value = value;
+        if(this.ngOnChildChanges != null) this.ngOnChildChanges();
         return this;
     }
 

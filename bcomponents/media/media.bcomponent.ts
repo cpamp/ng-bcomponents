@@ -43,6 +43,7 @@ export class MediaBComponent extends BComponent {
         this.alignment = alignment;
         this.src = src;
         this.size = size;
+        if(this.ngOnChildChanges != null) this.ngOnChildChanges();
         return this;
     }
 

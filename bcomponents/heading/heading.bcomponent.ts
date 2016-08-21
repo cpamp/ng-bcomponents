@@ -20,6 +20,7 @@ export class HeadingBComponent extends BComponent{
         this.title = title;
         this.subtitle = subtitle;
         this.size = size;
+        if(this.ngOnChildChanges != null) this.ngOnChildChanges();
         return this;
     }
 

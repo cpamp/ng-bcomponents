@@ -1,7 +1,7 @@
 <div class="{{groupClass}}">
     <span *ngIf="!isNull(frontText) && isNull(frontButton)" class="input-group-addon">{{frontText}}</span>
-    <span *ngIf="!isNull(frontButton)" class="input-group-btn"><button type="button" [bcomponent-attributes]="frontButton" (click)="frontButton.click()">{{frontButton.text}}</button></span>
+    <span *ngIf="!isNull(frontButton)" class="input-group-btn"><button [bcomponent-attributes]="frontButton" [attr.class]="frontButton.baseClass" type="button" (click)="frontButton.click()">{{frontButton.text}}</button></span>
     <input [bcomponent-attributes]="self" type="text" placeholder="{{placeholder}}" [(ngModel)]="model">
     <span *ngIf="!isNull(backText) && isNull(backButton)" class="input-group-addon">{{backText}}</span>
-    <span *ngIf="!isNull(backButton)" class="input-group-btn"><button [bcomponent-attributes]="backButton" type="button" (click)="backButton.click()">{{backButton.text}}</button></span>    
+    <span *ngIf="!isNull(backButton)" class="input-group-btn"><button [bcomponent-attributes]="backButton" [attr.class]="backButton.baseClass" type="button" (click)="backButton.click()">{{backButton.text}}</button></span>    
 </div>

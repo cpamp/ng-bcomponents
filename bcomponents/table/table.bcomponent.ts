@@ -20,6 +20,7 @@ export class TableBComponent extends BComponent {
         this.items = items;
         this.headers = headers;
         this.striped = striped;
+        if(this.ngOnChildChanges != null) this.ngOnChildChanges();
         return this;
     }
 

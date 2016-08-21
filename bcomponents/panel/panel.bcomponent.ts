@@ -22,6 +22,7 @@ export class PanelBComponent extends BComponent {
         this.body = body;
         this.footer = footer;
         this.type = type;
+        if(this.ngOnChildChanges != null) this.ngOnChildChanges();
         return this;
     }
 
