@@ -1,6 +1,6 @@
 {
   "name": "ng-bcomponents",
-  "version": "0.1.10",
+  "version": "0.2.0",
   "description": "Bootstrap components as angular2 components",
   "main": "index.js",
   "peerDependencies": {
