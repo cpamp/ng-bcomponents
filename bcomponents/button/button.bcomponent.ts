@@ -12,11 +12,15 @@ export class ButtonBComponent extends BComponent {
     public type: DisplayType;
     public click: () => void;
 
-    constructor(text: string = "", type: DisplayType = "default", click: () => void = (() => {})) {
+    constructor() {
         super("btn btn-default");
+    }
+
+    public Initialize = (text: string = "", type: DisplayType = "default", click: () => void = (() => {})): ButtonBComponent => {
         this.text = text;
         this.type = type;
         this.click = click;
+        return this;
     }
 
     ngOnChildChanges = () => {

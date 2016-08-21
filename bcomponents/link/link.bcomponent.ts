@@ -11,9 +11,13 @@ export class LinkBComponent extends BComponent {
     public text: string;
     public link: string;
 
-    constructor(text: string = "", link: string = "") {
+    constructor() {
         super(null);
+    }
+
+    public Initialize = (text: string = "", link: string = ""): LinkBComponent => {
         this.text = text;
         this.link = link;
+        return this;
     }
 }
