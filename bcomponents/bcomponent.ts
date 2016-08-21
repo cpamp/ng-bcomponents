@@ -15,6 +15,7 @@ export class BComponent {
 
     constructor(baseClass: string) {
         this.baseClass = baseClass;
+        this.ngOnChanges();
     }
 
     ngOnChanges() {
