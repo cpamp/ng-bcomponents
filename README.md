@@ -176,6 +176,8 @@ linked: boolean = false
 ```
 
 ### Media
+Class: `MediaBComponent`  
+Selector: `media-bcomponent`  
 ```typescript
 type VerticalAlignment = "left" | "right"
 type HorizontalAlignment = "top" | "middle" | "bottom"
