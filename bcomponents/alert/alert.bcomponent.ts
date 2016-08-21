@@ -17,6 +17,14 @@ export class AlertBComponent extends BComponent {
         super("alert alert-success");
     }
 
+    public Initialize = (text: string = "", dismissible: boolean = false, hidden: boolean = false, type: DisplayType = "success"): AlertBComponent => {
+        this.text = text;
+        this.dismissible = dismissible;
+        this.hidden = hidden;
+        this.type = type;
+        return this;
+    }
+
     ngOnChildChanges = () => {
         this.type = this.type === "default" || this.type === "primary" ? "success" : this.type;
         this.baseClass = "alert alert-" + this.type;
