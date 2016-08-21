@@ -166,6 +166,23 @@ text: string
 link: string
 ```
 
+### List Group
+ListGroupItem:
+```typescript
+text: string
+badge: BadgeBComponent
+link: string
+active: boolean
+constructor(text: string, badge: BadgeBComponent = null, link: string = "", active: boolean = false)
+```
+Class: `ListGroupBComponent`  
+Selector: `list-group-bcomponent`  
+Inputs:
+```typescript
+items: ListGroupItem[]
+linked: boolean = false
+```
+
 ### Panel
 Class: `PanelBComponent`  
 Selector: `panel-bcomponent`  

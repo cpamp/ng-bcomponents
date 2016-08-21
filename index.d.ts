@@ -31,6 +31,9 @@ export * from './dist/bcomponents/label/label.bcomponent';
 // Link
 export * from './dist/bcomponents/link/link.bcomponent';
 
+// List Group
+export * from './dist/bcomponents/list-group/list-group.bcomponent';
+
 // Panel
 export * from './dist/bcomponents/panel/panel.bcomponent';
 

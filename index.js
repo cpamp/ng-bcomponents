@@ -35,6 +35,10 @@ exports.LabelBComponent = require('./dist/bcomponents/label/label.bcomponent').L
 // Link
 exports.LinkBComponent = require('./dist/bcomponents/link/link.bcomponent').LinkBComponent;
 
+// List Group
+exports.ListGroupBComponent = require('./dist/bcomponents/list-group/list-group.bcomponent').ListGroupBComponent;
+exports.ListGroupItem = require('./dist/bcomponents/list-group/list-group.bcomponent').ListGroupItem;
+
 // Panel
 exports.PanelBComponent = require('./dist/bcomponents/panel/panel.bcomponent').PanelBComponent;
 
