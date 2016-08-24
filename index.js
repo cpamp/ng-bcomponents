@@ -50,6 +50,9 @@ exports.PanelBComponent = require('./dist/bcomponents/panel/panel.bcomponent').P
 // Progressbar
 exports.ProgressbarBComponent = require('./dist/bcomponents/progressbar/progressbar.bcomponent').ProgressbarBComponent;
 
+// Sidenav
+exports.SidenavBComponent = require('./dist/bcomponents/sidenav/sidenav.bcomponent').SidenavBComponent;
+
 // Table
 exports.TableBComponent = require('./dist/bcomponents/table/table.bcomponent').TableBComponent;
 

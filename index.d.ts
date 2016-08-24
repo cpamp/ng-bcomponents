@@ -43,6 +43,9 @@ export * from './dist/bcomponents/panel/panel.bcomponent';
 // Progressbar
 export * from './dist/bcomponents/progressbar/progressbar.bcomponent';
 
+// Sidenav
+export * from './dist/bcomponents/sidenav/sidenav.bcomponent';
+
 // Table
 export * from './dist/bcomponents/table/table.bcomponent';
 
