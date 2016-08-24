@@ -1,4 +1,4 @@
-import {Component, ComponentResolver, ViewContainerRef, ViewChild, Type} from '@angular/core';
+import {Component, ComponentFactoryResolver, ViewContainerRef, ViewChild, Type} from '@angular/core';
 import {BComponent, BComponentAttributes, BComponentInputs} from '../bcomponent';
 import {LinkBComponent} from '../link/link.bcomponent';
 
@@ -14,21 +14,19 @@ import {LinkBComponent} from '../link/link.bcomponent';
     inputs: BComponentInputs.concat('content', 'brand', 'items')
 })
 export class SidenavBComponent extends BComponent {
-    public content: Type;
+    public content: any;
     public brand: LinkBComponent;
     public items: LinkBComponent;
 
     @ViewChild("contentComponent", { read: ViewContainerRef }) contentComponent: ViewContainerRef;
 
-    constructor(private viewContainer: ViewContainerRef, private componentResolver: ComponentResolver) {
+    constructor(private viewContainer: ViewContainerRef, private cfr: ComponentFactoryResolver) {
         super(null);
     }
 
     ngOnInit() {
-        this.componentResolver.resolveComponent(this.content).then(factory => {
-            console.log("Creating Component");
-            this.contentComponent.createComponent(factory);
-        })
+        const contentComponent = this.cfr.resolveComponentFactory(this.content);
+        this.contentComponent.createComponent(contentComponent);
     }
 
     public hasBrand = (): boolean => {
