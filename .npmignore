@@ -1,9 +1,0 @@
-# npmignore
-bcomponents/
-typings/
-.gitignore
-gulpfile.js
-todo.txt
-tsconfig.json
-typings.json
-*.log
