@@ -225,12 +225,12 @@ maxValue: number = 100
 ```
 
 ### Sidenav
-The Sidenav BComponent works different from other BComponents. Pass a `Component` to the input `content` to load that component in the content portion of the template. Additionally, the component passed as input must be listed under the `entryComponents` property of your `NgModule`.  
+The Sidenav BComponent works different from other BComponents. Pass a `Component` to the input `component` to load that component in the content portion of the template. Additionally, the component passed as input must be listed under the `entryComponents` property of your `NgModule`.  
 Class: `SidenavBComponent`  
 Selector: `sidenav-bcomponent`  
 Inputs:
 ```typescript
-content: any
+component: any
 brand: LinkBComponent
 items: LinkBComponent[]
 ```
