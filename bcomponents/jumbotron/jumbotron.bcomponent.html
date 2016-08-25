@@ -1,6 +1,7 @@
 <div class="jumbotron" [bcomponent-attributes]="self">
     <div class="container">
-        <heading-bcomponent [size]="size" [title]="'Jumbotron'" [subtitle]="'jumbo sub-title'"></heading-bcomponent>
+        <heading-bcomponent *ngIf="!hasHeading()" [size]="size" [title]="title" [subtitle]="subtitle"></heading-bcomponent>
+        <heading-bcomponent *ngIf="hasHeading()" [bcomponent]="heading"></heading-bcomponent>
         <p [innerHtml]="body"></p>
     </div>
 </div>

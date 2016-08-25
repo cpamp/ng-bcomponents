@@ -6,9 +6,10 @@ import {HeadingBComponent} from '../heading/heading.bcomponent';
     selector: 'jumbotron-bcomponent',
     templateUrl: 'jumbotron.bcomponent.html',
     directives: [BComponentAttributes, HeadingBComponent],
-    inputs: BComponentInputs.concat(['title', 'subtitle', 'body', 'size'])
+    inputs: BComponentInputs.concat(['heading', 'title', 'subtitle', 'body', 'size'])
 })
 export class JumbotronBComponent extends BComponent {
+    public heading: HeadingBComponent;
     public title: string;
     public subtitle: string;
     public body: string;
@@ -25,5 +26,9 @@ export class JumbotronBComponent extends BComponent {
         this.size = size;
         if(this.ngOnChildChanges != null) this.ngOnChildChanges();
         return this;
+    }
+
+    public hasHeading = () => {
+        return !this.isNull(this.heading);
     }
 }
