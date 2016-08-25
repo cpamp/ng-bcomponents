@@ -13,6 +13,9 @@ export * from './dist/bcomponents/breadcrumb/breadcrumb.bcomponent';
 // Button
 export * from './dist/bcomponents/button/button.bcomponent';
 
+// Button Group
+export * from './dist/bcomponents/button-group/button-group.bcomponent';
+
 // Dropdown
 export * from './dist/bcomponents/dropdown/dropdown.bcomponent';
 

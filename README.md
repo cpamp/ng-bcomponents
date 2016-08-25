@@ -86,6 +86,15 @@ type: DisplayType
 click: () => void
 ```
 
+### Button Group
+Class: `ButtonGroupBComponent`  
+Selector: `button-group-bcomponent`  
+Inputs:  
+```typescript
+items: ButtonBComponent[]
+size: DisplaySize
+```
+
 ### Dropdown
 Class: `ButtonBComponent`  
 Selector: `dropdown-bcomponent`  

@@ -15,6 +15,9 @@ exports.BreadcrumbBComponent = require('./dist/bcomponents/breadcrumb/breadcrumb
 // Button
 exports.ButtonBComponent = require('./dist/bcomponents/button/button.bcomponent').ButtonBComponent;
 
+// Button Group
+exports.ButtonGroupBComponent = require('./dist/bcomponents/button-group/button-group.bcomponent').ButtonGroupBComponent;
+
 // Dropdown
 exports.DropdownBComponent = require('./dist/bcomponents/dropdown/dropdown.bcomponent').DropdownBComponent;
 exports.DropdownItem = require('./dist/bcomponents/dropdown/dropdown.bcomponent').DropdownItem;
