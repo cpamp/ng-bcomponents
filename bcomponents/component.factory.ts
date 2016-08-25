@@ -5,4 +5,11 @@ export class ComponentFactory {
         const contentComponent = factory.resolveComponentFactory(component);
         view.createComponent(contentComponent);
     }
+
+    static copy = <T>(base: T, copyObject: T) => {
+        for(var prop in copyObject) {
+            base[prop] = copyObject[prop];
+        }
+        return base;
+    }
 }

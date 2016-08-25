@@ -2,8 +2,8 @@
     <!-- Sidebar -->
     <div id="sidebar-wrapper">
         <ul class="sidebar-nav">
-            <li *ngIf="hasBrand()" class="sidebar-brand"><link-bcomponent [text]="brand.text" [link]="brand.link"></link-bcomponent></li>
-            <li *ngFor="let item of items"><link-bcomponent [text]="item.text" [link]="item.link"></link-bcomponent></li>
+            <li *ngIf="hasBrand()" class="sidebar-brand"><link-bcomponent [bcomponent]="brand"></link-bcomponent></li>
+            <li *ngFor="let item of items"><link-bcomponent [bcomponent]="item"></link-bcomponent></li>
         </ul>
     </div>
     <div id="page-content-wrapper">

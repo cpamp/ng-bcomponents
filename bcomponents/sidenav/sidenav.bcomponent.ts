@@ -1,4 +1,4 @@
-import {Component, ComponentFactoryResolver, ViewContainerRef, ViewChild, Type} from '@angular/core';
+import {Component, ComponentFactoryResolver, ViewContainerRef, ViewChild} from '@angular/core';
 import {BComponent, BComponentAttributes, BComponentInputs} from '../bcomponent';
 import {LinkBComponent} from '../link/link.bcomponent';
 import {ComponentFactory} from '../component.factory';
@@ -21,7 +21,7 @@ export class SidenavBComponent extends BComponent {
 
     @ViewChild("contentComponent", { read: ViewContainerRef }) contentComponent: ViewContainerRef;
 
-    constructor(private viewContainer: ViewContainerRef, private cfr: ComponentFactoryResolver) {
+    constructor(private cfr: ComponentFactoryResolver) {
         super(null);
     }
 

@@ -5,8 +5,8 @@
   </button>
   <ul class="dropdown-menu">
     <li *ngFor="let item of items" [attr.class]="item.class" [attr.role]="item.role">
-      <span *ngIf="item.type == 'header'" [innerHtml]="item.text"></span>
-      <a *ngIf="item.isLink()" [attr.href]="item.link" [innerHtml]="item.text"></a>
+      <span *ngIf="item.isHeader()" [innerHtml]="item.text"></span>
+      <a *ngIf="item.isLink()" [bcomponent-attributes]="item" [attr.href]="item.link" [innerHtml]="item.text"></a>
     </li>
   </ul>
 </div>

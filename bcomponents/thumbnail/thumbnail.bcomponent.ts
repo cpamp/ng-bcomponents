@@ -6,9 +6,10 @@ import {HeadingBComponent} from '../heading/heading.bcomponent';
     selector: "thumbnail-bcomponent",
     templateUrl: "thumbnail.bcomponent.html",
     directives: [BComponentAttributes, HeadingBComponent],
-    inputs: BComponentInputs.concat(['link', 'header', 'body', 'footer', 'src', 'alt', 'size'])
+    inputs: BComponentInputs.concat(['heading', 'link', 'header', 'body', 'footer', 'src', 'alt', 'size'])
 })
 export class ThumbnailBComponent extends BComponent {
+    public heading: HeadingBComponent;
     public link: string;
     public header: string;
     public body: string;
@@ -21,7 +22,8 @@ export class ThumbnailBComponent extends BComponent {
         super("thumbnail");
     }
 
-    public Initialize = (link: string = null, header: string = null, body: string = null, footer: string = null, src: string = "", alt: string = "", size: number = 3): ThumbnailBComponent => {
+    public Initialize = (heading: HeadingBComponent = null, link: string = null, header: string = null, body: string = null, footer: string = null, src: string = "", alt: string = "", size: number = 3): ThumbnailBComponent => {
+        this.heading = heading;
         this.link = link;
         this.header = header;
         this.body = body;
@@ -31,6 +33,10 @@ export class ThumbnailBComponent extends BComponent {
         this.size = size;
         if(this.ngOnChildChanges != null) this.ngOnChildChanges();
         return this;
+    }
+
+    hasHeading = (): boolean => {
+        return !this.isNull(this.heading);
     }
 
     hasHeader = (): boolean => {

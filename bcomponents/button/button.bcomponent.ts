@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, ChangeDetectorRef} from '@angular/core';
 import {BComponent, BComponentAttributes, BComponentInputs, DisplayType} from '../bcomponent';
 
 @Component({

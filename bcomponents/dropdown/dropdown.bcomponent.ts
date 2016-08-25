@@ -29,6 +29,10 @@ export class DropdownItem {
     public isLink = () => {
         return this.type === "default";
     }
+
+    public isHeader = () => {
+        return this.type === "header";
+    }
 }
 
 @Component({
