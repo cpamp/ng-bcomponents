@@ -36,6 +36,39 @@ import {LinkBComponent} from 'ng-bcomponents`;
 ## BComponents
 The components in this project are called bcomponents and all tags are suffixed with `-bcomponent`.
 
+### BComponent
+All `ng-bcomponents` extend `BComponent`  
+Class: `BComponent`  
+Selector: none  
+Inputs:
+```typescript
+id: string
+classes: string
+styles: string
+name: string
+aria: string
+ariaBy: string
+bcomponent: any = null
+```
+Api:  
+static disableAutoIdentifier: () => void
+InitializeAttributes: (id: string = "", classes: string = "", styles: string = "", name: string = "", aria: string = "", ariaBy: string = "") => BComponent
+
+// Jquery animations*
+getSelector:    () => JQuery
+toggle:         (duration: string | number = 400, callback?: Function) => JQuery
+hide:           (duration: string | number = 400, callback?: Function) => JQuery
+show:           (duration: string | number = 400, callback?: Function) => JQuery
+fadeToggle:     (duration: string | number = 400, callback?: Function) => JQuery
+fadeIn:         (duration: string | number = 400, callback?: Function) => JQuery
+fadeOut:        (duration: string | number = 400, callback?: Function) => JQuery
+fadeTo:         (duration: string | number = 400, callback?: Function) => JQuery
+slideToggle:    (duration: string | number = 400, callback?: Function) => JQuery
+slideDown:      (duration: string | number = 400, callback?: Function) => JQuery
+slideUp:        (duration: string | number = 400, callback?: Function) => JQuery
+```
+*Note: For the jQuery animations you must either provide an id input or have autoIdentifier set to true (default). AutoIdentifier is an opt out feature, to disable it call `BComponent.disableAutoIdentifier()` in the constructor of your NgModule class.
+
 ### DisplayType
 Many components accept an input `type` of type `DisplayType`. DisplayType can be any of the following values, but note that some components do not use default or primary and will instead default to success: `default, primary, success, info, warning, danger`.
 
