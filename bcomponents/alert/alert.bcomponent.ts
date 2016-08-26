@@ -26,19 +26,15 @@ export class AlertBComponent extends BComponent {
         return this;
     }
 
+    ngOnChildInit = () => {
+        if(this.hidden === true) { this.hide(0); }
+    }
+
     ngOnChildChanges = () => {
         this.type = this.type === "default" || this.type === "primary" ? "success" : this.type;
         this.baseClass = "alert alert-" + this.type;
         if(this.dismissible) {
             this.baseClass += " alert-dismissible";
         }
-    }
-
-    public show = () => {
-        this.hidden = true;
-    }
-
-    public hide = () => {
-        this.hidden = false;
     }
 }
