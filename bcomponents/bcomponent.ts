@@ -20,7 +20,7 @@ export class BComponent {
     protected ngOnChildChanges: () => void;
     protected ngOnChildInit: () => void;
 
-    public static autoIdentifier: boolean = false;
+    public static autoIdentifier: boolean = true;
 
     public class: string;
     public id: string;
@@ -61,15 +61,15 @@ export class BComponent {
         this.buildClass();
     }
 
-    public static enableAutoIdentifier = () => {
-        BComponent.autoIdentifier = true;
+    public static disableAutoIdentifier = () => {
+        BComponent.autoIdentifier = false;
     }
 
-    public loadComponent = (component: any, view: ViewContainerRef, crf: ComponentFactoryResolver) => {
+    protected loadComponent = (component: any, view: ViewContainerRef, crf: ComponentFactoryResolver) => {
         ComponentFactory.loadComponent(component, view, crf);
     }
 
-    public buildClass = () => {
+    private buildClass = () => {
         if(this.baseClass != null) {
             this.class = this.baseClass;
             if(this.classes != null) {
@@ -82,12 +82,12 @@ export class BComponent {
         }
     }
 
-    public isNull = (value: any): boolean => {
+    protected isNull = (value: any): boolean => {
         return value == null;
     }
 
     /** Animations */
-    private getSelector = (): JQuery => {
+    public getSelector = (): JQuery => {
         return $(IdentifierFactory.getSelector(this.id));
     }
 
