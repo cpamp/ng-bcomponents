@@ -51,6 +51,7 @@ ariaBy: string
 bcomponent: any = null
 ```
 Api:  
+```typescript
 static disableAutoIdentifier: () => void
 InitializeAttributes: (id: string = "", classes: string = "", styles: string = "", name: string = "", aria: string = "", ariaBy: string = "") => BComponent
 
