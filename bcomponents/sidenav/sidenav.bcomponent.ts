@@ -32,4 +32,8 @@ export class SidenavBComponent extends BComponent {
     public hasBrand = (): boolean => {
         return this.brand != null;
     }
+
+    public toggle = () => {
+        $("#wrapper").toggleClass("toggled");
+    }
 }
