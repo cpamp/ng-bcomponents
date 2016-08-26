@@ -20,6 +20,8 @@ export class BComponent {
     protected ngOnChildChanges: () => void;
     protected ngOnChildInit: () => void;
 
+    public static autoIdentifier: boolean = false;
+
     public class: string;
     public id: string;
     public classes: string;
@@ -45,7 +47,7 @@ export class BComponent {
     }
 
     ngOnInit() {
-        if(this.isNull(this.id)) {
+        if(this.isNull(this.id) && BComponent.autoIdentifier) {
             this.id = IdentifierFactory.getIdentifier();
         }
         if(!this.isNull(this.ngOnChildInit)) { this.ngOnChildInit(); }
@@ -57,6 +59,10 @@ export class BComponent {
             ComponentFactory.copy(this, this.bcomponent);
         }
         this.buildClass();
+    }
+
+    public static enableAutoIdentifier = () => {
+        BComponent.autoIdentifier = true;
     }
 
     public loadComponent = (component: any, view: ViewContainerRef, crf: ComponentFactoryResolver) => {
