@@ -1,5 +1,6 @@
 import {Directive, ElementRef, Input, ViewContainerRef, ComponentFactoryResolver} from '@angular/core';
 import {ComponentFactory} from './component.factory';
+import {IdentifierFactory} from './identifier.factory';
 
 export const BComponentInputs = [
     'id',
@@ -14,8 +15,10 @@ export const BComponentInputs = [
 export class BComponent {
     protected self = this;
     protected bcomponent: any = null;
-    protected ngOnChildChanges: () => void;
     protected baseClass: string;
+
+    protected ngOnChildChanges: () => void;
+    protected ngOnChildInit: () => void;
 
     public class: string;
     public id: string;
@@ -41,8 +44,15 @@ export class BComponent {
         return this;
     }
 
+    ngOnInit() {
+        if(this.isNull(this.id)) {
+            this.id = IdentifierFactory.getIdentifier();
+        }
+        if(!this.isNull(this.ngOnChildInit)) { this.ngOnChildInit(); }
+    }
+
     ngOnChanges() {
-        if(this.ngOnChildChanges != null) this.ngOnChildChanges();
+        if(!this.isNull(this.ngOnChildChanges)) { this.ngOnChildChanges(); }
         if(!this.isNull(this.bcomponent)) {
             ComponentFactory.copy(this, this.bcomponent);
         }
@@ -69,6 +79,56 @@ export class BComponent {
     public isNull = (value: any): boolean => {
         return value == null;
     }
+
+    /** Animations */
+    private getSelector = (): JQuery => {
+        return $(IdentifierFactory.getSelector(this.id));
+    }
+
+    /** Toggle / Hide / Show */
+    public toggle = (duration: string | number = 400, callback?: Function): JQuery => {
+        return this.getSelector().toggle(duration, callback);
+    }
+
+    public hide = (duration: string | number = 400, callback?: Function): JQuery => {
+        return this.getSelector().hide(duration, callback);
+    }
+
+    public show = (duration: string | number = 400, callback?: Function): JQuery => {
+        return this.getSelector().hide(duration, callback);
+    }
+
+    /** FadeToggle / FadeIn / FadeOut / FadeTo */
+    public fadeToggle = (duration: string | number = 400, callback?: Function): JQuery => {
+        return this.getSelector().fadeToggle(duration, callback);
+    }
+
+    public fadeIn = (duration: string | number = 400, callback?: Function): JQuery => {
+        return this.getSelector().fadeIn(duration, callback);
+    }
+
+    public fadeOut = (duration: string | number = 400, callback?: Function): JQuery => {
+        return this.getSelector().fadeOut(duration, callback);
+    }
+
+    public fadeTo = (duration: string | number = 400, opacity: number, callback?: Function): JQuery => {
+        return this.getSelector().fadeTo(duration, opacity, callback);
+    }
+
+    /** SlideToggle, SlideDown, SlideUp */
+    public slideToggle = (duration: string | number = 400, callback?: Function): JQuery => {
+        return this.getSelector().slideToggle(duration, callback);
+    }
+
+    public slideDown = (duration: string | number = 400, callback?: Function): JQuery => {
+        return this.getSelector().slideDown(duration, callback);
+    }
+
+    public slideUp = (duration: string | number = 400, callback?: Function): JQuery => {
+        return this.getSelector().slideUp(duration, callback);
+    }
+
+
 }
 
 @Directive({
