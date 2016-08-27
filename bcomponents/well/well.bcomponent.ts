@@ -5,18 +5,16 @@ import {BComponent, BComponentAttributes, BComponentInputs, DisplaySize} from '.
     selector: "well-bcomponent",
     templateUrl: "well.bcomponent.html",
     directives: [BComponentAttributes],
-    inputs: BComponentInputs.concat(['text', 'size'])
+    inputs: BComponentInputs.concat(['size'])
 })
 export class WellBComponent extends BComponent {
-    public text: string;
     public size: DisplaySize;
 
     constructor() {
         super("well");
     }
 
-    public Initialize = (text: string = "", size: DisplaySize = null): WellBComponent => {
-        this.text = text;
+    public Initialize = (size: DisplaySize = null): WellBComponent => {
         this.size = size;
         if(this.ngOnChildChanges != null) this.ngOnChildChanges();
         return this;
