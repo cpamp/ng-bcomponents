@@ -5,18 +5,16 @@ import {BComponent, BComponentAttributes, BComponentInputs, DisplayType} from '.
     selector: "label-bcomponent",
     templateUrl: "label.bcomponent.html",
     directives: [BComponentAttributes],
-    inputs: BComponentInputs.concat(['text', 'type'])
+    inputs: BComponentInputs.concat(['type'])
 })
 export class LabelBComponent extends BComponent {
-    public text: string;
     public type: DisplayType = "default";
 
     constructor() {
         super("label label-default");
     }
 
-    public Initialize = (text: string = "", type: DisplayType = "default"): LabelBComponent => {
-        this.text = text;
+    public Initialize = (type: DisplayType = "default"): LabelBComponent => {
         this.type = type;
         if(this.ngOnChildChanges != null) this.ngOnChildChanges();
         return this;
