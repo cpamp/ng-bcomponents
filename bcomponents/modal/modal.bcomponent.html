@@ -5,7 +5,8 @@
                 <button type="button" class="close" (click)="close()" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
-                <h4 class="modal-title" [innerHtml]="title"></h4>
+                <span *ngIf="hasTitle()" class="modal-title" [innerHtml]="title"></span>
+                <span *ngIf="!hasTitle()" class="modal-title"><ng-content select="modal-title"></ng-content></span>
             </div>
             <div class="modal-body">
                 <span *ngIf="hasBody()" [innerHtml]="body"></span>

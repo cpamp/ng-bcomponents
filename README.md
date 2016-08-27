@@ -251,6 +251,7 @@ Class: `ModalBComponent`
 Selector: `media-bcomponent`  
 ng-content:
 ```
+modal-title: title
 modal-body: body
 modal-footer: footer
 ```
