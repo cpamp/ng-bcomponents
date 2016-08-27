@@ -40,6 +40,9 @@ export * from './dist/bcomponents/list-group/list-group.bcomponent';
 // Media
 export * from './dist/bcomponents/media/media.bcomponent';
 
+// Modal
+export * from './dist/bcomponents/modal/modal.bcomponent';
+
 // Panel
 export * from './dist/bcomponents/panel/panel.bcomponent';
 

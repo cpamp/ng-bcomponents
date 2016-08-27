@@ -246,6 +246,27 @@ alt: string
 size: string
 ```
 
+### Modal
+Class: `ModalBComponent`  
+Selector: `media-bcomponent`  
+ng-content:
+```
+modal-body: body
+modal-footer: footer
+```
+Inputs:
+```typescript
+fade: boolean = true
+title: string
+body: string
+footer: string
+```
+Api:
+```typescript
+open:       () => void
+close:      () => void
+```
+
 ### Panel
 Class: `PanelBComponent`  
 Selector: `panel-bcomponent`  

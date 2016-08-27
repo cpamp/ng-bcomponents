@@ -1,0 +1,20 @@
+<div [bcomponent-attributes]="self" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" (click)="close()" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" [innerHtml]="title"></h4>
+            </div>
+            <div class="modal-body">
+                <span *ngIf="hasBody()" [innerHtml]="body"></span>
+                <ng-content *ngIf="!hasBody()" select="modal-body"></ng-content>
+            </div>
+            <div class="modal-footer">
+                <span *ngIf="hasFooter()" [innerHtml]="footer"></span>
+                <ng-content *ngIf="!hasFooter()" select="modal-footer"></ng-content>
+            </div>
+        </div>
+    </div>
+</div>

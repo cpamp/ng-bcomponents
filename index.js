@@ -47,6 +47,9 @@ exports.MediaAlignment = require('./dist/bcomponents/media/media.bcomponent').Me
 exports.VerticalAlignment = require('./dist/bcomponents/media/media.bcomponent').VerticalAlignment;
 exports.HorizontalAlignment = require('./dist/bcomponents/media/media.bcomponent').HorizontalAlignment;
 
+// Modal
+exports.ModalBComponent = require('./dist/bcomponents/modal/modal.bcomponent').ModalBComponent;
+
 // Panel
 exports.PanelBComponent = require('./dist/bcomponents/panel/panel.bcomponent').PanelBComponent;
 
