@@ -248,7 +248,7 @@ size: string
 
 ### Modal
 Class: `ModalBComponent`  
-Selector: `media-bcomponent`  
+Selector: `modal-bcomponent`  
 ng-content:
 ```
 modal-title: title
