@@ -31,7 +31,7 @@ export class SidenavBComponent extends BComponent {
         }
     }
 
-    public Initialize = (component: any = null, brand: LinkBComponent = null, items: LinkBComponent[] = []) {
+    public Initialize = (component: any = null, brand: LinkBComponent = null, items: LinkBComponent[] = []) => {
         this.component = component;
         this.brand = brand;
         this.items = items;
