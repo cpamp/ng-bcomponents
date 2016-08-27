@@ -15,18 +15,11 @@ import {ComponentFactory} from '../component.factory';
     inputs: BComponentInputs.concat('component', 'brand', 'items')
 })
 export class SidenavBComponent extends BComponent {
-    public component: any;
     public brand: LinkBComponent;
     public items: LinkBComponent;
 
-    @ViewChild("contentComponent", { read: ViewContainerRef }) contentComponent: ViewContainerRef;
-
-    constructor(private cfr: ComponentFactoryResolver) {
+    constructor() {
         super(null);
-    }
-
-    ngOnInit() {
-        ComponentFactory.loadComponent(this.component, this.contentComponent, this.cfr)
     }
 
     public hasBrand = (): boolean => {
