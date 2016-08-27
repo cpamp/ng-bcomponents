@@ -21,4 +21,8 @@ export class LinkBComponent extends BComponent {
         if(this.ngOnChildChanges != null) this.ngOnChildChanges();
         return this;
     }
+
+    public hasText = (): boolean => {
+        return !this.isNull(this.text);
+    }
 }

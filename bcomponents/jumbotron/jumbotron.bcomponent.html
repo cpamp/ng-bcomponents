@@ -2,8 +2,7 @@
     <div class="container">
         <heading-bcomponent *ngIf="!hasHeading()" [size]="size" [title]="title" [subtitle]="subtitle"></heading-bcomponent>
         <heading-bcomponent *ngIf="hasHeading()" [bcomponent]="heading"></heading-bcomponent>
-        <p>
-            <ng-content></ng-content>
-        </p>
+        <p *ngIf="hasBody()" [innerHtml]="body"></p>
+        <p *ngIf="!hasBody()"><ng-content></ng-content></P>
     </div>
 </div>

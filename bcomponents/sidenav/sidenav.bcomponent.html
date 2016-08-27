@@ -7,6 +7,7 @@
         </ul>
     </div>
     <div id="page-content-wrapper">
-        <ng-content></ng-content>
+        <div #contentComponent></div>
+        <ng-content *ngIf="!hasContent()"></ng-content>
     </div>
 </div>

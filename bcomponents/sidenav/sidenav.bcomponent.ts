@@ -15,15 +15,34 @@ import {ComponentFactory} from '../component.factory';
     inputs: BComponentInputs.concat('component', 'brand', 'items')
 })
 export class SidenavBComponent extends BComponent {
+    public component: any;
     public brand: LinkBComponent;
-    public items: LinkBComponent;
+    public items: LinkBComponent[];
 
-    constructor() {
+    @ViewChild("contentComponent", { read: ViewContainerRef }) contentComponent: ViewContainerRef;
+
+    constructor(private cfr: ComponentFactoryResolver) {
         super(null);
     }
 
+    public ngOnChildInit = () => {
+        if(this.hasContent()) {
+            ComponentFactory.loadComponent(this.component, this.contentComponent, this.cfr);
+        }
+    }
+
+    public Initialize = (component: any = null, brand: LinkBComponent = null, items: LinkBComponent[] = []) {
+        this.component = component;
+        this.brand = brand;
+        this.items = items;
+    }
+
     public hasBrand = (): boolean => {
-        return this.brand != null;
+        return !this.isNull(this.brand);
+    }
+
+    public hasContent = (): boolean => {
+        return !this.isNull(this.component);
     }
 
     public toggleNav = () => {

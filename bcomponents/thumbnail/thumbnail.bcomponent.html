@@ -3,10 +3,11 @@
         <img [attr.src]="src" [attr.alt]="alt">
     </a>
     <img *ngIf="!hasLink()" [attr.src]="src" [attr.alt]="alt">
-    <div *ngIf="hasContent()" class="caption">
+    <div class="caption">
         <heading-bcomponent *ngIf="hasHeader() && !hasHeading()" [size]="size" [title]="header" [styles]="'margin-top:0px;'"></heading-bcomponent>
         <heading-bcomponent *ngIf="hasHeading()" [bcomponent]="heading"></heading-bcomponent>
         <p *ngIf="hasBody()" [innerHtml]="body"></p>
+        <p *ngIf="!hasBody()"><ng-content></ng-content></p>
         <p *ngIf="hasFooter()" [innerHtml]="footer"></p>
     </div>
 </div>

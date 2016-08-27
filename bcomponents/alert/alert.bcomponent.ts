@@ -5,9 +5,10 @@ import {BComponent, BComponentAttributes, BComponentInputs, DisplayType} from '.
     selector: "alert-bcomponent",
     templateUrl: "alert.bcomponent.html",
     directives: [BComponentAttributes],
-    inputs: BComponentInputs.concat(['dismissible', 'hidden', 'type'])
+    inputs: BComponentInputs.concat(['text', 'dismissible', 'hidden', 'type'])
 })
 export class AlertBComponent extends BComponent {
+    public text: string;
     public dismissible: boolean = false;
     public hidden: boolean = false;
     public type: DisplayType = "success";
@@ -16,7 +17,8 @@ export class AlertBComponent extends BComponent {
         super("alert alert-success");
     }
 
-    public Initialize = (dismissible: boolean = false, hidden: boolean = false, type: DisplayType = "success"): AlertBComponent => {
+    public Initialize = (text: string = "", dismissible: boolean = false, hidden: boolean = false, type: DisplayType = "success"): AlertBComponent => {
+        this.text = text;
         this.dismissible = dismissible;
         this.hidden = hidden;
         this.type = type;
@@ -34,5 +36,9 @@ export class AlertBComponent extends BComponent {
         if(this.dismissible) {
             this.baseClass += " alert-dismissible";
         }
+    }
+
+    public hasText = (): boolean => {
+        return !this.isNull;
     }
 }

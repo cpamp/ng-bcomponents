@@ -54,8 +54,4 @@ export class ThumbnailBComponent extends BComponent {
     hasLink = (): boolean => {
         return this.link !== null || this.link.trim() !== "";
     }
-
-    hasContent = (): boolean => {
-        return this.hasHeader() || this.hasBody() || this.hasFooter();
-    }
 }

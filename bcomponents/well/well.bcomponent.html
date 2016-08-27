@@ -1,3 +1,4 @@
 <div [bcomponent-attributes]="self">
-    <ng-content></ng-content>
+    <span *ngIf="hasText()" [innerHtml]="text"></span>
+    <ng-content *ngIf="!hasText()"></ng-content>
 </div>

@@ -1,7 +1,8 @@
 <div [bcomponent-attributes]="self">
     <div *ngIf="!isNull(header)" class="panel-heading" [innerHtml]="header"></div>
     <div class="panel-body">
-        <ng-content></ng-content>
+        <span *ngIf="hasBody()" [innerHtml]="body"></span>
+        <ng-content *ngIf="!hasBody()"></ng-content>
     </div>
     <div *ngIf="!isNull(footer)" class="panel-footer" [innerHtml]="footer"></div>
 </div>

@@ -7,7 +7,8 @@
     </div>
     <div class="media-body">
         <heading-bcomponent [title]="heading" [size]="size" [styles]="'margin-top: 0px;'"></heading-bcomponent>
-        <ng-content></ng-content>
+        <span *ngIf="hasBody()" [innerHtml]="body"></span>
+        <ng-content *ngIf="!hasBody()"></ng-content>
     </div>
     <div [attr.class]="mediaClass" *ngIf="isRight()">
         <a *ngIf="hasLink()" [attr.href]="link">

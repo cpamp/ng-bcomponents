@@ -18,13 +18,14 @@ export class MediaAlignment {
     selector: "media-bcomponent",
     templateUrl: "media.bcomponent.html",
     directives: [BComponentAttributes],
-    inputs: BComponentInputs.concat(['heading', 'title', 'link', 'src', 'alt', 'alignment', 'size']),
+    inputs: BComponentInputs.concat(['heading', 'title', 'body', 'link', 'src', 'alt', 'alignment', 'size']),
     styles: ["/deep/ h1,h2,h3,h4,h5,h6 { margin-top: 0px; }"]
 })
 export class MediaBComponent extends BComponent {
     public alignment: MediaAlignment;
     public heading: HeadingBComponent;
     public title: string;
+    public body: string;
     public link: string;
     public src: string;
     public alt: string;
@@ -36,15 +37,20 @@ export class MediaBComponent extends BComponent {
         super("media");
     }
 
-    public Initialize = (src: string = "", alt: string = "", heading: HeadingBComponent = null, title: string = "", size: string = "3", link: string = null, alignment: MediaAlignment = new MediaAlignment()): MediaBComponent => {
+    public Initialize = (src: string = "", alt: string = "", heading: HeadingBComponent = null, title: string = "", size: string = "3", body: string = "", link: string = null, alignment: MediaAlignment = new MediaAlignment()): MediaBComponent => {
         this.heading = heading;
         this.title = title;
+        this.body = body;
         this.link = link;
         this.alignment = alignment;
         this.src = src;
         this.size = size;
         if(this.ngOnChildChanges != null) this.ngOnChildChanges();
         return this;
+    }
+
+    ngOnChildChanges = () => {
+        this.mediaClass = "media-" + this.alignment.vertical + " media-" + this.alignment.horizontal;
     }
 
     public isRight = (): boolean => {
@@ -55,7 +61,7 @@ export class MediaBComponent extends BComponent {
         return this.link !== null;
     }
 
-    ngOnChildChanges = () => {
-        this.mediaClass = "media-" + this.alignment.vertical + " media-" + this.alignment.horizontal;
+    public hasBody = (): boolean => {
+        return !this.isNull(this.body);
     }
 }
