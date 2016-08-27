@@ -117,7 +117,7 @@ Selector: `button-bcomponent`
 Inputs:
 ```typescript
 text: string
-type: DisplayType
+type: DisplayType = "default"
 click: () => void
 ```
 

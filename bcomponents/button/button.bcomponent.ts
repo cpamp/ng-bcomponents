@@ -9,7 +9,7 @@ import {BComponent, BComponentAttributes, BComponentInputs, DisplayType} from '.
 })
 export class ButtonBComponent extends BComponent {
     public text: string;
-    public type: DisplayType;
+    public type: DisplayType = "default";
     public click: () => void;
 
     constructor() {
