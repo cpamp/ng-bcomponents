@@ -79,6 +79,7 @@ Many components accept an input `size` of type `DisplaySize`. Display size can b
 ### Alert
 Class: `AlertBComponent`  
 Selector: `alert-bcomponent`  
+ng-content: `text`  
 Inputs:
 ```typescript
 text: string
@@ -175,6 +176,7 @@ backButton: ButtonBComponent
 ### Jumbotron
 Class: `JumbotronBComponent`  
 Selector: `Jumbotron-bcomponent`  
+ng-content: `body`  
 Inputs:
 ```typescript
 title: string
@@ -186,6 +188,7 @@ size: number
 ### Label
 Class: `LabelBComponent`  
 Selector: `label-bcomponent`  
+ng-content: `text`  
 Inputs:
 ```typescript
 text: string
@@ -195,6 +198,7 @@ type: DisplayType
 ### Link
 Class: `LinkBComponent`  
 Selector: `link-bcomponent`  
+ng-content: `text`  
 Inputs:
 ```typescript
 text: string
@@ -221,6 +225,7 @@ linked: boolean = false
 ### Media
 Class: `MediaBComponent`  
 Selector: `media-bcomponent`  
+ng-content: `body`  
 ```typescript
 type VerticalAlignment = "left" | "right"
 type HorizontalAlignment = "top" | "middle" | "bottom"
@@ -244,6 +249,7 @@ size: string
 ### Panel
 Class: `PanelBComponent`  
 Selector: `panel-bcomponent`  
+ng-content: `body`  
 Inputs:
 ```typescript
 header: string
@@ -271,6 +277,7 @@ maxValue: number = 100
 The Sidenav BComponent works different from other BComponents. Pass a `Component` to the input `component` to load that component in the content portion of the template. Additionally, the component passed as input must be listed under the `entryComponents` property of your `NgModule`.  
 Class: `SidenavBComponent`  
 Selector: `sidenav-bcomponent`  
+ng-content: `component`  
 Inputs:
 ```typescript
 component: any
@@ -291,6 +298,7 @@ striped: boolean
 ### Thumbnail
 Class: `ThumbnailBComponent`  
 Selector: `thumbnail-bcomponent`  
+ng-content: `body`  
 Inputs:
 ```typescript
 link: string
@@ -305,6 +313,7 @@ size: number = 3
 ### Well
 Class: `WellBComponent`  
 Selector: `well-bcomponent`  
+ng-content: `text`  
 Inputs:
 ```typescript
 text: string
