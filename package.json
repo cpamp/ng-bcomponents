@@ -3,6 +3,14 @@
   "version": "0.3.3",
   "description": "Bootstrap components as angular2 components",
   "main": "index.js",
+  "keywords": [
+    "angular2",
+    "ng2",
+    "ng",
+    "component",
+    "bcomponent",
+    "bootstrap"
+  ],
   "peerDependencies": {
     "@angular/common": "^2.0.0-rc.5",
     "@angular/compiler": "^2.0.0-rc.5",
