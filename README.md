@@ -320,7 +320,11 @@ striped: boolean
 ### Thumbnail
 Class: `ThumbnailBComponent`  
 Selector: `thumbnail-bcomponent`  
-ng-content: `body`  
+ng-content:
+```
+thumbnail-body: body
+thumbnail-footer: footer
+```
 Inputs:
 ```typescript
 link: string

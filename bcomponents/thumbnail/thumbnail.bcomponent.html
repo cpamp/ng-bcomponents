@@ -7,7 +7,8 @@
         <heading-bcomponent *ngIf="hasHeader() && !hasHeading()" [size]="size" [title]="header" [styles]="'margin-top:0px;'"></heading-bcomponent>
         <heading-bcomponent *ngIf="hasHeading()" [bcomponent]="heading"></heading-bcomponent>
         <p *ngIf="hasBody()" [innerHtml]="body"></p>
-        <p *ngIf="!hasBody()"><ng-content></ng-content></p>
+        <p *ngIf="!hasBody()"><ng-content select="thumbnail-body"></ng-content></p>
         <p *ngIf="hasFooter()" [innerHtml]="footer"></p>
+        <p *ngIf="!hasFooter()"><ng-content select="thumbnail-footer"></ng-content></p>
     </div>
 </div>
