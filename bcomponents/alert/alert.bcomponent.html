@@ -1,5 +1,5 @@
 <div [bcomponent-attributes]="self" role="alert">
     <button type="button" class="close" data-dismiss="alert" aria-label="close" *ngIf="dismissible"><span aria-hidden="true">&times;</span></button>
-    <span *ngIf="hasText()"></span>
+    <div *ngIf="hasText()" [innerHtml]="text"></div>
     <ng-content *ngIf="!hasText()"></ng-content>
 </div>

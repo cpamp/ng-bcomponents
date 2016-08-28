@@ -5,15 +5,15 @@
                 <button type="button" class="close" (click)="close()" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
-                <span *ngIf="hasTitle()" class="modal-title" [innerHtml]="title"></span>
-                <span *ngIf="!hasTitle()" class="modal-title"><ng-content select="modal-title"></ng-content></span>
+                <div *ngIf="hasTitle()" class="modal-title" [innerHtml]="title"></div>
+                <div *ngIf="!hasTitle()" class="modal-title"><ng-content select="modal-title"></ng-content></div>
             </div>
             <div class="modal-body">
-                <span *ngIf="hasBody()" [innerHtml]="body"></span>
+                <div *ngIf="hasBody()" [innerHtml]="body"></div>
                 <ng-content *ngIf="!hasBody()" select="modal-body"></ng-content>
             </div>
             <div class="modal-footer">
-                <span *ngIf="hasFooter()" [innerHtml]="footer"></span>
+                <div *ngIf="hasFooter()" [innerHtml]="footer"></div>
                 <ng-content *ngIf="!hasFooter()" select="modal-footer"></ng-content>
             </div>
         </div>
