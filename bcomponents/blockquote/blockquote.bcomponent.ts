@@ -16,9 +16,10 @@ export class BlockquoteBComponent extends BComponent {
         super(null);
     }
 
-    public Initialize = (body: string = "", footer: string = null): BlockquoteBComponent => {
+    public Initialize = (body: string = "", footer: string = null, reverse: boolean = false): BlockquoteBComponent => {
         this.body = body;
         this.footer = footer;
+        this.reverse = reverse;
         return this;
     }
 
