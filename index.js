@@ -58,6 +58,8 @@ exports.ProgressbarBComponent = require('./dist/bcomponents/progressbar/progress
 
 // Sidenav
 exports.SidenavBComponent = require('./dist/bcomponents/sidenav/sidenav.bcomponent').SidenavBComponent;
+exports.SidenavItem = require('./dist/bcomponents/sidenav/sidenav.bcomponent').SidenavItem;
+exports.SidenavDropdownItem = require('./dist/bcomponents/sidenav/sidenav.bcomponent').SidenavDropdownItem;
 
 // Table
 exports.TableBComponent = require('./dist/bcomponents/table/table.bcomponent').TableBComponent;

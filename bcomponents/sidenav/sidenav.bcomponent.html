@@ -1,12 +1,29 @@
 <div id="wrapper">
-    <!-- Sidebar -->
-    <div id="sidebar-wrapper">
-        <ul class="sidebar-nav">
+    <div class="overlay"></div>
+    <nav class="navbar navbar-inverse navbar-fixed-top" id="sidebar-wrapper" role="navigation">
+        <ul class="nav sidebar-nav">
             <li *ngIf="hasBrand()" class="sidebar-brand"><link-bcomponent [bcomponent]="brand"></link-bcomponent></li>
-            <li *ngFor="let item of items"><link-bcomponent [bcomponent]="item"></link-bcomponent></li>
+            <li *ngFor="let item of items" [class.dropdown]="item.isDropdown()">
+                <link-bcomponent *ngIf="!item.isDropdown()" [bcomponent]="item.link"></link-bcomponent>
+
+                <a *ngIf="item.isDropdown()" href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    {{item.text}} <span class="caret"></span>
+                </a>
+                <ul *ngIf="item.isDropdown()" class="dropdown-menu" role="menu">
+                    <li *ngFor="let dropdownItem of item.dropdownItems" [class.dropdown-header]="dropdownItem.isHeader()">
+                        <span *ngIf="dropdownItem.isHeader()" [innerHtml]="dropdownItem.header"></span>
+                        <link-bcomponent *ngIf="!dropdownItem.isHeader()" [bcomponent]="dropdownItem.link"></link-bcomponent>
+                    </li>
+                </ul>
+            </li>
         </ul>
-    </div>
+    </nav>
     <div id="page-content-wrapper">
+        <button *ngIf="hamburger" type="button" class="hamburger is-closed animated fadeInLeft" data-toggle="offcanvas" (click)="toggleNav()">
+            <span class="hamb-top"></span>
+            <span class="hamb-middle"></span>
+            <span class="hamb-bottom"></span>
+        </button>
         <div #contentComponent></div>
         <ng-content *ngIf="!hasContent()"></ng-content>
     </div>
