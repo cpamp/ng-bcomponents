@@ -102,6 +102,21 @@ increment: (by: number = 1) => void
 decrement: (by: number = 1) => void
 ```
 
+### Blockquote
+Class: `BlockquoteBComponent`  
+Selector: `blockquote-bcomponent`  
+ng-content:
+```
+thumbnail-body: body
+thumbnail-footer: footer
+```
+Inputs:
+```typescript
+body: string
+footer: string
+reverse: boolean = false
+```
+
 ### Breadcrumb
 Class: `BreadcrumbBComponent`  
 Selector: `breadcrumb-bcomponent`  
