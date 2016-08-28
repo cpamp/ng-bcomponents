@@ -7,6 +7,9 @@ export * from './dist/bcomponents/alert/alert.bcomponent';
 // Badge
 export * from './dist/bcomponents/badge/badge.bcomponent';
 
+// Blockquote
+export * from './dist/bcomponents/blockquote/blockquote.bcomponent';
+
 // Breadcrumb
 export * from './dist/bcomponents/breadcrumb/breadcrumb.bcomponent';
 

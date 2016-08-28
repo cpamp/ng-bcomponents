@@ -1,6 +1,6 @@
 <blockquote [bcomponent-attributes]="self">
     <p>
-        <div *ngIf="hasBody()" [innerHtml]="body"></div>
+        <span *ngIf="hasBody()" [innerHtml]="body"></span>
         <ng-content *ngIf="!hasBody()" select="blockquote-body"></ng-content>
     </p>
     <footer>

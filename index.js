@@ -9,6 +9,9 @@ exports.AlertBComponent = require('./dist/bcomponents/alert/alert.bcomponent').A
 // Badge
 exports.BadgeBComponent = require('./dist/bcomponents/badge/badge.bcomponent').BadgeBComponent;
 
+// Blockquote
+exports.BlockquoteBComponent = require('./dist/bcomponents/blockquote/blockquote.bcomponent').BlockquoteBComponent;
+
 // Breadcrumb
 exports.BreadcrumbBComponent = require('./dist/bcomponents/breadcrumb/breadcrumb.bcomponent').BreadcrumbBComponent;
 
