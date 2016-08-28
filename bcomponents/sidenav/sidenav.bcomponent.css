@@ -89,8 +89,10 @@ html {
 .sidebar-nav li:before {
   background-color: #3366ff;
 }
-.sidebar-nav li:first-child a {
+.sidebar-nav li:first-child:before {
   background-color: #1a1a1a;
+}
+.sidebar-nav li:first-child a {
   color: #ffffff;
 }
 .sidebar-nav li:hover:before {
@@ -98,7 +100,7 @@ html {
   width: 100%;
 }
 .sidebar-nav li a {
-  color: #dddddd;
+  color: #999;
   display: block;
   text-decoration: none;
 }
@@ -108,6 +110,7 @@ html {
 }
 .sidebar-nav .dropdown-toggle {
   padding: 0px;
+  color: #999;
 }
 .sidebar-nav .dropdown li {
   padding: 0;
