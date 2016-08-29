@@ -1,6 +1,6 @@
 {
   "name": "ng-bcomponents",
-  "version": "0.3.4",
+  "version": "0.4.0",
   "description": "Bootstrap components as angular2 components",
   "main": "index.js",
   "keywords": [
