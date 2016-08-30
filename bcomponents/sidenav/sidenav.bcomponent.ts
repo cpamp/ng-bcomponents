@@ -76,6 +76,8 @@ export class SidenavBComponent extends BComponent {
         this.hamburger = hamburger;
         this.overlay = overlay;
         this.startOpen = startOpen;
+        if(this.ngOnChildChanges != null) this.ngOnChildChanges();
+        return this;
     }
 
     public hasBrand = (): boolean => {
