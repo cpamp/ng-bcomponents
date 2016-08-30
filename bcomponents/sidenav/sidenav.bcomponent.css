@@ -55,7 +55,6 @@ html {
   display: none;
 }
 /deep/ #page-content-wrapper {
-  padding-top: 70px;
   width: 100%;
 }
 /*-------------------------------*/
@@ -89,10 +88,8 @@ html {
 /deep/ .sidebar-nav li:before {
   background-color: #3366ff;
 }
-/deep/ .sidebar-nav li:first-child:before {
+/deep/ .sidebar-nav .sidebar-brand:before {
   background-color: #1a1a1a;
-}
-/deep/ .sidebar-nav li:first-child a {
   color: #ffffff;
 }
 /deep/ .sidebar-nav li:hover:before {
