@@ -19,7 +19,7 @@
         </ul>
     </nav>
     <div id="page-content-wrapper">
-        <button *ngIf="hamburger" type="button" class="hamburger animated fadeInLeft" [class.is-closed]="isClosed" [class.is-open]="!isClosed"  data-toggle="offcanvas" (click)="toggleNav()">
+        <button *ngIf="menuButton" type="button" class="hamburger animated fadeInLeft" [class.is-closed]="isClosed" [class.is-open]="!isClosed"  data-toggle="offcanvas" (click)="toggleNav()">
             <span class="hamb-top"></span>
             <span class="hamb-middle"></span>
             <span class="hamb-bottom"></span>

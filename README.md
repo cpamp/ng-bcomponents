@@ -218,6 +218,7 @@ Inputs:
 ```typescript
 text: string
 link: string
+router: boolean = false
 ```
 
 ### List Group
@@ -319,7 +320,10 @@ Inputs:
 ```typescript
 component: any
 brand: LinkBComponent
-items: LinkBComponent[]
+items: SidenavItem[]
+menuButton: boolean = true
+overlay: boolean = true
+startOpen = true
 ```
 
 ### Table
