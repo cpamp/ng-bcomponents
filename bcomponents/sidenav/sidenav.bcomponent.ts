@@ -22,7 +22,7 @@ export class SidenavItem {
     public dropdownItems: SidenavDropdownItem[];
     public text: string;
 
-    constructor(link: LinkBComponent = null, dropdownItems: SidenavDropdownItem[] = null, text: string = "") {
+    constructor(link: LinkBComponent = null, text: string = "", dropdownItems: SidenavDropdownItem[] = null) {
         this.link = link;
         this.dropdownItems = dropdownItems;
         this.text = text;
