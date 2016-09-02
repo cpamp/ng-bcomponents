@@ -35,7 +35,7 @@ export class BComponent {
         this.ngOnChanges();
     }
 
-    public InitializeAttributes = (id: string = "", classes: string = "", styles: string = "", name: string = "", aria: string = "", ariaBy: string = "") => {
+    public InitializeAttributes = (id: string = "", classes: string = "", styles: string = "", name: string = "", aria: string = "", ariaBy: string = ""): this => {
         this.id = id;
         this.classes = classes;
         this.styles = styles;
@@ -101,7 +101,7 @@ export class BComponent {
     }
 
     public show = (duration: string | number = 400, callback?: Function): JQuery => {
-        return this.getSelector().hide(duration, callback);
+        return this.getSelector().show(duration, callback);
     }
 
     /** FadeToggle / FadeIn / FadeOut / FadeTo */
