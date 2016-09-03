@@ -117,7 +117,7 @@ export class BComponent {
         return this.getSelector().fadeOut(duration, callback);
     }
 
-    public fadeTo = (duration: string | number = 400, opacity: number, callback?: Function): JQuery => {
+    public fadeTo = (duration: string | number = 400, opacity: number = 0, callback?: Function): JQuery => {
         return this.getSelector().fadeTo(duration, opacity, callback);
     }
 

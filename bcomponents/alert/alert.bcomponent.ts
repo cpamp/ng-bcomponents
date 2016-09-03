@@ -39,6 +39,6 @@ export class AlertBComponent extends BComponent {
     }
 
     public hasText = (): boolean => {
-        return !this.isNull;
+        return !this.isNull(this.text);
     }
 }
