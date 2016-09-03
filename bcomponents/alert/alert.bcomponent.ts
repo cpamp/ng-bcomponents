@@ -26,7 +26,7 @@ export class AlertBComponent extends BComponent {
         return this;
     }
 
-    ngOnChildInit = () => {
+    ngAfterChildViewInit = () => {
         if(this.hidden === true) { this.hide(0); }
     }
 

@@ -19,6 +19,7 @@ export class BComponent {
 
     protected ngOnChildChanges: () => void;
     protected ngOnChildInit: () => void;
+    protected ngAfterChildViewInit: () => void;
 
     public static autoIdentifier: boolean = true;
 
@@ -59,6 +60,10 @@ export class BComponent {
             ComponentFactory.copy(this, this.bcomponent);
         }
         this.buildClass();
+    }
+
+    ngAfterViewInit() {
+        if(!this.isNull(this.ngAfterChildViewInit)) { this.ngAfterChildViewInit(); }
     }
 
     public static disableAutoIdentifier = () => {
