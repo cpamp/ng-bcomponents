@@ -1,11 +1,11 @@
 import {Component} from '@angular/core';
-import {BComponent, BComponentInputs, BComponentAttributes} from '../bcomponent';
+import {BComponent, BComponentInputs} from '../bcomponent';
 import {HeadingBComponent} from '../heading/heading.bcomponent';
 
 @Component({
     selector: 'jumbotron-bcomponent',
     templateUrl: 'jumbotron.bcomponent.html',
-    directives: [BComponentAttributes, HeadingBComponent],
+    directives: [],
     inputs: BComponentInputs.concat(['heading', 'title', 'subtitle', 'body', 'size'])
 })
 export class JumbotronBComponent extends BComponent {

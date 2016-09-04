@@ -1,10 +1,10 @@
 import {Component} from '@angular/core';
-import {BComponent, BComponentAttributes, BComponentInputs, DisplayType} from '../bcomponent';
+import {BComponent, BComponentInputs, DisplayType} from '../bcomponent';
 
 @Component({
     selector: "progressbar-bcomponent",
     templateUrl: "progressbar.bcomponent.html",
-    directives: [BComponentAttributes],
+    directives: [],
     inputs: BComponentInputs.concat(['value', 'type', 'display', 'displayPercent', 'striped', 'animated', 'minValue', 'maxValue'])
 })
 export class ProgressbarBComponent extends BComponent {

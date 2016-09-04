@@ -63,3 +63,5 @@ export * from './dist/bcomponents/thumbnail/thumbnail.bcomponent';
 
 // Well
 export * from './dist/bcomponents/well/well.bcomponent';
+
+export * from './dist/bcomponents/bcomponent.module';

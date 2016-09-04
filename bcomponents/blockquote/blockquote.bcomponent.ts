@@ -1,10 +1,10 @@
 import {Component} from '@angular/core';
-import {BComponent, BComponentAttributes, BComponentInputs} from '../bcomponent';
+import {BComponent, BComponentInputs} from '../bcomponent';
 
 @Component({
     selector: 'blockquote-bcomponent',
     templateUrl: 'blockquote.bcomponent.html',
-    directives: [BComponentAttributes],
+    directives: [],
     inputs: BComponentInputs.concat(['body', 'footer', 'reverse'])
 })
 export class BlockquoteBComponent extends BComponent {

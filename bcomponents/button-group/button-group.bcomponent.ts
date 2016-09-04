@@ -1,12 +1,12 @@
 import {Component} from '@angular/core';
-import {BComponent, BComponentAttributes, BComponentInputs, DisplaySize} from '../bcomponent';
+import {BComponent, BComponentInputs, DisplaySize} from '../bcomponent';
 import {ButtonBComponent} from '../button/button.bcomponent';
 import {ComponentFactory} from '../component.factory';
 
 @Component({
     selector: 'button-group-bcomponent',
     templateUrl: 'button-group.bcomponent.html',
-    directives: [BComponentAttributes],
+    directives: [],
     inputs: BComponentInputs.concat(['items', 'size'])
 })
 export class ButtonGroupBComponent extends BComponent {

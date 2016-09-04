@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {BComponent, BComponentAttributes, BComponentInputs} from '../bcomponent';
+import {BComponent, BComponentInputs} from '../bcomponent';
 import {LinkBComponent} from '../link/link.bcomponent';
 
 export type DropdownType = "separator" | "header" | "default";
@@ -38,7 +38,7 @@ export class DropdownItem {
 @Component({
     selector: 'dropdown-bcomponent',
     templateUrl: 'dropdown.bcomponent.html',
-    directives: [BComponentAttributes],
+    directives: [],
     inputs: BComponentInputs.concat(['items', 'title'])
 })
 export class DropdownBComponent extends BComponent {

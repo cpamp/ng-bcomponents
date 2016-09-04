@@ -1,10 +1,10 @@
 import {Component, ViewChild} from '@angular/core';
-import {BComponent, BComponentAttributes, BComponentInputs, DisplayType} from '../bcomponent';
+import {BComponent, BComponentInputs, DisplayType} from '../bcomponent';
 
 @Component({
     selector: "alert-bcomponent",
     templateUrl: "alert.bcomponent.html",
-    directives: [BComponentAttributes],
+    directives: [],
     inputs: BComponentInputs.concat(['text', 'dismissible', 'hidden', 'type'])
 })
 export class AlertBComponent extends BComponent {

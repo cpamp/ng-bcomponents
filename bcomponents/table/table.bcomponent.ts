@@ -1,10 +1,10 @@
 import {Component} from '@angular/core';
-import {BComponent, BComponentAttributes, BComponentInputs} from '../bcomponent';
+import {BComponent, BComponentInputs} from '../bcomponent';
 
 @Component({
     selector: "table-bcomponent",
     templateUrl: "table.bcomponent.html",
-    directives: [BComponentAttributes],
+    directives: [],
     inputs: BComponentInputs.concat(['items', 'headers', 'striped'])
 })
 export class TableBComponent extends BComponent {

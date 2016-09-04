@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {BComponent, BComponentAttributes, BComponentInputs} from '../bcomponent';
+import {BComponent, BComponentInputs} from '../bcomponent';
 import {BadgeBComponent} from '../badge/badge.bcomponent';
 
 export class ListGroupItem {
@@ -23,7 +23,7 @@ export class ListGroupItem {
 @Component({
     selector: "list-group-bcomponent",
     templateUrl: "list-group.bcomponent.html",
-    directives: [BComponentAttributes, BadgeBComponent],
+    directives: [],
     inputs: BComponentInputs.concat(['items', 'linked'])
 })
 export class ListGroupBComponent extends BComponent {

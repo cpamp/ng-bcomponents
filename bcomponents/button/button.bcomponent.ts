@@ -1,10 +1,10 @@
 import {Component, ChangeDetectorRef} from '@angular/core';
-import {BComponent, BComponentAttributes, BComponentInputs, DisplayType} from '../bcomponent';
+import {BComponent, BComponentInputs, DisplayType} from '../bcomponent';
 
 @Component({
     selector: "button-bcomponent",
     templateUrl: "button.bcomponent.html",
-    directives: [BComponentAttributes],
+    directives: [],
     inputs: BComponentInputs.concat(['text', 'type', 'click'])
 })
 export class ButtonBComponent extends BComponent {

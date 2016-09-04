@@ -1,10 +1,10 @@
 import {Component} from '@angular/core';
-import {BComponent, BComponentAttributes, BComponentInputs, DisplayType} from '../bcomponent';
+import {BComponent, BComponentInputs, DisplayType} from '../bcomponent';
 
 @Component({
     selector: "panel-bcomponent",
     templateUrl: "panel.bcomponent.html",
-    directives: [BComponentAttributes],
+    directives: [],
     inputs: BComponentInputs.concat(['header', 'body', 'footer', 'type'])
 })
 export class PanelBComponent extends BComponent {

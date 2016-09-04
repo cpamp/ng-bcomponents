@@ -1,10 +1,10 @@
 import {Component} from '@angular/core';
-import {BComponent, BComponentInputs, BComponentAttributes} from '../bcomponent';
+import {BComponent, BComponentInputs} from '../bcomponent';
 
 @Component({
     selector: 'heading-bcomponent',
     templateUrl: 'heading.bcomponent.html',
-    directives: [BComponentAttributes],
+    directives: [],
     inputs: BComponentInputs.concat(['title', 'subtitle', 'size'])
 })
 export class HeadingBComponent extends BComponent{

@@ -1,10 +1,10 @@
 import {Component} from '@angular/core';
-import {BComponent, BComponentAttributes, BComponentInputs, DisplayType} from '../bcomponent';
+import {BComponent, BComponentInputs, DisplayType} from '../bcomponent';
 
 @Component({
     selector: "label-bcomponent",
     templateUrl: "label.bcomponent.html",
-    directives: [BComponentAttributes],
+    directives: [],
     inputs: BComponentInputs.concat(['text', 'type'])
 })
 export class LabelBComponent extends BComponent {

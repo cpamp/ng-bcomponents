@@ -1,11 +1,11 @@
 import {Component} from '@angular/core';
-import {BComponent, BComponentAttributes, BComponentInputs} from '../bcomponent';
+import {BComponent, BComponentInputs} from '../bcomponent';
 import {HeadingBComponent} from '../heading/heading.bcomponent';
 
 @Component({
     selector: "thumbnail-bcomponent",
     templateUrl: "thumbnail.bcomponent.html",
-    directives: [BComponentAttributes, HeadingBComponent],
+    directives: [],
     inputs: BComponentInputs.concat(['heading', 'link', 'header', 'body', 'footer', 'src', 'alt', 'size'])
 })
 export class ThumbnailBComponent extends BComponent {

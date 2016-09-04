@@ -1,11 +1,11 @@
 import {Component} from '@angular/core';
-import {BComponent, BComponentAttributes, BComponentInputs} from '../bcomponent';
+import {BComponent, BComponentInputs} from '../bcomponent';
 import {LinkBComponent} from '../link/link.bcomponent';
 
 @Component({
     selector: 'breadcrumb-bcomponent',
     templateUrl: 'breadcrumb.bcomponent.html',
-    directives: [BComponentAttributes, LinkBComponent],
+    directives: [],
     inputs: BComponentInputs.concat('items', 'active')
 })
 export class BreadcrumbBComponent extends BComponent {

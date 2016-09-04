@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {BComponent, BComponentAttributes, BComponentInputs, DisplayType} from '../bcomponent';
+import {BComponent, BComponentInputs, DisplayType} from '../bcomponent';
 import {HeadingBComponent} from '../heading/heading.bcomponent';
 
 export type VerticalAlignment = "left" | "right";
@@ -17,7 +17,7 @@ export class MediaAlignment {
 @Component({
     selector: "media-bcomponent",
     templateUrl: "media.bcomponent.html",
-    directives: [BComponentAttributes],
+    directives: [],
     inputs: BComponentInputs.concat(['heading', 'title', 'body', 'link', 'src', 'alt', 'alignment', 'size']),
     styles: ["/deep/ h1,h2,h3,h4,h5,h6 { margin-top: 0px; }"]
 })

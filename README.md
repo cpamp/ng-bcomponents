@@ -27,10 +27,13 @@ System.config(config);
 ```
 
 ### Usage
-To import a component simply import the one of the classes listed below like this:  
+Import the `NgBComponentsModule` into your app module and add it to your app module's imports
 ```typescript
-import {ButtonBComponent} from 'ng-bcomponents`;  
-import {LinkBComponent} from 'ng-bcomponents`;  
+import {NgBComponentsModule} from 'ng-bcomponents';
+@NgModule({
+    imports: [NgBComponentsModule]
+})
+export class AppModule {}
 ```
 
 ## BComponents
