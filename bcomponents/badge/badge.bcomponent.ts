@@ -4,7 +4,6 @@ import {BComponent, BComponentInputs} from '../bcomponent';
 @Component({
     selector: "badge-bcomponent",
     templateUrl: "badge.bcomponent.html",
-    directives: [],
     inputs: BComponentInputs.concat(['value'])
 })
 export class BadgeBComponent extends BComponent {

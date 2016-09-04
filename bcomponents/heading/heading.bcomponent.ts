@@ -4,7 +4,6 @@ import {BComponent, BComponentInputs} from '../bcomponent';
 @Component({
     selector: 'heading-bcomponent',
     templateUrl: 'heading.bcomponent.html',
-    directives: [],
     inputs: BComponentInputs.concat(['title', 'subtitle', 'size'])
 })
 export class HeadingBComponent extends BComponent{

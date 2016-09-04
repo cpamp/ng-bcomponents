@@ -5,7 +5,6 @@ import {LinkBComponent} from '../link/link.bcomponent';
 @Component({
     selector: 'breadcrumb-bcomponent',
     templateUrl: 'breadcrumb.bcomponent.html',
-    directives: [],
     inputs: BComponentInputs.concat('items', 'active')
 })
 export class BreadcrumbBComponent extends BComponent {

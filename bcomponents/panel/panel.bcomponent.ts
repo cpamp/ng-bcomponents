@@ -4,7 +4,6 @@ import {BComponent, BComponentInputs, DisplayType} from '../bcomponent';
 @Component({
     selector: "panel-bcomponent",
     templateUrl: "panel.bcomponent.html",
-    directives: [],
     inputs: BComponentInputs.concat(['header', 'body', 'footer', 'type'])
 })
 export class PanelBComponent extends BComponent {

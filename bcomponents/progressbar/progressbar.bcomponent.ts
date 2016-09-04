@@ -4,7 +4,6 @@ import {BComponent, BComponentInputs, DisplayType} from '../bcomponent';
 @Component({
     selector: "progressbar-bcomponent",
     templateUrl: "progressbar.bcomponent.html",
-    directives: [],
     inputs: BComponentInputs.concat(['value', 'type', 'display', 'displayPercent', 'striped', 'animated', 'minValue', 'maxValue'])
 })
 export class ProgressbarBComponent extends BComponent {

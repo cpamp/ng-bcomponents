@@ -4,7 +4,6 @@ import {BComponent, BComponentInputs} from '../bcomponent';
 @Component({
     selector: 'blockquote-bcomponent',
     templateUrl: 'blockquote.bcomponent.html',
-    directives: [],
     inputs: BComponentInputs.concat(['body', 'footer', 'reverse'])
 })
 export class BlockquoteBComponent extends BComponent {

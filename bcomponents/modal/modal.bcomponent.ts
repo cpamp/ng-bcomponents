@@ -4,7 +4,6 @@ import {BComponent, BComponentInputs, DisplaySize} from '../bcomponent';
 @Component({
     selector: 'modal-bcomponent',
     templateUrl: 'modal.bcomponent.html',
-    directives: [],
     inputs: BComponentInputs.concat(['fade', 'title', 'body', 'footer'])
 })
 export class ModalBComponent extends BComponent {

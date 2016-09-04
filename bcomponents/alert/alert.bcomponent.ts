@@ -4,7 +4,6 @@ import {BComponent, BComponentInputs, DisplayType} from '../bcomponent';
 @Component({
     selector: "alert-bcomponent",
     templateUrl: "alert.bcomponent.html",
-    directives: [],
     inputs: BComponentInputs.concat(['text', 'dismissible', 'hidden', 'type'])
 })
 export class AlertBComponent extends BComponent {

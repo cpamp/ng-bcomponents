@@ -6,7 +6,6 @@ import {ComponentFactory} from '../component.factory';
 @Component({
     selector: 'button-group-bcomponent',
     templateUrl: 'button-group.bcomponent.html',
-    directives: [],
     inputs: BComponentInputs.concat(['items', 'size'])
 })
 export class ButtonGroupBComponent extends BComponent {

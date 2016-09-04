@@ -5,7 +5,6 @@ import {ButtonBComponent} from '../button/button.bcomponent';
 @Component({
     selector: "input-group-bcomponent",
     templateUrl: "input-group.bcomponent.html",
-    directives: [],
     inputs: BComponentInputs.concat(['placeholder', 'model', 'size', 'frontText', 'backText', 'frontButton', 'backButton'])
 })
 export class InputGroupBComponent extends BComponent {

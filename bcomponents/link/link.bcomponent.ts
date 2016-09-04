@@ -4,7 +4,6 @@ import {BComponent, BComponentInputs} from '../bcomponent';
 @Component({
     selector: "link-bcomponent",
     templateUrl: "link.bcomponent.html",
-    directives: [],
     inputs: BComponentInputs.concat(['text', 'link', 'router'])
 })
 export class LinkBComponent extends BComponent {

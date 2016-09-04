@@ -4,7 +4,6 @@ import {BComponent, BComponentInputs, DisplayType} from '../bcomponent';
 @Component({
     selector: "button-bcomponent",
     templateUrl: "button.bcomponent.html",
-    directives: [],
     inputs: BComponentInputs.concat(['text', 'type', 'click'])
 })
 export class ButtonBComponent extends BComponent {

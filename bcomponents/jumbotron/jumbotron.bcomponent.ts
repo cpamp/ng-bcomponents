@@ -5,7 +5,6 @@ import {HeadingBComponent} from '../heading/heading.bcomponent';
 @Component({
     selector: 'jumbotron-bcomponent',
     templateUrl: 'jumbotron.bcomponent.html',
-    directives: [],
     inputs: BComponentInputs.concat(['heading', 'title', 'subtitle', 'body', 'size'])
 })
 export class JumbotronBComponent extends BComponent {

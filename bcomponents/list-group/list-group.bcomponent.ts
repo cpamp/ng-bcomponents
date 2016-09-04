@@ -23,7 +23,6 @@ export class ListGroupItem {
 @Component({
     selector: "list-group-bcomponent",
     templateUrl: "list-group.bcomponent.html",
-    directives: [],
     inputs: BComponentInputs.concat(['items', 'linked'])
 })
 export class ListGroupBComponent extends BComponent {

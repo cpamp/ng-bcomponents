@@ -38,7 +38,6 @@ export class DropdownItem {
 @Component({
     selector: 'dropdown-bcomponent',
     templateUrl: 'dropdown.bcomponent.html',
-    directives: [],
     inputs: BComponentInputs.concat(['items', 'title'])
 })
 export class DropdownBComponent extends BComponent {
