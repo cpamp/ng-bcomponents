@@ -1,14 +1,14 @@
-import {Component} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {BComponent, BComponentInputs, DisplaySize} from '../bcomponent';
 
 @Component({
     selector: "well-bcomponent",
     templateUrl: "well.bcomponent.html",
-    inputs: BComponentInputs.concat(['text', 'size'])
+    inputs: BComponentInputs
 })
 export class WellBComponent extends BComponent {
-    public text: string;
-    public size: DisplaySize;
+    @Input() text: string;
+    @Input() size: DisplaySize;
 
     constructor() {
         super("well");

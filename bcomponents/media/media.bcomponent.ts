@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {BComponent, BComponentInputs, DisplayType} from '../bcomponent';
 import {HeadingBComponent} from '../heading/heading.bcomponent';
 
@@ -17,18 +17,18 @@ export class MediaAlignment {
 @Component({
     selector: "media-bcomponent",
     templateUrl: "media.bcomponent.html",
-    inputs: BComponentInputs.concat(['heading', 'title', 'body', 'link', 'src', 'alt', 'alignment', 'size']),
+    inputs: BComponentInputs,
     styles: ["/deep/ h1,h2,h3,h4,h5,h6 { margin-top: 0px; }"]
 })
 export class MediaBComponent extends BComponent {
-    public alignment: MediaAlignment;
-    public heading: HeadingBComponent;
-    public title: string;
-    public body: string;
-    public link: string;
-    public src: string;
-    public alt: string;
-    public size: string;
+    @Input() alignment: MediaAlignment;
+    @Input() heading: HeadingBComponent;
+    @Input() title: string;
+    @Input() body: string;
+    @Input() link: string;
+    @Input() src: string;
+    @Input() alt: string;
+    @Input() size: string;
 
     public mediaClass;
 

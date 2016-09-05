@@ -1,15 +1,15 @@
-import {Component} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {BComponent, BComponentInputs} from '../bcomponent';
 
 @Component({
     selector: 'blockquote-bcomponent',
     templateUrl: 'blockquote.bcomponent.html',
-    inputs: BComponentInputs.concat(['body', 'footer', 'reverse'])
+    inputs: BComponentInputs
 })
 export class BlockquoteBComponent extends BComponent {
-    public body: string;
-    public footer: string;
-    public reverse: boolean = false;
+    @Input() body: string;
+    @Input() footer: string;
+    @Input() reverse: boolean = false;
 
     constructor() {
         super(null);

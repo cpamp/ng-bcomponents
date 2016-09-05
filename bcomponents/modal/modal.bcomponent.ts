@@ -1,16 +1,16 @@
-import {Component} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {BComponent, BComponentInputs, DisplaySize} from '../bcomponent';
 
 @Component({
     selector: 'modal-bcomponent',
     templateUrl: 'modal.bcomponent.html',
-    inputs: BComponentInputs.concat(['fade', 'title', 'body', 'footer'])
+    inputs: BComponentInputs
 })
 export class ModalBComponent extends BComponent {
-    public fade: boolean = true;
-    public title: string;
-    public body: string;
-    public footer: string;
+    @Input() fade: boolean = true;
+    @Input() title: string;
+    @Input() body: string;
+    @Input() footer: string;
 
     constructor() {
         super("modal");

@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {BComponent, BComponentInputs} from '../bcomponent';
 import {BadgeBComponent} from '../badge/badge.bcomponent';
 
@@ -23,11 +23,11 @@ export class ListGroupItem {
 @Component({
     selector: "list-group-bcomponent",
     templateUrl: "list-group.bcomponent.html",
-    inputs: BComponentInputs.concat(['items', 'linked'])
+    inputs: BComponentInputs
 })
 export class ListGroupBComponent extends BComponent {
-    public items: ListGroupItem[];
-    public linked: boolean = false;
+    @Input() items: ListGroupItem[];
+    @Input() linked: boolean = false;
 
     constructor() {
         super("list-group");

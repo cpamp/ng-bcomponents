@@ -1,15 +1,15 @@
-import {Component, ChangeDetectorRef} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {BComponent, BComponentInputs, DisplayType} from '../bcomponent';
 
 @Component({
     selector: "button-bcomponent",
     templateUrl: "button.bcomponent.html",
-    inputs: BComponentInputs.concat(['text', 'type', 'click'])
+    inputs: BComponentInputs
 })
 export class ButtonBComponent extends BComponent {
-    public text: string;
-    public type: DisplayType = "default";
-    public click: () => void;
+    @Input() text: string;
+    @Input() type: DisplayType = "default";
+    @Input() click: () => void;
 
     constructor() {
         super("btn btn-default");

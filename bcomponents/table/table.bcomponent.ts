@@ -1,15 +1,15 @@
-import {Component} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {BComponent, BComponentInputs} from '../bcomponent';
 
 @Component({
     selector: "table-bcomponent",
     templateUrl: "table.bcomponent.html",
-    inputs: BComponentInputs.concat(['items', 'headers', 'striped'])
+    inputs: BComponentInputs
 })
 export class TableBComponent extends BComponent {
-    public items: any[];
-    public headers: any[];
-    public striped: boolean;
+    @Input() items: any[];
+    @Input() headers: any[];
+    @Input() striped: boolean;
 
     constructor() {
         super("table");

@@ -1,20 +1,20 @@
-import {Component} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {BComponent, BComponentInputs, DisplayType, DisplaySize} from '../bcomponent';
 import {ButtonBComponent} from '../button/button.bcomponent';
 
 @Component({
     selector: "input-group-bcomponent",
     templateUrl: "input-group.bcomponent.html",
-    inputs: BComponentInputs.concat(['placeholder', 'model', 'size', 'frontText', 'backText', 'frontButton', 'backButton'])
+    inputs: BComponentInputs
 })
 export class InputGroupBComponent extends BComponent {
-    public placeholder: string;
-    public model: string;
-    public size: DisplaySize;
-    public frontText: string;
-    public backText: string;
-    public frontButton: ButtonBComponent;
-    public backButton: ButtonBComponent;
+    @Input() placeholder: string;
+    @Input() model: string;
+    @Input() size: DisplaySize;
+    @Input() frontText: string;
+    @Input() backText: string;
+    @Input() frontButton: ButtonBComponent;
+    @Input() backButton: ButtonBComponent;
 
     public groupClass: string;
 

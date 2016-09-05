@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {BComponent, BComponentInputs} from '../bcomponent';
 import {LinkBComponent} from '../link/link.bcomponent';
 
@@ -38,11 +38,11 @@ export class DropdownItem {
 @Component({
     selector: 'dropdown-bcomponent',
     templateUrl: 'dropdown.bcomponent.html',
-    inputs: BComponentInputs.concat(['items', 'title'])
+    inputs: BComponentInputs
 })
 export class DropdownBComponent extends BComponent {
-    public items: DropdownItem[];
-    public title: string;
+    @Input() items: DropdownItem[];
+    @Input() title: string;
 
     constructor() {
         super("dropdown");

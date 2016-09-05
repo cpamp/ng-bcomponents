@@ -1,15 +1,15 @@
-import {Component} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {BComponent, BComponentInputs} from '../bcomponent';
 import {LinkBComponent} from '../link/link.bcomponent';
 
 @Component({
     selector: 'breadcrumb-bcomponent',
     templateUrl: 'breadcrumb.bcomponent.html',
-    inputs: BComponentInputs.concat('items', 'active')
+    inputs: BComponentInputs
 })
 export class BreadcrumbBComponent extends BComponent {
-    public items: LinkBComponent[];
-    public active: string;
+    @Input() items: LinkBComponent[];
+    @Input() active: string;
 
     constructor() {
         super("breadcrumb");

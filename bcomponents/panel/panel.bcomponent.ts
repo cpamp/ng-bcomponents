@@ -1,16 +1,16 @@
-import {Component} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {BComponent, BComponentInputs, DisplayType} from '../bcomponent';
 
 @Component({
     selector: "panel-bcomponent",
     templateUrl: "panel.bcomponent.html",
-    inputs: BComponentInputs.concat(['header', 'body', 'footer', 'type'])
+    inputs: BComponentInputs
 })
 export class PanelBComponent extends BComponent {
-    public header: string;
-    public body: string;
-    public footer: string;
-    public type: DisplayType = "default";
+    @Input() header: string;
+    @Input() body: string;
+    @Input() footer: string;
+    @Input() type: DisplayType = "default";
 
     constructor() {
         super("panel panel-default");

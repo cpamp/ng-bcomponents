@@ -1,13 +1,13 @@
-import {Component} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {BComponent, BComponentInputs} from '../bcomponent';
 
 @Component({
     selector: "badge-bcomponent",
     templateUrl: "badge.bcomponent.html",
-    inputs: BComponentInputs.concat(['value'])
+    inputs: BComponentInputs
 })
 export class BadgeBComponent extends BComponent {
-    public value: number = 0;
+    @Input() value: number = 0;
 
     constructor() {
         super("badge");

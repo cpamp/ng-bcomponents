@@ -1,15 +1,15 @@
-import {Component} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {BComponent, BComponentInputs} from '../bcomponent';
 
 @Component({
     selector: 'heading-bcomponent',
     templateUrl: 'heading.bcomponent.html',
-    inputs: BComponentInputs.concat(['title', 'subtitle', 'size'])
+    inputs: BComponentInputs
 })
 export class HeadingBComponent extends BComponent{
-    public title: string;
-    public subtitle: string;
-    public size: number = 1;
+    @Input() title: string;
+    @Input() subtitle: string;
+    @Input() size: number = 1;
 
     constructor() {
         super("page-header");

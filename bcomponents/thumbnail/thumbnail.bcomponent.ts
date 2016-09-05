@@ -1,21 +1,21 @@
-import {Component} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {BComponent, BComponentInputs} from '../bcomponent';
 import {HeadingBComponent} from '../heading/heading.bcomponent';
 
 @Component({
     selector: "thumbnail-bcomponent",
     templateUrl: "thumbnail.bcomponent.html",
-    inputs: BComponentInputs.concat(['heading', 'link', 'header', 'body', 'footer', 'src', 'alt', 'size'])
+    inputs: BComponentInputs
 })
 export class ThumbnailBComponent extends BComponent {
-    public heading: HeadingBComponent;
-    public link: string;
-    public header: string;
-    public body: string;
-    public footer: string;
-    public src: string;
-    public alt: string;
-    public size: number = 3;
+    @Input() heading: HeadingBComponent;
+    @Input() link: string;
+    @Input() header: string;
+    @Input() body: string;
+    @Input() footer: string;
+    @Input() src: string;
+    @Input() alt: string;
+    @Input() size: number = 3;
 
     constructor() {
         super("thumbnail");

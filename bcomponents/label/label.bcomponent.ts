@@ -1,14 +1,14 @@
-import {Component} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {BComponent, BComponentInputs, DisplayType} from '../bcomponent';
 
 @Component({
     selector: "label-bcomponent",
     templateUrl: "label.bcomponent.html",
-    inputs: BComponentInputs.concat(['text', 'type'])
+    inputs: BComponentInputs
 })
 export class LabelBComponent extends BComponent {
-    public text: string;
-    public type: DisplayType = "default";
+    @Input() text: string;
+    @Input() type: DisplayType = "default";
 
     constructor() {
         super("label label-default");

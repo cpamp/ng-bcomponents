@@ -1,18 +1,18 @@
-import {Component} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {BComponent, BComponentInputs} from '../bcomponent';
 import {HeadingBComponent} from '../heading/heading.bcomponent';
 
 @Component({
     selector: 'jumbotron-bcomponent',
     templateUrl: 'jumbotron.bcomponent.html',
-    inputs: BComponentInputs.concat(['heading', 'title', 'subtitle', 'body', 'size'])
+    inputs: BComponentInputs
 })
 export class JumbotronBComponent extends BComponent {
-    public heading: HeadingBComponent;
-    public title: string;
-    public subtitle: string;
-    public body: string;
-    public size: number;
+    @Input() heading: HeadingBComponent;
+    @Input() title: string;
+    @Input() subtitle: string;
+    @Input() body: string;
+    @Input() size: number;
 
     constructor() {
         super("jumbotron");

@@ -1,20 +1,20 @@
-import {Component} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {BComponent, BComponentInputs, DisplayType} from '../bcomponent';
 
 @Component({
     selector: "progressbar-bcomponent",
     templateUrl: "progressbar.bcomponent.html",
-    inputs: BComponentInputs.concat(['value', 'type', 'display', 'displayPercent', 'striped', 'animated', 'minValue', 'maxValue'])
+    inputs: BComponentInputs
 })
 export class ProgressbarBComponent extends BComponent {
-    public value: number = 0;
-    public type: DisplayType = "success";
-    public display: string = "%";
-    public displayPercent: boolean = true;
-    public striped: boolean = false;
-    public animated: boolean = false;
-    public minValue: number = 0;
-    public maxValue: number = 100;
+    @Input() value: number = 0;
+    @Input() type: DisplayType = "success";
+    @Input() display: string = "%";
+    @Input() displayPercent: boolean = true;
+    @Input() striped: boolean = false;
+    @Input() animated: boolean = false;
+    @Input() minValue: number = 0;
+    @Input() maxValue: number = 100;
 
     public percentValue: number;
 

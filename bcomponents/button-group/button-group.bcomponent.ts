@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {BComponent, BComponentInputs, DisplaySize} from '../bcomponent';
 import {ButtonBComponent} from '../button/button.bcomponent';
 import {ComponentFactory} from '../component.factory';
@@ -6,11 +6,11 @@ import {ComponentFactory} from '../component.factory';
 @Component({
     selector: 'button-group-bcomponent',
     templateUrl: 'button-group.bcomponent.html',
-    inputs: BComponentInputs.concat(['items', 'size'])
+    inputs: BComponentInputs
 })
 export class ButtonGroupBComponent extends BComponent {
-    public items: ButtonBComponent[];
-    public size: DisplaySize;
+    @Input() items: ButtonBComponent[];
+    @Input() size: DisplaySize;
 
     constructor() {
         super("btn-group");

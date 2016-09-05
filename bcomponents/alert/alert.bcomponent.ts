@@ -1,16 +1,16 @@
-import {Component, ViewChild} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {BComponent, BComponentInputs, DisplayType} from '../bcomponent';
 
 @Component({
     selector: "alert-bcomponent",
     templateUrl: "alert.bcomponent.html",
-    inputs: BComponentInputs.concat(['text', 'dismissible', 'hidden', 'type'])
+    inputs: BComponentInputs
 })
 export class AlertBComponent extends BComponent {
-    public text: string;
-    public dismissible: boolean = false;
-    public hidden: boolean = false;
-    public type: DisplayType = "success";
+    @Input() text: string;
+    @Input() dismissible: boolean = false;
+    @Input() hidden: boolean = false;
+    @Input() type: DisplayType = "success";
 
     constructor() {
         super("alert alert-success");

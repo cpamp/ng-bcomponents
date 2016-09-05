@@ -1,15 +1,15 @@
-import {Component} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {BComponent, BComponentInputs} from '../bcomponent';
 
 @Component({
     selector: "link-bcomponent",
     templateUrl: "link.bcomponent.html",
-    inputs: BComponentInputs.concat(['text', 'link', 'router'])
+    inputs: BComponentInputs
 })
 export class LinkBComponent extends BComponent {
-    public text: string;
-    public link: string;
-    public router: boolean = false;
+    @Input() text: string;
+    @Input() link: string;
+    @Input() router: boolean = false;
 
     constructor() {
         super(null);
