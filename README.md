@@ -1,8 +1,6 @@
 # ng-bcomponents
 This project is a collection of bootstrap components (bcomponents) as angular 2 components. Instead of having to write nested markup for a bootstrap heading, you would use `<heading-bcomponent [title]="'My awesome heading'"></heading-bcomponent>`.
 
-You can visit the [angular2-bootstrap-components-demo project](https://github.com/cpamp21/angular2-bootstrap-components-demo) for a complete usage example.
-
 ## Installation and Usage
 ### npm
 To install with npm run the following command:  
