@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, Input, Output, EventEmitter, SimpleChange} from '@angular/core';
 import {BComponent, BComponentInputs} from '../bcomponent';
 
 @Component({
@@ -9,8 +9,16 @@ import {BComponent, BComponentInputs} from '../bcomponent';
 export class BadgeBComponent extends BComponent {
     @Input() value: number = 0;
 
+    @Output() change: EventEmitter<BadgeBComponent> = new EventEmitter<BadgeBComponent>();
+
     constructor() {
         super("badge");
+    }
+
+    ngOnChildChanges = (change?: {[property: string]: SimpleChange}) => {
+        if(!this.isNull(change) && change['value']) {
+            this.change.emit(this);
+        }
     }
 
     public Initialize = (value: number = 0): BadgeBComponent => {
