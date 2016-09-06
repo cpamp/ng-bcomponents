@@ -1,4 +1,4 @@
-import {Directive, ElementRef, Input, ViewContainerRef, ComponentFactoryResolver} from '@angular/core';
+import {Directive, ElementRef, Input, ViewContainerRef, ComponentFactoryResolver, SimpleChange} from '@angular/core';
 import {ComponentFactory} from './component.factory';
 import {IdentifierFactory} from './identifier.factory';
 
@@ -17,7 +17,7 @@ export class BComponent {
     protected bcomponent: any = null;
     protected baseClass: string;
 
-    protected ngOnChildChanges: () => void;
+    protected ngOnChildChanges: (change?: {[property: string]: SimpleChange}) => void;
     protected ngOnChildInit: () => void;
     protected ngAfterChildViewInit: () => void;
 
@@ -54,8 +54,8 @@ export class BComponent {
         if(!this.isNull(this.ngOnChildInit)) { this.ngOnChildInit(); }
     }
 
-    ngOnChanges() {
-        if(!this.isNull(this.ngOnChildChanges)) { this.ngOnChildChanges(); }
+    ngOnChanges(change?: {[property: string]: SimpleChange}) {
+        if(!this.isNull(this.ngOnChildChanges)) { this.ngOnChildChanges(change); }
         if(!this.isNull(this.bcomponent)) {
             ComponentFactory.copy(this, this.bcomponent);
         }
