@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, Input, Output, EventEmitter, SimpleChange} from '@angular/core';
 import {BComponent, BComponentInputs, DisplayType} from '../bcomponent';
 
 @Component({
@@ -15,6 +15,8 @@ export class ProgressbarBComponent extends BComponent {
     @Input() animated: boolean = false;
     @Input() minValue: number = 0;
     @Input() maxValue: number = 100;
+
+    @Output() change: EventEmitter<ProgressbarBComponent> = new EventEmitter<ProgressbarBComponent>();
 
     public percentValue: number;
 
@@ -41,13 +43,17 @@ export class ProgressbarBComponent extends BComponent {
         return this;
     }
 
-    ngOnChildChanges = () => {
+    ngOnChildChanges = (change?: {[property: string]: SimpleChange}) => {
         this.type = this.type === "default" || this.type === "primary" ? "success" : this.type;
         this.baseClass = "progress-bar progress-bar-" + this.type;
         if(this.striped) { this.baseClass += " progress-bar-striped"; }
         if(this.animated) { this.baseClass += " active"; }
         this.bounds();
         this.styles = "width: " + this.percentValue + "%;";
+        
+        if(!this.isNull(change) && change['value']) {
+            this.change.emit(this);
+        }
     }
 
     public increment = (by: number = 1) => {
