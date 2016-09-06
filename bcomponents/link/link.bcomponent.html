@@ -1,8 +1,8 @@
-<a [bcomponent-attributes]="self" [attr.href]="link" *ngIf="!router">
+<a [bcomponent-attributes]="self" [attr.href]="link" *ngIf="!router" (click)="clickEvent()">
     <span *ngIf="hasText()" [innerHtml]="text"></span>
     <ng-content *ngIf="!hasText()"></ng-content>
 </a>
-<a [bcomponent-attributes]="self" [routerLink]="[link]" *ngIf="router">
+<a [bcomponent-attributes]="self" [routerLink]="[link]" *ngIf="router" (click)="clickEvent()">
     <span *ngIf="hasText()" [innerHtml]="text"></span>
     <ng-content *ngIf="!hasText()"></ng-content>
 </a>
