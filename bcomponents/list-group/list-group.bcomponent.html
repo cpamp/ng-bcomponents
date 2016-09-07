@@ -1,12 +1,15 @@
-<ul *ngIf="!linked" [bcomponent-attributes]="self">
+<ul *ngIf="!linked && !isNull(items)" [bcomponent-attributes]="self">
     <li *ngFor="let item of items" class="list-group-item">
         <span *ngIf="item.hasBadge()" [bcomponent-attributes]="item.badge">{{item.badge.value}}</span>
         <span [innerHtml]="item.text"></span>
     </li>
 </ul>
-<div *ngIf="linked" [bcomponent-attributes]="self">
+<div *ngIf="linked && !isNull(items)" [bcomponent-attributes]="self">
     <a *ngFor="let item of items" [bcomponent-attributes]="item" class="list-group-item" [class.active]="item.active" [attr.href]="item.link">
         <span *ngIf="item.hasBadge()" [bcomponent-attributes]="item.badge">{{item.badge.value}}</span>
         <span [innerHtml]="item.text"></span>
     </a>
+</div>
+<div *ngIf="isNull(items)" [bcomponent-attributes]="self">
+    <ng-content></ng-content>
 </div>
