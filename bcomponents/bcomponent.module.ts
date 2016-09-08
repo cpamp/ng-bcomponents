@@ -14,7 +14,7 @@ import {InputGroupModule} from './input-group/input-group.module';
 import {JumbotronModule} from './jumbotron/jumbotron.module';
 import {LabelModule} from './label/label.module';
 import {LinkModule} from './link/link.module';
-import {ListGroupModule} from './list-group/list-group.module';
+import {ListModule} from './list/list.module';
 import {MediaModule} from './media/media.module';
 import {ModalModule} from './modal/modal.module';
 import {PanelModule} from './panel/panel.module';
@@ -37,7 +37,7 @@ var Modules: any[] = [
     JumbotronModule,
     LabelModule,
     LinkModule,
-    ListGroupModule,
+    ListModule,
     MediaModule,
     ModalModule,
     PanelModule,

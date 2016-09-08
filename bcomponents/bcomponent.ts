@@ -158,13 +158,17 @@ export class BComponentAttributes {
         this.el.nativeElement.setAttribute(attribute, value);
     }
 
+    public setAttributes = (attributes: BComponent) => {
+        if(attributes.class != null) this.setAttribute("class", attributes.class);
+        if(attributes.id != null) this.setAttribute("id", attributes.id);
+        if(attributes.styles != null) this.setAttribute("style", attributes.styles);
+        if(attributes.name != null) this.setAttribute("name", attributes.name);
+        if(attributes.aria != null) this.setAttribute("aria-label", attributes.aria);
+        if(attributes.ariaBy != null) this.setAttribute("aria-labelledby", attributes.ariaBy);
+    }
+
     ngOnChanges() {
-        if(this.attributes.class != null) this.setAttribute("class", this.attributes.class);
-        if(this.attributes.id != null) this.setAttribute("id", this.attributes.id);
-        if(this.attributes.styles != null) this.setAttribute("style", this.attributes.styles);
-        if(this.attributes.name != null) this.setAttribute("name", this.attributes.name);
-        if(this.attributes.aria != null) this.setAttribute("aria-label", this.attributes.aria);
-        if(this.attributes.ariaBy != null) this.setAttribute("aria-labelledby", this.attributes.ariaBy);
+        this.setAttributes(this.attributes);
     }
 }
 

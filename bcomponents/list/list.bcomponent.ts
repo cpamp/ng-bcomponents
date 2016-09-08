@@ -21,11 +21,11 @@ export class ListGroupItem {
 }
 
 @Component({
-    selector: "list-group-bcomponent",
-    templateUrl: "list-group.bcomponent.html",
+    selector: "list-bcomponent",
+    templateUrl: "list.bcomponent.html",
     inputs: BComponentInputs
 })
-export class ListGroupBComponent extends BComponent {
+export class ListBComponent extends BComponent {
     @Input() items: ListGroupItem[];
     @Input() linked: boolean = false;
 
@@ -33,7 +33,7 @@ export class ListGroupBComponent extends BComponent {
         super("list-group");
     }
 
-    public Initialize = (items: ListGroupItem[] = [], linked: boolean = false): ListGroupBComponent => {
+    public Initialize = (items: ListGroupItem[] = [], linked: boolean = false): ListBComponent => {
         this.items = items;
         this.linked = linked;
         if(this.ngOnChildChanges != null) this.ngOnChildChanges();

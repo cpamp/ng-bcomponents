@@ -52,10 +52,11 @@ exports.LabelModule = require('./dist/bcomponents/label/label.module').LabelModu
 exports.LinkBComponent = require('./dist/bcomponents/link/link.bcomponent').LinkBComponent;
 exports.LinkModule = require('./dist/bcomponents/link/link.module').LinkModule;
 
-// List Group
-exports.ListGroupBComponent = require('./dist/bcomponents/list-group/list-group.bcomponent').ListGroupBComponent;
-exports.ListGroupModule = require('./dist/bcomponents/list-group/list-group.module').ListGroupModule;
-exports.ListGroupItem = require('./dist/bcomponents/list-group/list-group.bcomponent').ListGroupItem;
+// List
+exports.ListBComponent = require('./dist/bcomponents/list/list.bcomponent').ListBComponent;
+exports.ListItemBComponent = require('./dist/bcomponents/list/list-item.bcomponent').ListItemBComponent
+exports.ListModule = require('./dist/bcomponents/list/list.module').ListGroupModule;
+exports.ListGroupItem = require('./dist/bcomponents/list/list.bcomponent').ListGroupItem;
 
 // Media
 exports.MediaBComponent = require('./dist/bcomponents/media/media.bcomponent').MediaBComponent;
