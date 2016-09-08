@@ -1,9 +1,9 @@
 import {Component, Directive, Input} from '@angular/core';
 import {BComponent, BComponentInputs, DisplaySize} from '../bcomponent';
 
-@Directive({selector: 'modal-title'}) export class ModalTitleBComponentDirective {}
-@Directive({selector: 'modal-body'}) export class ModalBodyBComponentDirective {}
-@Directive({selector: 'modal-footer'}) export class ModalFooterBComponentDirective {}
+@Directive({selector: 'bc-modal-title'}) export class ModalTitleBComponentDirective {}
+@Directive({selector: 'bc-modal-body'}) export class ModalBodyBComponentDirective {}
+@Directive({selector: 'bc-modal-footer'}) export class ModalFooterBComponentDirective {}
 
 @Component({
     selector: 'bc-modal',
