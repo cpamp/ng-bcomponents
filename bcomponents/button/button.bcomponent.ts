@@ -9,18 +9,18 @@ import {BComponent, BComponentInputs, DisplayType} from '../bcomponent';
 export class ButtonBComponent extends BComponent {
     @Input() text: string;
     @Input() type: DisplayType = "default";
-    @Input() onClick: () => void;
+    @Input() click: () => void;
 
-    @Output() click: EventEmitter<ButtonBComponent> = new EventEmitter<ButtonBComponent>();
+    @Output() onClick: EventEmitter<ButtonBComponent> = new EventEmitter<ButtonBComponent>();
 
     constructor() {
         super("btn btn-default");
     }
 
-    public Initialize = (text: string = "", type: DisplayType = "default", onClick: () => void = (() => {})): ButtonBComponent => {
+    public Initialize = (text: string = "", type: DisplayType = "default", click: () => void = (() => {})): ButtonBComponent => {
         this.text = text;
         this.type = type;
-        this.onClick = onClick;
+        this.click = click;
         if(this.ngOnChildChanges != null) this.ngOnChildChanges();
         return this;
     }
@@ -30,7 +30,7 @@ export class ButtonBComponent extends BComponent {
     }
 
     public clickEvent = () => {
-        if(this.onClick != null) {this.onClick();}
-        this.click.emit(this);
+        if(this.click != null) {this.click();}
+        this.onClick.emit(this);
     }
 }
