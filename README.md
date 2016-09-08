@@ -28,8 +28,14 @@ System.config(config);
 Import the `NgBComponentsModule` into your app module and add it to your app module's imports
 ```typescript
 import {NgBComponentsModule} from 'ng-bcomponents';
+import {BComponent} from 'ng-bcomponents';
 @NgModule({
     imports: [NgBComponentsModule]
 })
-export class AppModule {}
+export class AppModule {
+    constructor() {
+        //Uncomment to disable auto identifiers
+        //BComponent.disableAutoIdentifier();
+    }
+}
 ```
