@@ -1,7 +1,7 @@
 <div class="jumbotron" [bcomponent-attributes]="self">
     <div class="container">
-        <heading-bcomponent *ngIf="!hasHeading()" [size]="size" [title]="title" [subtitle]="subtitle"></heading-bcomponent>
-        <heading-bcomponent *ngIf="hasHeading()" [bcomponent]="heading"></heading-bcomponent>
+        <bc-heading *ngIf="!hasHeading()" [size]="size" [title]="title" [subtitle]="subtitle"></bc-heading>
+        <bc-heading *ngIf="hasHeading()" [bcomponent]="heading"></bc-heading>
         <p *ngIf="hasBody()" [innerHtml]="body"></p>
         <p *ngIf="!hasBody()"><ng-content></ng-content></P>
     </div>

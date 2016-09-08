@@ -6,7 +6,7 @@
         <img *ngIf="!hasLink()" class="media-object" [attr.src]="src" [attr.alt]="alt">
     </div>
     <div class="media-body">
-        <heading-bcomponent [title]="heading" [size]="size" [styles]="'margin-top: 0px;'"></heading-bcomponent>
+        <bc-heading [title]="heading" [size]="size" [styles]="'margin-top: 0px;'"></bc-heading>
         <span *ngIf="hasBody()" [innerHtml]="body"></span>
         <ng-content *ngIf="!hasBody()"></ng-content>
     </div>
