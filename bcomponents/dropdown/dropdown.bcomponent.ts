@@ -36,7 +36,7 @@ export class DropdownItem {
 }
 
 @Component({
-    selector: 'dropdown-bcomponent',
+    selector: 'bc-dropdown',
     templateUrl: 'dropdown.bcomponent.html',
     inputs: BComponentInputs
 })

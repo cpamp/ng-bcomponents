@@ -2,7 +2,7 @@ import {Component, Input, Output, EventEmitter, SimpleChange} from '@angular/cor
 import {BComponent, BComponentInputs} from '../bcomponent';
 
 @Component({
-    selector: "badge-bcomponent",
+    selector: "bc-badge",
     templateUrl: "badge.bcomponent.html",
     inputs: BComponentInputs
 })

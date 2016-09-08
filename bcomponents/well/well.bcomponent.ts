@@ -2,7 +2,7 @@ import {Component, Input} from '@angular/core';
 import {BComponent, BComponentInputs, DisplaySize} from '../bcomponent';
 
 @Component({
-    selector: "well-bcomponent",
+    selector: "bc-well",
     templateUrl: "well.bcomponent.html",
     inputs: BComponentInputs
 })

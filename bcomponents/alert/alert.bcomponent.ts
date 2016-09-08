@@ -2,7 +2,7 @@ import {Component, Input} from '@angular/core';
 import {BComponent, BComponentInputs, DisplayType} from '../bcomponent';
 
 @Component({
-    selector: "alert-bcomponent",
+    selector: "bc-alert",
     templateUrl: "alert.bcomponent.html",
     inputs: BComponentInputs
 })

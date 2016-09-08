@@ -3,7 +3,7 @@ import {BComponent, BComponentInputs} from '../bcomponent';
 import {LinkBComponent} from '../link/link.bcomponent';
 
 @Component({
-    selector: 'breadcrumb-bcomponent',
+    selector: 'bc-breadcrumb',
     templateUrl: 'breadcrumb.bcomponent.html',
     inputs: BComponentInputs
 })

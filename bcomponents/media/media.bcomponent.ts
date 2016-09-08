@@ -15,7 +15,7 @@ export class MediaAlignment {
 }
 
 @Component({
-    selector: "media-bcomponent",
+    selector: "bc-media",
     templateUrl: "media.bcomponent.html",
     inputs: BComponentInputs,
     styles: ["/deep/ h1,h2,h3,h4,h5,h6 { margin-top: 0px; }"]

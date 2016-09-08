@@ -2,7 +2,7 @@ import {Component, Input, Output, EventEmitter} from '@angular/core';
 import {BComponent, BComponentInputs} from '../bcomponent';
 
 @Component({
-    selector: "link-bcomponent",
+    selector: "bc-link",
     templateUrl: "link.bcomponent.html",
     inputs: BComponentInputs
 })

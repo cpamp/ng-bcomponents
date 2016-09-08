@@ -4,7 +4,7 @@ import {ButtonBComponent} from '../button/button.bcomponent';
 import {ComponentFactory} from '../component.factory';
 
 @Component({
-    selector: 'button-group-bcomponent',
+    selector: 'bc-button-group',
     templateUrl: 'button-group.bcomponent.html',
     inputs: BComponentInputs
 })

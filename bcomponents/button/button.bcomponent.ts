@@ -2,7 +2,7 @@ import {Component, Input, Output, EventEmitter} from '@angular/core';
 import {BComponent, BComponentInputs, DisplayType} from '../bcomponent';
 
 @Component({
-    selector: "button-bcomponent",
+    selector: "bc-button",
     templateUrl: "button.bcomponent.html",
     inputs: BComponentInputs
 })

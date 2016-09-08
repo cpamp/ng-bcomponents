@@ -2,7 +2,7 @@ import {Component, Input, Output, EventEmitter, SimpleChange} from '@angular/cor
 import {BComponent, BComponentInputs, DisplayType} from '../bcomponent';
 
 @Component({
-    selector: "progressbar-bcomponent",
+    selector: "bc-progressbar",
     templateUrl: "progressbar.bcomponent.html",
     inputs: BComponentInputs
 })

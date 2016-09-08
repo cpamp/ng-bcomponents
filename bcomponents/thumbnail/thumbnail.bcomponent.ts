@@ -3,7 +3,7 @@ import {BComponent, BComponentInputs} from '../bcomponent';
 import {HeadingBComponent} from '../heading/heading.bcomponent';
 
 @Component({
-    selector: "thumbnail-bcomponent",
+    selector: "bc-thumbnail",
     templateUrl: "thumbnail.bcomponent.html",
     inputs: BComponentInputs
 })

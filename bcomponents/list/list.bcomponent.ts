@@ -21,7 +21,7 @@ export class ListGroupItem {
 }
 
 @Component({
-    selector: "list-bcomponent",
+    selector: "bc-list",
     templateUrl: "list.bcomponent.html",
     inputs: BComponentInputs
 })

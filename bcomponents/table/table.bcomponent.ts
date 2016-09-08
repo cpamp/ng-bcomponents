@@ -2,7 +2,7 @@ import {Component, Input} from '@angular/core';
 import {BComponent, BComponentInputs} from '../bcomponent';
 
 @Component({
-    selector: "table-bcomponent",
+    selector: "bc-table",
     templateUrl: "table.bcomponent.html",
     inputs: BComponentInputs
 })

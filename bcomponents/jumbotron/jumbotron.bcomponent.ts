@@ -3,7 +3,7 @@ import {BComponent, BComponentInputs} from '../bcomponent';
 import {HeadingBComponent} from '../heading/heading.bcomponent';
 
 @Component({
-    selector: 'jumbotron-bcomponent',
+    selector: 'bc-jumbotron',
     templateUrl: 'jumbotron.bcomponent.html',
     inputs: BComponentInputs
 })

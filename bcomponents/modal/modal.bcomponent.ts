@@ -6,7 +6,7 @@ import {BComponent, BComponentInputs, DisplaySize} from '../bcomponent';
 @Directive({selector: 'modal-footer'}) export class ModalFooterBComponentDirective {}
 
 @Component({
-    selector: 'modal-bcomponent',
+    selector: 'bc-modal',
     templateUrl: 'modal.bcomponent.html',
     inputs: BComponentInputs
 })

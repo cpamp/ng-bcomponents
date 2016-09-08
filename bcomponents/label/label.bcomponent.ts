@@ -2,7 +2,7 @@ import {Component, Input} from '@angular/core';
 import {BComponent, BComponentInputs, DisplayType} from '../bcomponent';
 
 @Component({
-    selector: "label-bcomponent",
+    selector: "bc-label",
     templateUrl: "label.bcomponent.html",
     inputs: BComponentInputs
 })

@@ -3,7 +3,7 @@ import {BComponent, BComponentInputs, DisplayType, DisplaySize} from '../bcompon
 import {ButtonBComponent} from '../button/button.bcomponent';
 
 @Component({
-    selector: "input-group-bcomponent",
+    selector: "bc-input-group",
     templateUrl: "input-group.bcomponent.html",
     inputs: BComponentInputs
 })

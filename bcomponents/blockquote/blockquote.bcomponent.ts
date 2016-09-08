@@ -2,7 +2,7 @@ import {Component, Input} from '@angular/core';
 import {BComponent, BComponentInputs} from '../bcomponent';
 
 @Component({
-    selector: 'blockquote-bcomponent',
+    selector: 'bc-blockquote',
     templateUrl: 'blockquote.bcomponent.html',
     inputs: BComponentInputs
 })
