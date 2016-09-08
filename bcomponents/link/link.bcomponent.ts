@@ -10,19 +10,19 @@ export class LinkBComponent extends BComponent {
     @Input() text: string;
     @Input() link: string;
     @Input() router: boolean = false;
-    @Input() onClick: () => void;
+    @Input() click: () => void;
 
-    @Output() click: EventEmitter<LinkBComponent> = new EventEmitter<LinkBComponent>();
+    @Output() onClick: EventEmitter<LinkBComponent> = new EventEmitter<LinkBComponent>();
 
     constructor() {
         super(null);
     }
 
-    public Initialize = (text: string = "", link: string = "", router: boolean = false, onClick: () => void = null): LinkBComponent => {
+    public Initialize = (text: string = "", link: string = "", router: boolean = false, click: () => void = null): LinkBComponent => {
         this.text = text;
         this.link = link;
         this.router = router;
-        this.onClick = onClick;
+        this.click = click;
         if(this.ngOnChildChanges != null) this.ngOnChildChanges();
         return this;
     }
@@ -32,7 +32,7 @@ export class LinkBComponent extends BComponent {
     }
 
     public clickEvent = () => {
-        if(!this.isNull(this.onClick)) { this.onClick(); }
-        this.click.emit(this);
+        if(!this.isNull(this.click)) { this.click(); }
+        this.onClick.emit(this);
     }
 }
