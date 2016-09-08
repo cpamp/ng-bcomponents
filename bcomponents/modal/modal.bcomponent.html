@@ -6,15 +6,15 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
                 <div *ngIf="hasTitle()" class="modal-title" [innerHtml]="title"></div>
-                <div *ngIf="!hasTitle()" class="modal-title"><ng-content select="modal-title"></ng-content></div>
+                <div *ngIf="!hasTitle()" class="modal-title"><ng-content select="bc-modal-title"></ng-content></div>
             </div>
             <div class="modal-body">
                 <div *ngIf="hasBody()" [innerHtml]="body"></div>
-                <ng-content *ngIf="!hasBody()" select="modal-body"></ng-content>
+                <ng-content *ngIf="!hasBody()" select="bc-modal-body"></ng-content>
             </div>
             <div class="modal-footer">
                 <div *ngIf="hasFooter()" [innerHtml]="footer"></div>
-                <ng-content *ngIf="!hasFooter()" select="modal-footer"></ng-content>
+                <ng-content *ngIf="!hasFooter()" select="bc-modal-footer"></ng-content>
             </div>
         </div>
     </div>
