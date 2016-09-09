@@ -2,13 +2,21 @@ import {NgModule} from '@angular/core';
 import {RouterModule} from '@angular/router';
 import {BrowserModule} from '@angular/platform-browser';
 import {AttributesModule} from '../attributes.module';
-import {ListBComponent} from './list.bcomponent';
-import {ListItemDirective, ListItemBComponent, ListItemActiveDirective} from './list-item.bcomponent';
+import {ListBComponent, ListBDirective} from './list.bcomponent';
+import {ListItemBDirective, ListItemBComponent, ListItemActiveDirective} from './list-item.bcomponent';
 import {BadgeModule} from '../badge/badge.module';
+
+var directives = [
+    ListBComponent,
+    ListBDirective,
+    ListItemBDirective,
+    ListItemBComponent,
+    ListItemActiveDirective
+];
 
 @NgModule({
     imports: [BrowserModule, AttributesModule, BadgeModule, RouterModule],
-    declarations: [ListBComponent, ListItemDirective, ListItemBComponent, ListItemActiveDirective],
-    exports: [ListBComponent, ListItemDirective, ListItemBComponent, ListItemActiveDirective]
+    declarations: directives,
+    exports: directives
 })
 export class ListModule {}

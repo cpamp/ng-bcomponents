@@ -26,7 +26,7 @@ export class ListItemBComponent extends ListItemBase {
     selector: '[bc-list-item]',
     inputs: BComponentInputs
 })
-export class ListItemDirective extends ListItemBase {
+export class ListItemBDirective extends ListItemBase {
     constructor(el: ElementRef) {
         super(el);
     }
