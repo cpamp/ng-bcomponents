@@ -6,7 +6,7 @@ import {AttributesModule} from '../attributes.module';
 var directives = [
     AlertBComponent,
     AlertBDirective
-]
+];
 
 @NgModule({
     imports: [BrowserModule, AttributesModule],

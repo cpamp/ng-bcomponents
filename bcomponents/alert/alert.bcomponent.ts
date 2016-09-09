@@ -43,9 +43,7 @@ export class AlertBase extends BComponent {
     inputs: BComponentInputs
 })
 export class AlertBComponent extends AlertBase {
-    constructor() {
-        super();
-    }
+    constructor() { super(); }
 }
 
 @Directive({
@@ -53,7 +51,5 @@ export class AlertBComponent extends AlertBase {
     inputs: BComponentInputs
 })
 export class AlertBDirective extends AlertBase {
-    constructor(el: ElementRef) {
-        super(el);
-    }
+    constructor(el: ElementRef) { super(el); }
 }
