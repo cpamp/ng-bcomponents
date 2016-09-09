@@ -12,13 +12,23 @@ export const BComponentInputs = [
     'bcomponent'
 ];
 
+export interface AttributesInterface {
+    class: string;
+    id: string;
+    classes: string;
+    styles: string;
+    name: string;
+    aria: string;
+    ariaBy: string;
+}
+
 @Directive({
     selector: "[bcomponent-attributes]"
 })
 export class BComponentAttributes {
     private el: ElementRef;
 
-    @Input('bcomponent-attributes') attributes: BComponent;
+    @Input('bcomponent-attributes') attributes: AttributesInterface;
 
     constructor(el: ElementRef) {
         this.el = el;
@@ -28,7 +38,7 @@ export class BComponentAttributes {
         this.el.nativeElement.setAttribute(attribute, value);
     }
 
-    public setAttributes = (attributes: BComponent) => {
+    public setAttributes = (attributes: AttributesInterface) => {
         if(attributes.class != null) this.setAttribute("class", attributes.class);
         if(attributes.id != null) this.setAttribute("id", attributes.id);
         if(attributes.styles != null) this.setAttribute("style", attributes.styles);
@@ -42,7 +52,7 @@ export class BComponentAttributes {
     }
 }
 
-export class BComponent {
+export class BComponent implements AttributesInterface{
     /** id attribute */
     public id: string;
     /** class attribute */
