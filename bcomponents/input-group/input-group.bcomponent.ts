@@ -1,13 +1,8 @@
-import {Component, Input} from '@angular/core';
+import {Component, Directive, ElementRef, Input} from '@angular/core';
 import {BComponent, BComponentInputs, DisplayType, DisplaySize} from '../bcomponent';
 import {ButtonBComponent} from '../button/button.bcomponent';
 
-@Component({
-    selector: "bc-input-group",
-    templateUrl: "input-group.bcomponent.html",
-    inputs: BComponentInputs
-})
-export class InputGroupBComponent extends BComponent {
+export class InputGroupBase extends BComponent {
     @Input() placeholder: string;
     @Input() model: string;
     @Input() size: DisplaySize;
@@ -18,11 +13,11 @@ export class InputGroupBComponent extends BComponent {
 
     public groupClass: string;
 
-    constructor() {
-        super("form-control");
+    constructor(el: ElementRef = void 0) {
+        super("form-control", el);
     }
 
-    public Initialize = (placeholder: string = "", model: string = "", size: DisplaySize = null, frontText: string = null, backText: string = null, frontButton: ButtonBComponent = null, backButton: ButtonBComponent = null): InputGroupBComponent => {
+    public Initialize = (placeholder: string = "", model: string = "", size: DisplaySize = null, frontText: string = null, backText: string = null, frontButton: ButtonBComponent = null, backButton: ButtonBComponent = null): this => {
         this.placeholder = placeholder;
         this.model = model;
         this.size = size;
@@ -40,4 +35,21 @@ export class InputGroupBComponent extends BComponent {
             this.groupClass += " input-group-" + this.size;
         }
     }
+}
+
+@Component({
+    selector: "bc-input-group",
+    templateUrl: "input-group.bcomponent.html",
+    inputs: BComponentInputs
+})
+export class InputGroupBComponent extends InputGroupBase {
+    constructor() { super(); }
+}
+
+@Directive({
+    selector: "[bc-input-group]",
+    inputs: BComponentInputs
+})
+export class InputGroupBDirective extends InputGroupBase {
+    constructor(el: ElementRef) { super(el); }
 }
