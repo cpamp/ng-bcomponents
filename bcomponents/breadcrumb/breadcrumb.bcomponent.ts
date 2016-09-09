@@ -7,7 +7,7 @@ export class BreadcrumbBase extends BComponent {
     @Input() active: string;
 
     constructor(el: ElementRef = void 0) {
-        super("breadcrumb");
+        super("breadcrumb", el);
     }
 
     public Initialize = (items: LinkBComponent[] = null, active: string = null): this => {
