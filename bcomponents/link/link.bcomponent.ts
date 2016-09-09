@@ -9,7 +9,7 @@ export class LinkBase extends BComponent {
 
     @Output() onClick: EventEmitter<this> = new EventEmitter<this>();
 
-    constructor(el?: ElementRef) {
+    constructor(el: ElementRef = void 0) {
         super(null, el);
     }
 
