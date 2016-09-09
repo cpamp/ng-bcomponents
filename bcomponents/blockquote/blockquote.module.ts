@@ -1,11 +1,16 @@
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {AttributesModule} from '../attributes.module';
-import {BlockquoteBComponent} from './blockquote.bcomponent';
+import {BlockquoteBComponent, BlockquoteBDirective} from './blockquote.bcomponent';
+
+var directives = [
+    BlockquoteBComponent,
+    BlockquoteBDirective
+];
 
 @NgModule({
     imports: [BrowserModule, AttributesModule],
-    declarations: [BlockquoteBComponent],
-    exports: [BlockquoteBComponent]
+    declarations: directives,
+    exports: directives
 })
 export class BlockquoteModule {}
