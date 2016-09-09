@@ -1,21 +1,16 @@
-import {Component, Input} from '@angular/core';
+import {Component, Directive, ElementRef, Input} from '@angular/core';
 import {BComponent, BComponentInputs} from '../bcomponent';
 import {HeadingBComponent} from '../heading/heading.bcomponent';
 
-@Component({
-    selector: 'bc-jumbotron',
-    templateUrl: 'jumbotron.bcomponent.html',
-    inputs: BComponentInputs
-})
-export class JumbotronBComponent extends BComponent {
+export class JumbotronBase extends BComponent {
     @Input() heading: HeadingBComponent;
     @Input() title: string;
     @Input() subtitle: string;
     @Input() body: string;
     @Input() size: number;
 
-    constructor() {
-        super("jumbotron");
+    constructor(el: ElementRef = void 0) {
+        super("jumbotron", el);
     }
 
     public Initialize = (title: string = "", subtitle: string = "", body: string = "", size: number = 1): JumbotronBComponent => {
@@ -34,4 +29,21 @@ export class JumbotronBComponent extends BComponent {
     public hasBody = (): boolean => {
         return !this.isNull(this.body);
     }
+}
+
+@Component({
+    selector: 'bc-jumbotron',
+    templateUrl: 'jumbotron.bcomponent.html',
+    inputs: BComponentInputs
+})
+export class JumbotronBComponent extends JumbotronBase {
+    constructor() { super(); }
+}
+
+@Directive({
+    selector: '[bc-jumbotron]',
+    inputs: BComponentInputs
+})
+export class JumbotronBDirective extends JumbotronBase {
+    constructor(el: ElementRef) { super(el); }
 }
