@@ -10,7 +10,7 @@ export class HeadingBase extends BComponent{
         super("page-header", el);
     }
 
-    public Initialize = (title: string = "", subtitle: string = "", size: number = 1): HeadingBComponent => {
+    public Initialize = (title: string = "", subtitle: string = "", size: number = 1): this => {
         this.title = title;
         this.subtitle = subtitle;
         this.size = size;
