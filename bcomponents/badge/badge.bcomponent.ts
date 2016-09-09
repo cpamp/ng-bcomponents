@@ -1,18 +1,14 @@
-import {Component, Input, Output, EventEmitter, SimpleChange} from '@angular/core';
+import {Component, Directive, Input, Output, EventEmitter, SimpleChange, ElementRef} from '@angular/core';
 import {BComponent, BComponentInputs} from '../bcomponent';
 
-@Component({
-    selector: "bc-badge",
-    templateUrl: "badge.bcomponent.html",
-    inputs: BComponentInputs
-})
-export class BadgeBComponent extends BComponent {
+
+export class BadgeBase extends BComponent {
     @Input() value: number = 0;
 
-    @Output() change: EventEmitter<BadgeBComponent> = new EventEmitter<BadgeBComponent>();
+    @Output() change: EventEmitter<this> = new EventEmitter<this>();
 
-    constructor() {
-        super("badge");
+    constructor(el: ElementRef = void 0) {
+        super("badge", el);
     }
 
     ngOnChildChanges = (change?: {[property: string]: SimpleChange}) => {
@@ -21,7 +17,7 @@ export class BadgeBComponent extends BComponent {
         }
     }
 
-    public Initialize = (value: number = 0): BadgeBComponent => {
+    public Initialize = (value: number = 0): this => {
         this.value = value;
         if(this.ngOnChildChanges != null) this.ngOnChildChanges();
         return this;
@@ -42,4 +38,21 @@ export class BadgeBComponent extends BComponent {
     public decrement = (by: number = 1) => {
         if(this.isNumer()) { this.value -= by; }
     }
+}
+
+@Component({
+    selector: "bc-badge",
+    templateUrl: "badge.bcomponent.html",
+    inputs: BComponentInputs
+})
+export class BadgeBComponent extends BadgeBase {
+    constructor(){ super(); }
+}
+
+@Directive({
+    selector: "[bc-badge]",
+    inputs: BComponentInputs
+})
+export class BadgeBDirective extends BadgeBase {
+    constructor(el: ElementRef) { super(el); }
 }
