@@ -1,12 +1,17 @@
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {AttributesModule} from '../attributes.module';
-import {DropdownBComponent} from './dropdown.bcomponent';
+import {DropdownBComponent, DropdownBDirective} from './dropdown.bcomponent';
 import {LinkModule} from '../link/link.module';
+
+var directives = [
+    DropdownBComponent,
+    DropdownBDirective
+];
 
 @NgModule({
     imports: [BrowserModule, AttributesModule, LinkModule],
-    declarations: [DropdownBComponent],
-    exports: [DropdownBComponent]
+    declarations: directives,
+    exports: directives
 })
 export class DropdownModule {}
