@@ -13,7 +13,7 @@ export class JumbotronBase extends BComponent {
         super("jumbotron", el);
     }
 
-    public Initialize = (title: string = "", subtitle: string = "", body: string = "", size: number = 1): JumbotronBComponent => {
+    public Initialize = (title: string = "", subtitle: string = "", body: string = "", size: number = 1): this => {
         this.title = title;
         this.subtitle = subtitle;
         this.body = body;
