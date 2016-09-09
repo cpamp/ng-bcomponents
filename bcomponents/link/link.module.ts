@@ -2,11 +2,16 @@ import {NgModule} from '@angular/core';
 import {RouterModule} from '@angular/router';
 import {BrowserModule} from '@angular/platform-browser';
 import {AttributesModule} from '../attributes.module';
-import {LinkBComponent} from './link.bcomponent';
+import {LinkBComponent, LinkBDirective} from './link.bcomponent';
+
+var directives = [
+    LinkBComponent,
+    LinkBDirective
+];
 
 @NgModule({
     imports: [BrowserModule, AttributesModule, RouterModule],
-    declarations: [LinkBComponent],
-    exports: [LinkBComponent]
+    declarations: directives,
+    exports: directives
 })
 export class LinkModule {}

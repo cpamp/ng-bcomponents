@@ -1,24 +1,19 @@
-import {Component, Input, Output, EventEmitter} from '@angular/core';
+import {Component, Directive, ElementRef, Input, Output, EventEmitter} from '@angular/core';
 import {BComponent, BComponentInputs} from '../bcomponent';
 
-@Component({
-    selector: "bc-link",
-    templateUrl: "link.bcomponent.html",
-    inputs: BComponentInputs
-})
-export class LinkBComponent extends BComponent {
+export class LinkBase extends BComponent {
     @Input() text: string;
     @Input() link: string;
     @Input() router: boolean = false;
     @Input() click: () => void;
 
-    @Output() onClick: EventEmitter<LinkBComponent> = new EventEmitter<LinkBComponent>();
+    @Output() onClick: EventEmitter<this> = new EventEmitter<this>();
 
-    constructor() {
-        super(null);
+    constructor(el?: ElementRef) {
+        super(null, el);
     }
 
-    public Initialize = (text: string = "", link: string = "", router: boolean = false, click: () => void = null): LinkBComponent => {
+    public Initialize = (text: string = "", link: string = "", router: boolean = false, click: () => void = null): this => {
         this.text = text;
         this.link = link;
         this.router = router;
@@ -35,4 +30,21 @@ export class LinkBComponent extends BComponent {
         if(!this.isNull(this.click)) { this.click(); }
         this.onClick.emit(this);
     }
+}
+
+@Component({
+    selector: "bc-link",
+    templateUrl: "link.bcomponent.html",
+    inputs: BComponentInputs
+})
+export class LinkBComponent extends LinkBase {
+    constructor() { super(); }
+}
+
+@Directive({
+    selector: "[bc-link]",
+    inputs: BComponentInputs
+})
+export class LinkBDirective extends LinkBase {
+    constructor(el: ElementRef) { super(el); }
 }
