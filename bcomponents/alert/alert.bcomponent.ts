@@ -1,22 +1,17 @@
-import {Component, Input} from '@angular/core';
+import {Component, Directive, Input, ElementRef} from '@angular/core';
 import {BComponent, BComponentInputs, DisplayType} from '../bcomponent';
 
-@Component({
-    selector: "bc-alert",
-    templateUrl: "alert.bcomponent.html",
-    inputs: BComponentInputs
-})
-export class AlertBComponent extends BComponent {
+export class AlertBase extends BComponent {
     @Input() text: string;
     @Input() dismissible: boolean = false;
     @Input() hidden: boolean = false;
     @Input() type: DisplayType = "success";
 
-    constructor() {
-        super("alert alert-success");
+    constructor(el: ElementRef = void 0) {
+        super("alert alert-success", el);
     }
 
-    public Initialize = (text: string = "", dismissible: boolean = false, hidden: boolean = false, type: DisplayType = "success"): AlertBComponent => {
+    public Initialize = (text: string = "", dismissible: boolean = false, hidden: boolean = false, type: DisplayType = "success"): this => {
         this.text = text;
         this.dismissible = dismissible;
         this.hidden = hidden;
@@ -39,5 +34,26 @@ export class AlertBComponent extends BComponent {
 
     public hasText = (): boolean => {
         return !this.isNull(this.text);
+    }
+}
+
+@Component({
+    selector: "bc-alert",
+    templateUrl: "alert.bcomponent.html",
+    inputs: BComponentInputs
+})
+export class AlertBComponent extends AlertBase {
+    constructor() {
+        super();
+    }
+}
+
+@Directive({
+    selector: "[bc-alert]",
+    inputs: BComponentInputs
+})
+export class AlertBDirective extends AlertBase {
+    constructor(el: ElementRef) {
+        super(el);
     }
 }
