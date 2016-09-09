@@ -1,23 +1,18 @@
-import {Component, Input, Output, EventEmitter} from '@angular/core';
+import {Component, Directive, Input, Output, EventEmitter, ElementRef} from '@angular/core';
 import {BComponent, BComponentInputs, DisplayType} from '../bcomponent';
 
-@Component({
-    selector: "bc-button",
-    templateUrl: "button.bcomponent.html",
-    inputs: BComponentInputs
-})
-export class ButtonBComponent extends BComponent {
+export class ButtonBase extends BComponent {
     @Input() text: string;
     @Input() type: DisplayType = "default";
     @Input() click: () => void;
 
-    @Output() onClick: EventEmitter<ButtonBComponent> = new EventEmitter<ButtonBComponent>();
+    @Output() onClick: EventEmitter<this> = new EventEmitter<this>();
 
-    constructor() {
-        super("btn btn-default");
+    constructor(el: ElementRef = void 0) {
+        super("btn btn-default", el);
     }
 
-    public Initialize = (text: string = "", type: DisplayType = "default", click: () => void = (() => {})): ButtonBComponent => {
+    public Initialize = (text: string = "", type: DisplayType = "default", click: () => void = (() => {})): this => {
         this.text = text;
         this.type = type;
         this.click = click;
@@ -33,4 +28,21 @@ export class ButtonBComponent extends BComponent {
         if(this.click != null) {this.click();}
         this.onClick.emit(this);
     }
+}
+
+@Component({
+    selector: "bc-button",
+    templateUrl: "button.bcomponent.html",
+    inputs: BComponentInputs
+})
+export class ButtonBComponent extends ButtonBase {
+    constructor() { super(); }
+}
+
+@Directive({
+    selector: "[bc-button]",
+    inputs: BComponentInputs
+})
+export class ButtonBDirective extends ButtonBase {
+    constructor(el: ElementRef) { super(el); }
 }
