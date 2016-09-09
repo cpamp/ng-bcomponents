@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, Directive, ElementRef, Input} from '@angular/core';
 import {BComponent, BComponentInputs, DisplayType} from '../bcomponent';
 import {HeadingBComponent} from '../heading/heading.bcomponent';
 
@@ -14,13 +14,7 @@ export class MediaAlignment {
     }
 }
 
-@Component({
-    selector: "bc-media",
-    templateUrl: "media.bcomponent.html",
-    inputs: BComponentInputs,
-    styles: ["/deep/ h1,h2,h3,h4,h5,h6 { margin-top: 0px; }"]
-})
-export class MediaBComponent extends BComponent {
+export class MediaBase extends BComponent {
     @Input() alignment: MediaAlignment;
     @Input() heading: HeadingBComponent;
     @Input() title: string;
@@ -32,11 +26,11 @@ export class MediaBComponent extends BComponent {
 
     public mediaClass;
 
-    constructor() {
-        super("media");
+    constructor(el: ElementRef = void 0) {
+        super("media", el);
     }
 
-    public Initialize = (src: string = "", alt: string = "", heading: HeadingBComponent = null, title: string = "", size: string = "3", body: string = "", link: string = null, alignment: MediaAlignment = new MediaAlignment()): MediaBComponent => {
+    public Initialize = (src: string = "", alt: string = "", heading: HeadingBComponent = null, title: string = "", size: string = "3", body: string = "", link: string = null, alignment: MediaAlignment = new MediaAlignment()): this => {
         this.heading = heading;
         this.title = title;
         this.body = body;
@@ -63,4 +57,22 @@ export class MediaBComponent extends BComponent {
     public hasBody = (): boolean => {
         return !this.isNull(this.body);
     }
+}
+
+@Component({
+    selector: "bc-media",
+    templateUrl: "media.bcomponent.html",
+    inputs: BComponentInputs,
+    styles: ["/deep/ h1,h2,h3,h4,h5,h6 { margin-top: 0px; }"]
+})
+export class MediaBComponent extends MediaBase {
+    constructor() { super(); }
+}
+
+@Directive({
+    selector: "[bc-media]",
+    inputs: BComponentInputs,
+})
+export class MediaBDirective extends MediaBase {
+    constructor(el: ElementRef) { super(el); }
 }
