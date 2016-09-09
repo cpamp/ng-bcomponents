@@ -1,20 +1,15 @@
-import {Component, Input} from '@angular/core';
+import {Component, Directive, ElementRef, Input} from '@angular/core';
 import {BComponent, BComponentInputs, DisplayType} from '../bcomponent';
 
-@Component({
-    selector: "bc-label",
-    templateUrl: "label.bcomponent.html",
-    inputs: BComponentInputs
-})
-export class LabelBComponent extends BComponent {
+export class LabelBase extends BComponent {
     @Input() text: string;
     @Input() type: DisplayType = "default";
 
-    constructor() {
-        super("label label-default");
+    constructor(el: ElementRef = void 0) {
+        super("label label-default", el);
     }
 
-    public Initialize = (text: string = "", type: DisplayType = "default"): LabelBComponent => {
+    public Initialize = (text: string = "", type: DisplayType = "default"): this => {
         this.text = text;
         this.type = type;
         if(this.ngOnChildChanges != null) this.ngOnChildChanges();
@@ -28,4 +23,21 @@ export class LabelBComponent extends BComponent {
     public hasText = (): boolean => {
         return !this.isNull(this.text);
     }
+}
+
+@Component({
+    selector: "bc-label",
+    templateUrl: "label.bcomponent.html",
+    inputs: BComponentInputs
+})
+export class LabelBComponent extends LabelBase {
+    constructor() { super(); }
+}
+
+@Directive({
+    selector: "[bc-label]",
+    inputs: BComponentInputs
+})
+export class LabelBDirective extends LabelBase {
+    constructor(el: ElementRef) { super(el); }
 }

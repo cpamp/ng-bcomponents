@@ -1,11 +1,16 @@
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {AttributesModule} from '../attributes.module';
-import {LabelBComponent} from './label.bcomponent';
+import {LabelBComponent, LabelBDirective} from './label.bcomponent';
+
+var directives = [
+    LabelBComponent,
+    LabelBDirective
+];
 
 @NgModule({
     imports: [BrowserModule, AttributesModule],
-    declarations: [LabelBComponent],
-    exports: [LabelBComponent]
+    declarations: directives,
+    exports: directives
 })
 export class LabelModule {}
