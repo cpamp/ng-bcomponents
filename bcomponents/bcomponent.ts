@@ -265,6 +265,12 @@ export class BComponent {
     }
 }
 
+/**
+ * Display types for Bootstrap components
+ */
 export type DisplayType = "default" | "primary" | "success" | "info" | "warning" | "danger";
 
+/**
+ * Display sizes for Bootstrap components
+ */
 export type DisplaySize = "lg" | "sm" | "xs";
