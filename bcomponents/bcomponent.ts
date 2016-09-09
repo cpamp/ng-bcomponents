@@ -12,9 +12,47 @@ export const BComponentInputs = [
     'bcomponent'
 ];
 
+@Directive({
+    selector: "[bcomponent-attributes]"
+})
+export class BComponentAttributes {
+    private el: ElementRef;
+
+    @Input('bcomponent-attributes') attributes: BComponent;
+
+    constructor(el: ElementRef) {
+        this.el = el;
+    }
+
+    public setAttribute = (attribute: string, value: string) => {
+        this.el.nativeElement.setAttribute(attribute, value);
+    }
+
+    public setAttributes = (attributes: BComponent) => {
+        if(attributes.class != null) this.setAttribute("class", attributes.class);
+        if(attributes.id != null) this.setAttribute("id", attributes.id);
+        if(attributes.styles != null) this.setAttribute("style", attributes.styles);
+        if(attributes.name != null) this.setAttribute("name", attributes.name);
+        if(attributes.aria != null) this.setAttribute("aria-label", attributes.aria);
+        if(attributes.ariaBy != null) this.setAttribute("aria-labelledby", attributes.ariaBy);
+    }
+
+    ngOnChanges() {
+        this.setAttributes(this.attributes);
+    }
+}
+
 export class BComponent {
-    protected self = this;
+    // Inputs
+    public id: string;
+    public classes: string;
+    public styles: string;
+    public name: string;
+    public aria: string;
+    public ariaBy: string;
     protected bcomponent: any = null;
+
+    protected self = this;
     protected baseClass: string;
 
     protected ngOnChildChanges: (change?: {[property: string]: SimpleChange}) => void;
@@ -24,27 +62,21 @@ export class BComponent {
     public static autoIdentifier: boolean = true;
 
     public class: string;
-    public id: string;
-    public classes: string;
-    public styles: string;
-    public name: string;
-    public aria: string;
-    public ariaBy: string;
 
-    constructor(baseClass: string) {
+    private attributes: BComponentAttributes;
+
+    constructor(baseClass: string, el: ElementRef = void 0) {
         this.baseClass = baseClass;
         this.ngOnChanges();
+        if(el !== void 0) {
+            this.attributes = new BComponentAttributes(el);
+        }
     }
 
-    public InitializeAttributes = (id: string = "", classes: string = "", styles: string = "", name: string = "", aria: string = "", ariaBy: string = ""): this => {
-        this.id = id;
-        this.classes = classes;
-        this.styles = styles;
-        this.name = name;
-        this.aria = aria;
-        this.ariaBy = ariaBy;
-        this.buildClass();
-        return this;
+    private setAttributes = () => {
+        if(!this.isNull(this.attributes)) {
+            this.attributes.setAttributes(this.self);
+        }
     }
 
     ngOnInit() {
@@ -52,6 +84,7 @@ export class BComponent {
             this.id = IdentifierFactory.getIdentifier();
         }
         if(!this.isNull(this.ngOnChildInit)) { this.ngOnChildInit(); }
+        this.setAttributes();
     }
 
     ngOnChanges(change?: {[property: string]: SimpleChange}) {
@@ -60,14 +93,11 @@ export class BComponent {
             ComponentFactory.copy(this, this.bcomponent);
         }
         this.buildClass();
+        this.setAttributes();
     }
 
     ngAfterViewInit() {
         if(!this.isNull(this.ngAfterChildViewInit)) { this.ngAfterChildViewInit(); }
-    }
-
-    public static disableAutoIdentifier = () => {
-        BComponent.autoIdentifier = false;
     }
 
     protected loadComponent = (component: any, view: ViewContainerRef, crf: ComponentFactoryResolver) => {
@@ -89,6 +119,21 @@ export class BComponent {
 
     protected isNull = (value: any): boolean => {
         return value == null;
+    }
+
+    public InitializeAttributes = (id: string = "", classes: string = "", styles: string = "", name: string = "", aria: string = "", ariaBy: string = ""): this => {
+        this.id = id;
+        this.classes = classes;
+        this.styles = styles;
+        this.name = name;
+        this.aria = aria;
+        this.ariaBy = ariaBy;
+        this.buildClass();
+        return this;
+    }
+
+    public static disableAutoIdentifier = () => {
+        BComponent.autoIdentifier = false;
     }
 
     /** Animations */
@@ -137,38 +182,6 @@ export class BComponent {
 
     public slideUp = (duration: string | number = 400, callback?: Function): JQuery => {
         return this.getSelector().slideUp(duration, callback);
-    }
-
-
-}
-
-@Directive({
-    selector: "[bcomponent-attributes]"
-})
-export class BComponentAttributes {
-    private el: ElementRef;
-
-    @Input('bcomponent-attributes') attributes: BComponent;
-
-    constructor(el: ElementRef) {
-        this.el = el;
-    }
-
-    public setAttribute = (attribute: string, value: string) => {
-        this.el.nativeElement.setAttribute(attribute, value);
-    }
-
-    public setAttributes = (attributes: BComponent) => {
-        if(attributes.class != null) this.setAttribute("class", attributes.class);
-        if(attributes.id != null) this.setAttribute("id", attributes.id);
-        if(attributes.styles != null) this.setAttribute("style", attributes.styles);
-        if(attributes.name != null) this.setAttribute("name", attributes.name);
-        if(attributes.aria != null) this.setAttribute("aria-label", attributes.aria);
-        if(attributes.ariaBy != null) this.setAttribute("aria-labelledby", attributes.ariaBy);
-    }
-
-    ngOnChanges() {
-        this.setAttributes(this.attributes);
     }
 }
 
