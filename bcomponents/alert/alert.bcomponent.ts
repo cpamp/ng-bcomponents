@@ -32,6 +32,20 @@ export class AlertBase extends BComponent {
         }
     }
 
+    public showDismissing = (ms: number, showAnimation: () => void = void 0, hideAnimation: () => void = void 0) => {
+        if(showAnimation === void 0) {
+            this.show(0);
+        } else {
+            showAnimation();
+        }
+
+        if(hideAnimation === void 0) {
+            setTimeout(() => {this.hide(0);}, ms);
+        } else {
+            setTimeout(hideAnimation, ms);
+        }
+    }
+
     public hasText = (): boolean => {
         return !this.isNull(this.text);
     }
