@@ -1,21 +1,16 @@
-import {Component, Input} from '@angular/core';
+import {Component, Directive, ElementRef, Input} from '@angular/core';
 import {BComponent, BComponentInputs} from '../bcomponent';
 
-@Component({
-    selector: "bc-table",
-    templateUrl: "table.bcomponent.html",
-    inputs: BComponentInputs
-})
-export class TableBComponent extends BComponent {
+export class TableBase extends BComponent {
     @Input() items: any[];
     @Input() headers: any[];
     @Input() striped: boolean;
 
-    constructor() {
-        super("table");
+    constructor(el: ElementRef = void 0) {
+        super("table", el);
     }
 
-    public Initialize = (items: any[] = [], headers: any[] = null, striped: boolean = false): TableBComponent => {
+    public Initialize = (items: any[] = [], headers: any[] = null, striped: boolean = false): this => {
         this.items = items;
         this.headers = headers;
         this.striped = striped;
@@ -52,4 +47,22 @@ export class TableBComponent extends BComponent {
             this.items = rows;
         }
     }
+}
+
+@Component({
+    selector: "bc-table",
+    templateUrl: "table.bcomponent.html",
+    inputs: BComponentInputs
+})
+export class TableBComponent extends TableBase {
+    constructor() { super(); }
+}
+
+
+@Directive({
+    selector: "bc-table",
+    inputs: BComponentInputs
+})
+export class TableBDirective extends TableBase {
+    constructor(el: ElementRef) { super(el); }
 }
