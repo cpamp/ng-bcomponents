@@ -60,7 +60,7 @@ export class TableBComponent extends TableBase {
 
 
 @Directive({
-    selector: "bc-table",
+    selector: "[bc-table]",
     inputs: BComponentInputs
 })
 export class TableBDirective extends TableBase {
