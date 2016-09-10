@@ -1,11 +1,19 @@
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {AttributesModule} from '../attributes.module';
-import {ModalBComponent, ModalBodyBComponentDirective, ModalFooterBComponentDirective, ModalTitleBComponentDirective} from './modal.bcomponent';
+import {ModalBComponent, ModalBDirective, ModalBodyBComponentDirective, ModalFooterBComponentDirective, ModalTitleBComponentDirective} from './modal.bcomponent';
+
+var directives = [
+    ModalBComponent,
+    ModalBDirective,
+    ModalBodyBComponentDirective,
+    ModalFooterBComponentDirective,
+    ModalTitleBComponentDirective
+];
 
 @NgModule({
     imports: [BrowserModule, AttributesModule],
-    declarations: [ModalBComponent, ModalBodyBComponentDirective, ModalFooterBComponentDirective, ModalTitleBComponentDirective],
-    exports: [ModalBComponent, ModalBodyBComponentDirective, ModalFooterBComponentDirective, ModalTitleBComponentDirective]
+    declarations: directives,
+    exports: directives
 })
 export class ModalModule {}
