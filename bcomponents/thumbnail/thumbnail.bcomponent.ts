@@ -1,13 +1,8 @@
-import {Component, Input} from '@angular/core';
+import {Component, Directive, ElementRef, Input} from '@angular/core';
 import {BComponent, BComponentInputs} from '../bcomponent';
 import {HeadingBComponent} from '../heading/heading.bcomponent';
 
-@Component({
-    selector: "bc-thumbnail",
-    templateUrl: "thumbnail.bcomponent.html",
-    inputs: BComponentInputs
-})
-export class ThumbnailBComponent extends BComponent {
+export class ThumbnailBase extends BComponent {
     @Input() heading: HeadingBComponent;
     @Input() link: string;
     @Input() header: string;
@@ -17,11 +12,11 @@ export class ThumbnailBComponent extends BComponent {
     @Input() alt: string;
     @Input() size: number = 3;
 
-    constructor() {
-        super("thumbnail");
+    constructor(el: ElementRef = void 0) {
+        super("thumbnail", el);
     }
 
-    public Initialize = (heading: HeadingBComponent = null, link: string = null, header: string = null, body: string = null, footer: string = null, src: string = "", alt: string = "", size: number = 3): ThumbnailBComponent => {
+    public Initialize = (heading: HeadingBComponent = null, link: string = null, header: string = null, body: string = null, footer: string = null, src: string = "", alt: string = "", size: number = 3): this => {
         this.heading = heading;
         this.link = link;
         this.header = header;
@@ -53,4 +48,21 @@ export class ThumbnailBComponent extends BComponent {
     hasLink = (): boolean => {
         return this.link !== null || this.link.trim() !== "";
     }
+}
+
+@Component({
+    selector: "bc-thumbnail",
+    templateUrl: "thumbnail.bcomponent.html",
+    inputs: BComponentInputs
+})
+export class ThumbnailBComponent extends ThumbnailBase {
+    constructor() { super(); }
+}
+
+@Directive({
+    selector: "[bc-thumbnail]",
+    inputs: BComponentInputs
+})
+export class ThumbnailBDirective extends ThumbnailBase {
+    constructor(el: ElementRef) { super(el); }
 }
