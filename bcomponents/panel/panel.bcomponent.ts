@@ -39,7 +39,7 @@ export class PanelBComponent extends PanelBase {
 }
 
 @Directive({
-    selector: "bc-panel",
+    selector: "[bc-panel]",
     inputs: BComponentInputs
 })
 export class PanelBDirective extends PanelBase {
