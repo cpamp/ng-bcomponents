@@ -1,11 +1,16 @@
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {AttributesModule} from '../attributes.module';
-import {ProgressbarBComponent} from './progressbar.bcomponent';
+import {ProgressbarBComponent, ProgressbarBDirective} from './progressbar.bcomponent';
+
+var directives = [
+    ProgressbarBComponent,
+    ProgressbarBDirective
+];
 
 @NgModule({
     imports: [BrowserModule, AttributesModule],
-    declarations: [ProgressbarBComponent],
-    exports: [ProgressbarBComponent]
+    declarations: directives,
+    exports: directives
 })
 export class ProgressbarModule {}
