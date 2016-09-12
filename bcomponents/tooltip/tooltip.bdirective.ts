@@ -6,9 +6,8 @@ import {DisplayPosition, BComponentInputs} from '../bcomponent';
     inputs: BComponentInputs
 })
 export class TooltipBDirective {
-    @Input() position: DisplayPosition = "bottom";
+    @Input('bc-tooltip-position') position: DisplayPosition = "bottom";
     @Input('bc-tooltip') bcTooltip: string;
-    @Input('tooltip-text') tooltipText: string;
 
     private el: ElementRef;
 
