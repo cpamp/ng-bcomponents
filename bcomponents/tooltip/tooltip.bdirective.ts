@@ -1,9 +1,8 @@
 import {Directive, Input, ElementRef} from '@angular/core';
-import {DisplayPosition, BComponentInputs} from '../bcomponent';
+import {DisplayPosition} from '../bcomponent';
 
 @Directive({
-    selector: '[bc-tooltip]',
-    inputs: BComponentInputs
+    selector: '[bc-tooltip]'
 })
 export class TooltipBDirective {
     @Input('bc-tooltip-position') position: DisplayPosition = "bottom";
