@@ -35,7 +35,7 @@ export class BComponentAttributes {
     }
 
     public setAttribute = (attribute: string, value: string) => {
-        this.el.nativeElement.setAttribute(attribute, value);
+        $(this.el.nativeElement).attr(attribute, value);
     }
 
     public setAttributes = (attributes: AttributesInterface) => {
@@ -79,7 +79,7 @@ export class BComponent implements AttributesInterface{
 
     public class: string;
 
-    private attributes: BComponentAttributes;
+    protected attributes: BComponentAttributes;
 
     constructor(baseClass: string, el: ElementRef = void 0) {
         this.baseClass = baseClass;
@@ -284,3 +284,8 @@ export type DisplayType = "default" | "primary" | "success" | "info" | "warning"
  * Display sizes for Bootstrap components
  */
 export type DisplaySize = "lg" | "sm" | "xs";
+
+/**
+ * Display Position
+ */
+export type DisplayPosition = "top" | "bottom" | "left" | "right";

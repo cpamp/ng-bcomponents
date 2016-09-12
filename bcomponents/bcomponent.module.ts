@@ -22,6 +22,7 @@ import {ProgressbarModule} from './progressbar/progressbar.module';
 import {SidenavModule} from './sidenav/sidenav.module';
 import {TableModule} from './table/table.module';
 import {ThumbnailModule} from './thumbnail/thumbnail.module';
+import {TooltipModule} from './tooltip/tooltip.module';
 import {WellModule} from './well/well.module';
 
 var Modules: any[] = [
@@ -45,6 +46,7 @@ var Modules: any[] = [
     SidenavModule,
     TableModule,
     ThumbnailModule,
+    TooltipModule,
     WellModule
 ];
 
