@@ -21,7 +21,7 @@ export class TooltipBDirective {
 
     ngAfterViewInit() {
         this.setAttribute('data-toggle', 'tooltip');
-        this.setAttribute('title', this.bcTooltip);
+        if(this.bcTooltip != null && this.bcTooltip !== '') {this.setAttribute('title', this.bcTooltip);}
         this.setAttribute('data-placement', this.position);
         $(this.el.nativeElement).tooltip();
     }
