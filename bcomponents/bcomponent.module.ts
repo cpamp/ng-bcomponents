@@ -18,6 +18,7 @@ import {ListModule} from './list/list.module';
 import {MediaModule} from './media/media.module';
 import {ModalModule} from './modal/modal.module';
 import {PanelModule} from './panel/panel.module';
+import {PopoverModule} from './popover/popover.module';
 import {ProgressbarModule} from './progressbar/progressbar.module';
 import {SidenavModule} from './sidenav/sidenav.module';
 import {TableModule} from './table/table.module';
@@ -42,6 +43,7 @@ var Modules: any[] = [
     MediaModule,
     ModalModule,
     PanelModule,
+    PopoverModule,
     ProgressbarModule,
     SidenavModule,
     TableModule,
