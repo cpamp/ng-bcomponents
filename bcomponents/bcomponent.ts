@@ -275,6 +275,25 @@ export class BComponent implements AttributesInterface{
     }
 }
 
+export class BDirective {
+    public el: ElementRef;
+    constructor(el: ElementRef) {
+        this.el = el;
+    }
+
+    public isNull = (value: any) => {
+        return value == null;
+    }
+
+    public isNullOrEmpty = (value: string) => {
+        return this.isNull(value) || value !== '';
+    }
+
+    public setAttribute = (attr: string, value: string) => {
+        $(this.el.nativeElement).attr(attr, value);
+    }
+}
+
 /**
  * Display types for Bootstrap components
  */
