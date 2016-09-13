@@ -286,7 +286,7 @@ export class BDirective {
     }
 
     public isNullOrEmpty = (value: string) => {
-        return this.isNull(value) || value !== '';
+        return this.isNull(value) || value === '';
     }
 
     public setAttribute = (attr: string, value: string) => {
