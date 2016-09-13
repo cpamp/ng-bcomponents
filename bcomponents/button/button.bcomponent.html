@@ -1,1 +1,2 @@
-<button [bcomponent-attributes]="self" type="button" (click)="clickEvent()" [innerHtml]="text"></button>
+<button *ngIf="!isNull(text)" [bcomponent-attributes]="self" type="button" (click)="clickEvent()" [innerHtml]="text"></button>
+<button *ngIf="isNull(text)" [bcomponent-attributes]="self" type="button" (click)="clickEvent()"><ng-content></ng-content></button>
