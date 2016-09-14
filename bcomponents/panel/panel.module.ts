@@ -1,11 +1,14 @@
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {AttributesModule} from '../attributes.module';
-import {PanelBComponent, PanelBDirective} from './panel.bcomponent';
+import {PanelBComponent, PanelBDirective, PanelBodyBDirective, PanelFooterBDirective, PanelHeaderBDirective} from './panel.bcomponent';
 
 var directives = [
     PanelBComponent,
-    PanelBDirective
+    PanelBDirective,
+    PanelBodyBDirective,
+    PanelHeaderBDirective,
+    PanelFooterBDirective
 ];
 
 @NgModule({

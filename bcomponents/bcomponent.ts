@@ -289,6 +289,10 @@ export class BDirective {
         return this.isNull(value) || value === '';
     }
 
+    public addClass = (value: string) => {
+        $(this.el.nativeElement).addClass(value);
+    }
+
     public setAttribute = (attr: string, value: string) => {
         $(this.el.nativeElement).attr(attr, value);
     }
