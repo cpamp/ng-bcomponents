@@ -6,10 +6,11 @@ export class ComponentFactory {
         view.createComponent(contentComponent);
     }
 
-    static copy = <T>(base: T, copyObject: T) => {
-        for(var prop in copyObject) {
+    static copy = (base: Object, copyObject: Object) => {
+        var props = Object.getOwnPropertyNames(copyObject);
+        props.forEach((prop) => {
             base[prop] = copyObject[prop];
-        }
+        });
         return base;
     }
 }
