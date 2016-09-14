@@ -37,6 +37,12 @@ export class PanelBase extends BComponent {
         this.baseClass = "panel panel-" + this.type;
     }
 
+    ngAfterChildViewInit = () => {
+        console.log(this.projectionBody);
+        console.log(this.projectionFooter);
+        console.log(this.projectionHeader);
+    }
+
     public hasBody = (): boolean => {
         return !this.isNull(this.body);
     }
