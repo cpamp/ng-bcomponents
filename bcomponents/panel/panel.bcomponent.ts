@@ -2,21 +2,13 @@ import {Component, Directive, ContentChild, ElementRef, Input} from '@angular/co
 import {BComponent, BDirective, BComponentInputs, DisplayType} from '../bcomponent';
 
 @Directive({selector: "bc-panel-header"})
-export class PanelHeaderBDirective extends BDirective {
-    constructor(el: ElementRef) {
-        super(el);
-    }
-}
+export class PanelHeaderBDirective {}
 
 @Directive({selector: "bc-panel-body"})
 export class PanelBodyBDirective {}
 
 @Directive({selector: "bc-panel-footer"})
-export class PanelFooterBDirective extends BDirective {
-    constructor(el: ElementRef) {
-        super(el);
-    }
-}
+export class PanelFooterBDirective {}
 
 export class PanelBase extends BComponent {
     @Input() header: string;
