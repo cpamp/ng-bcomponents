@@ -1,11 +1,32 @@
-import {Component, Directive, ElementRef, Input} from '@angular/core';
-import {BComponent, BComponentInputs, DisplayType} from '../bcomponent';
+import {Component, Directive, ContentChild, ElementRef, Input} from '@angular/core';
+import {BComponent, BDirective, BComponentInputs, DisplayType} from '../bcomponent';
+
+@Directive({selector: "bc-panel-header"})
+export class PanelHeaderBDirective extends BDirective {
+    constructor(el: ElementRef) {
+        super(el);
+    }
+}
+
+@Directive({selector: "bc-panel-body"})
+export class PanelBodyBDirective {}
+
+@Directive({selector: "bc-panel-footer"})
+export class PanelFooterBDirective extends BDirective {
+    constructor(el: ElementRef) {
+        super(el);
+    }
+}
 
 export class PanelBase extends BComponent {
     @Input() header: string;
     @Input() body: string;
     @Input() footer: string;
     @Input() type: DisplayType = "default";
+
+    @ContentChild(PanelHeaderBDirective) projectionHeader: any;
+    @ContentChild(PanelBodyBDirective) projectionBody: any;
+    @ContentChild(PanelFooterBDirective) projectionFooter: any;
 
     constructor(el: ElementRef = void 0) {
         super("panel panel-default", el);
@@ -22,6 +43,12 @@ export class PanelBase extends BComponent {
 
     ngOnChildChanges = () => {
         this.baseClass = "panel panel-" + this.type;
+    }
+
+    ngAfterChildViewInit = () => {
+        console.log(this.projectionBody);
+        console.log(this.projectionFooter);
+        console.log(this.projectionHeader);
     }
 
     public hasBody = (): boolean => {
