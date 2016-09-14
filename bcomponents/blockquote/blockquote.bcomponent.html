@@ -1,10 +1,10 @@
 <blockquote [bcomponent-attributes]="self">
-    <p>
-        <span *ngIf="hasBody()" [innerHtml]="body"></span>
-        <ng-content *ngIf="!hasBody()" select="[blockquote-body]"></ng-content>
+    <p *ngIf="!isNull(body)" [innerHtml]="body"></p>
+    <p *ngIf="isNull(body) && !isNull(projectionBody)">
+        <ng-content select="bc-blockquote-body"></ng-content>
     </p>
-    <footer>
-        <div *ngIf="hasFooter()" [innerHtml]="footer"></div>
-        <ng-content *ngIf="!hasFooter()" select="[blockquote-footer]"></ng-content>
+    <footer *ngIf="!isNull(footer)" [innerHtml]="footer"></footer>
+    <footer *ngIf="isNull(footer) && !isNull(projectionFooter)">
+        <ng-content select="bc-blockquote-footer"></ng-content>
     </footer>
 </blockquote>

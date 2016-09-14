@@ -1,10 +1,19 @@
-import {Component, Directive, Input, ElementRef} from '@angular/core';
+import {Component, Directive, ContentChild, Input, ElementRef} from '@angular/core';
 import {BComponent, BComponentInputs} from '../bcomponent';
+
+@Directive({selector:'bc-blockquote-body'})
+export class BlockquoteBodyBDirective {}
+
+@Directive({selector:'bc-blockquote-footer'})
+export class BlockquoteFooterBDirective {}
 
 export class BlockquoteBase extends BComponent {
     @Input() body: string;
     @Input() footer: string;
     @Input() reverse: boolean = false;
+
+    @ContentChild(BlockquoteBodyBDirective) projectionBody;
+    @ContentChild(BlockquoteFooterBDirective) projectionFooter;
 
     constructor(el: ElementRef = void 0) {
         super(null, el);
@@ -21,14 +30,6 @@ export class BlockquoteBase extends BComponent {
         if(this.reverse) {
             this.baseClass = "blockquote-reverse";
         }
-    }
-
-    public hasBody = ():boolean => {
-        return !this.isNull(this.body);
-    }
-
-    public hasFooter = ():boolean => {
-        return !this.isNull(this.footer);
     }
 }
 
