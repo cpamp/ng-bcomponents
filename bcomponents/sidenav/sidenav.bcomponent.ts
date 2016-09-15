@@ -87,6 +87,10 @@ export class SidenavBComponent extends BComponent {
         return !this.isNull(this.component);
     }
 
+    /**
+     * Toggle the visibility of the sidenav
+     * @memberOf SidenavBComponent
+     */
     public toggleNav = () => {
         var overlay = $('.overlay');
         if (this.isClosed == true) {

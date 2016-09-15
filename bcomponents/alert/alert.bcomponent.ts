@@ -32,7 +32,14 @@ export class AlertBase extends BComponent {
         }
     }
 
-    public showDismissing = (ms: number, showAnimation: () => void = void 0, hideAnimation: () => void = void 0) => {
+    /**
+     * Show an alert that self dismisses
+     * @param {number} ms - Number of milliseconds to show
+     * @param {function?} showAnimation - Custom show animation
+     * @param {function?} hideAnimation - Custom hide animation
+     * @memberOf AlertBase
+     */
+    public showDismissing = (ms: number, showAnimation?: () => void, hideAnimation?: () => void) => {
         if(showAnimation === void 0) {
             this.show(0);
         } else {

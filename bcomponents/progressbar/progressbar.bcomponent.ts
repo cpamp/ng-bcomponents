@@ -51,10 +51,29 @@ export class ProgressbarBase extends BComponent {
         }
     }
 
+    /**
+     * Set the value of the progress bar
+     * @param {number} value - Value to set the progress bar to
+     * @memberOf ProgressbarBase
+     */
+    public setValue = (value: number) => {
+        this.value = value;
+    }
+
+    /**
+     * Increase the value of the progress bar
+     * @param {number} by - Value to increase the progress bar by. Defaults to 1
+     * @memberOf ProgressbarBase
+     */
     public increment = (by: number = 1) => {
         this.value += by;
     }
 
+    /**
+     * Decrease the value of the progress bar
+     * @param {number} by - Value to decrease the progress bar by. Defaults to 1
+     * @memberOf ProgressbarBase
+     */
     public decrement = (by: number = 1) => {
         this.value -= by;
     }

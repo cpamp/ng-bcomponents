@@ -23,18 +23,33 @@ export class BadgeBase extends BComponent {
         return this;
     }
 
-    public setValue = (value: number) => {
-        this.value = value;
-    }
-
     private isNumer = (): boolean => {
         return typeof this.value === 'number';
     }
 
+    /**
+     * Set the value of the badge
+     * @param {number} value - Value to set the badge to
+     * @memberOf BadgeBase
+     */
+    public setValue = (value: number) => {
+        this.value = value;
+    }
+
+    /**
+     * Increase the value of the badge
+     * @param {number} by - Value to increase the badge number by. Defaults to 1
+     * @memberOf BadgeBase
+     */
     public increment = (by: number = 1) => {
         if(this.isNumer()) { this.value += by; }
     }
 
+    /**
+     * Decrease the value of the badge
+     * @param {number} by - Value to decrease the badge number by. Defaults to 1
+     * @memberOf BadgeBase
+     */
     public decrement = (by: number = 1) => {
         if(this.isNumer()) { this.value -= by; }
     }

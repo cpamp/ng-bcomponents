@@ -41,10 +41,18 @@ export class ModalBase extends BComponent {
         return !this.isNull(this.footer);
     }
 
+    /**
+     * Show the modal
+     * @memberOf ModalBase
+     */
     public open = () => {
         this.getSelector().modal('show');
     }
 
+    /**
+     * Hide the modal
+     * @memberOf ModalBase
+     */
     public close = () => {
         this.getSelector().modal('hide');
     }
