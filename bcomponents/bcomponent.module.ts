@@ -8,6 +8,7 @@ import {BlockquoteModule} from './blockquote/blockquote.module';
 import {BreadcrumbModule} from './breadcrumb/breadcrumb.module';
 import {ButtonModule} from './button/button.module';
 import {ButtonGroupModule} from './button-group/button-group.module';
+import {CollapseModule} from './collapse/collapse.module';
 import {DropdownModule} from './dropdown/dropdown.module';
 import {HeadingModule} from './heading/heading.module';
 import {InputGroupModule} from './input-group/input-group.module';
@@ -33,6 +34,7 @@ var Modules: any[] = [
     BreadcrumbModule,
     ButtonModule,
     ButtonGroupModule,
+    CollapseModule,
     DropdownModule,
     HeadingModule,
     InputGroupModule,
