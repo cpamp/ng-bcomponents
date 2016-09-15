@@ -3,23 +3,23 @@ import {ComponentFactory} from './component.factory';
 import {IdentifierFactory} from './identifier.factory';
 
 export const BComponentInputs = [
-    'id',
-    'classes',
-    'styles',
-    'name',
-    'aria',
-    'ariaBy',
+    'bcId',
+    'bcClass',
+    'bcStyle',
+    'bcName',
+    'bcAria',
+    'bcAriaBy',
     'bcomponent'
 ];
 
 export interface AttributesInterface {
     class: string;
-    id: string;
-    classes: string;
-    styles: string;
-    name: string;
-    aria: string;
-    ariaBy: string;
+    bcId: string;
+    bcClass: string;
+    bcStyle: string;
+    bcName: string;
+    bcAria: string;
+    bcAriaBy: string;
 }
 
 @Directive({
@@ -40,11 +40,11 @@ export class BComponentAttributes {
 
     public setAttributes = (attributes: AttributesInterface) => {
         if(attributes.class != null) this.setAttribute("class", attributes.class);
-        if(attributes.id != null) this.setAttribute("id", attributes.id);
-        if(attributes.styles != null) this.setAttribute("style", attributes.styles);
-        if(attributes.name != null) this.setAttribute("name", attributes.name);
-        if(attributes.aria != null) this.setAttribute("aria-label", attributes.aria);
-        if(attributes.ariaBy != null) this.setAttribute("aria-labelledby", attributes.ariaBy);
+        if(attributes.bcId != null) this.setAttribute("id", attributes.bcId);
+        if(attributes.bcStyle != null) this.setAttribute("style", attributes.bcStyle);
+        if(attributes.bcName != null) this.setAttribute("name", attributes.bcName);
+        if(attributes.bcAria != null) this.setAttribute("aria-label", attributes.bcAria);
+        if(attributes.bcAriaBy != null) this.setAttribute("aria-labelledby", attributes.bcAriaBy);
     }
 
     ngOnChanges() {
@@ -54,17 +54,17 @@ export class BComponentAttributes {
 
 export class BComponent implements AttributesInterface{
     /** id attribute */
-    public id: string;
+    public bcId: string;
     /** class attribute */
-    public classes: string;
+    public bcClass: string;
     /** style attribute */
-    public styles: string;
+    public bcStyle: string;
     /** name attribute */
-    public name: string;
+    public bcName: string;
     /** aria attribute */
-    public aria: string;
+    public bcAria: string;
     /** aria-labelledby attribute */
-    public ariaBy: string;
+    public bcAriaBy: string;
 
     protected bcomponent: any = null;
 
@@ -96,8 +96,8 @@ export class BComponent implements AttributesInterface{
     }
 
     ngOnInit() {
-        if(this.isNull(this.id) && BComponent.autoIdentifier) {
-            this.id = IdentifierFactory.getIdentifier();
+        if(this.isNull(this.bcId) && BComponent.autoIdentifier) {
+            this.bcId = IdentifierFactory.getIdentifier();
         }
         if(!this.isNull(this.ngOnChildInit)) { this.ngOnChildInit(); }
         this.setAttributes();
@@ -123,12 +123,12 @@ export class BComponent implements AttributesInterface{
     private buildClass = () => {
         if(this.baseClass != null) {
             this.class = this.baseClass;
-            if(this.classes != null) {
-                this.class +=  " " + this.classes;
+            if(this.bcClass != null) {
+                this.class +=  " " + this.bcClass;
             }
         } else {
-            if(this.classes != null) {
-                this.class = this.classes
+            if(this.bcClass != null) {
+                this.class = this.bcClass
             }
         }
     }
@@ -148,12 +148,12 @@ export class BComponent implements AttributesInterface{
      * @returns {this} - Returns this object
      */
     public InitializeAttributes = (id: string = "", classes: string = "", styles: string = "", name: string = "", aria: string = "", ariaBy: string = ""): this => {
-        this.id = id;
-        this.classes = classes;
-        this.styles = styles;
-        this.name = name;
-        this.aria = aria;
-        this.ariaBy = ariaBy;
+        this.bcId = id;
+        this.bcClass = classes;
+        this.bcStyle = styles;
+        this.bcName = name;
+        this.bcAria = aria;
+        this.bcAriaBy = ariaBy;
         this.buildClass();
         return this;
     }
@@ -170,7 +170,7 @@ export class BComponent implements AttributesInterface{
      * @returns {JQuery} - JQuery selector for the element
      */
     public getSelector = (): JQuery => {
-        return $(IdentifierFactory.getSelector(this.id));
+        return $(IdentifierFactory.getSelector(this.bcId));
     }
 
     /**
@@ -277,8 +277,10 @@ export class BComponent implements AttributesInterface{
 
 export class BDirective {
     public el: ElementRef;
+    public selector: JQuery;
     constructor(el: ElementRef) {
         this.el = el;
+        this.selector = $(this.el.nativeElement);
     }
 
     public isNull = (value: any) => {
@@ -290,11 +292,15 @@ export class BDirective {
     }
 
     public addClass = (value: string) => {
-        $(this.el.nativeElement).addClass(value);
+        this.selector.addClass(value);
+    }
+
+    public addStyle = (style: string, value: string | number) => {
+        this.selector.css(style, value);
     }
 
     public setAttribute = (attr: string, value: string) => {
-        $(this.el.nativeElement).attr(attr, value);
+        this.selector.attr(attr, value);
     }
 }
 

@@ -4,7 +4,7 @@
     </a>
     <img *ngIf="!hasLink()" [attr.src]="src" [attr.alt]="alt">
     <div class="caption">
-        <bc-heading *ngIf="hasHeader() && !hasHeading()" [size]="size" [title]="header" [styles]="'margin-top:0px;'"></bc-heading>
+        <bc-heading *ngIf="hasHeader() && !hasHeading()" [size]="size" [title]="header" bcStyle="margin-top:0px;"></bc-heading>
         <bc-heading *ngIf="hasHeading()" [bcomponent]="heading"></bc-heading>
         <p *ngIf="hasBody()" [innerHtml]="body"></p>
         <p *ngIf="!hasBody()"><ng-content select="thumbnail-body"></ng-content></p>

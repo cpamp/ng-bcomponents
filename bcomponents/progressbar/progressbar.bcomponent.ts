@@ -44,7 +44,7 @@ export class ProgressbarBase extends BComponent {
         if(this.striped) { this.baseClass += " progress-bar-striped"; }
         if(this.animated) { this.baseClass += " active"; }
         this.bounds();
-        this.styles = "width: " + this.percentValue + "%;";
+        this.bcStyle = "width: " + this.percentValue + "%;";
         
         if(!this.isNull(change) && change['value']) {
             this.change.emit(this);

@@ -65,7 +65,7 @@ export class SidenavBComponent extends BComponent {
     }
 
     ngOnChildChanges = () => {
-        this.id = "wrapper";
+        this.bcId = "wrapper";
     }
 
     public Initialize = (component: any = null, brand: LinkBComponent = null, items: SidenavItem[] = [], menuButton: boolean = true, overlay: boolean = true, startOpen: boolean = true) => {
