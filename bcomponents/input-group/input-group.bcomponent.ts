@@ -1,15 +1,32 @@
-import {Component, Directive, ElementRef, Input} from '@angular/core';
+import {Component, Directive, ElementRef, Input, ContentChildren, ContentChild, QueryList} from '@angular/core';
 import {BComponent, BComponentInputs, DisplayType, DisplaySize} from '../bcomponent';
 import {ButtonBComponent} from '../button/button.bcomponent';
+
+@Directive({
+    selector: 'bc-input-group-back'
+})
+export class InputGroupBackBDirective {
+    @ContentChildren(ButtonBComponent) buttons: QueryList<ButtonBComponent>;
+}
+
+@Directive({
+    selector: 'bc-input-group-front'
+})
+export class InputGroupFrontBDirective {
+    @ContentChildren(ButtonBComponent) buttons: QueryList<ButtonBComponent>;
+}
 
 export class InputGroupBase extends BComponent {
     @Input() placeholder: string;
     @Input() model: string;
     @Input() size: DisplaySize;
-    @Input() frontText: string;
-    @Input() backText: string;
-    @Input() frontButton: ButtonBComponent;
-    @Input() backButton: ButtonBComponent;
+    @Input('front-text') frontText: string;
+    @Input('back-text') backText: string;
+    @Input('front-button') frontButton: ButtonBComponent;
+    @Input('back-button') backButton: ButtonBComponent;
+
+    @ContentChild(InputGroupBackBDirective) backButtons;
+    @ContentChild(InputGroupFrontBDirective) frontButtons;
 
     public groupClass: string;
 
@@ -27,6 +44,10 @@ export class InputGroupBase extends BComponent {
         this.backButton = backButton;
         if(this.ngOnChildChanges != null) this.ngOnChildChanges();
         return this;
+    }
+
+    ngOnChildInit = () => {
+        this.ngOnChildChanges();
     }
 
     ngOnChildChanges = () => {

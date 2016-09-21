@@ -1,7 +1,13 @@
-<div class="{{groupClass}}">
+<div [attr.class]="groupClass">
     <span *ngIf="!isNull(frontText) && isNull(frontButton)" class="input-group-addon">{{frontText}}</span>
-    <span *ngIf="!isNull(frontButton)" class="input-group-btn"><button [bcomponent-attributes]="frontButton" [attr.class]="frontButton.baseClass" type="button" (click)="frontButton.click()">{{frontButton.text}}</button></span>
+    <span *ngIf="!isNull(frontButton)" class="input-group-btn"><button [bcomponent-attributes]="frontButton" [attr.class]="frontButton.baseClass" type="button" (click)="frontButton.clickEvent()">{{frontButton.text}}</button></span>
+    <div *ngIf="isNull(frontButton) && !isNull(frontButtons)" class="input-group-btn">
+        <button *ngFor="let button of frontButtons.buttons._results" [bcomponent-attributes]="button" [attr.class]="button.baseClass" (click)="button.clickEvent()" [innerHtml]="button.text"></button>
+    </div>
     <input [bcomponent-attributes]="self" type="text" placeholder="{{placeholder}}" [(ngModel)]="model">
     <span *ngIf="!isNull(backText) && isNull(backButton)" class="input-group-addon">{{backText}}</span>
-    <span *ngIf="!isNull(backButton)" class="input-group-btn"><button [bcomponent-attributes]="backButton" [attr.class]="backButton.baseClass" type="button" (click)="backButton.click()">{{backButton.text}}</button></span>    
+    <span *ngIf="!isNull(backButton)" class="input-group-btn"><button [bcomponent-attributes]="backButton" [attr.class]="backButton.baseClass" type="button" (click)="backButton.clickEvent()">{{backButton.text}}</button></span>
+    <div *ngIf="isNull(backButton) && !isNull(backButtons)" class="input-group-btn">
+        <button *ngFor="let button of backButtons.buttons._results" [bcomponent-attributes]="button" [attr.class]="button.baseClass" (click)="button.clickEvent()" [innerHtml]="button.text"></button>
+    </div>
 </div>
